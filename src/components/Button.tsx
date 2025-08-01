@@ -5,10 +5,6 @@ const ButtonGroup = styled.div`
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
-
-  @media (min-width: 640px) {
-    flex-direction: row;
-  }
 `;
 
 const Button = styled.button<{ $variant?: "outline" }>`
