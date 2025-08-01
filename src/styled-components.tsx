@@ -1,10 +1,23 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import MediaQuery from "./styles/mediaQuery";
+
+export const GlobalStyle = createGlobalStyle`
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+`;
 
 export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
+  overflow: hidden;
+  flex-wrap: wrap;
   background-color: #f0f0f0;
   padding: 0px;
   margin: 0px;
@@ -12,6 +25,7 @@ export const PageWrapper = styled.div`
   min-height: 100%;
   justify-content: flex-start;
   align-items: flex-start;
+  box-sizing: border-box;
 
   ${MediaQuery.desktop} {
     width: 100%;
@@ -20,16 +34,6 @@ export const PageWrapper = styled.div`
 
 export const MainSection = styled(PageWrapper)`
   //Buttons and all the main content
-  display: flex;
-  flex-direction: column;
-
-  background-color: #f0f0f0;
-  padding: 0px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  width: 100%;
-  justify-content: flex-start;
-  align-items: flex-start;
 
   ${MediaQuery.desktop} {
     width: 100%;
@@ -42,13 +46,6 @@ export const Title = styled.h1`
   font-size: 2rem;
   margin: 20px;
 `;
-export const HeaderSection = styled.div`
+export const HeaderSection = styled(PageWrapper)`
   //This is Elly Fodor text and placeholder.
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 `;
-
-
-
-

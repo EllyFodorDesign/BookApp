@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderSection, MainSection, PageWrapper } from "./styled-components";
+import { GlobalStyle, HeaderSection, MainSection, PageWrapper } from "./styled-components";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import { ButtonGroup, Button } from "./components/Button";
@@ -18,6 +18,7 @@ const MobileOnly = styled.div`
 const App: React.FC = () => {
   return (
     <>
+     <GlobalStyle />
       <PageWrapper>
         <MobileOnly>
           <Navbar />
