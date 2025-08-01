@@ -2,35 +2,27 @@ import { useState } from "react";
 import styled from "styled-components";
 import EllyFodorLogo from "../assets/ellyfodor-logo.png"; // Adjust the path as needed
 
+// NavBar container
 const NavBar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   height: 56px;
-
-  padding: 0 0;
   background: #fff;
   border-bottom: 1px solid #eee;
   width: 100vw;
   max-width: 100vw;
   margin: 0 auto;
-
-  @media (min-width: 375px) {
-    max-width: 375px;
-  }
-  @media (min-width: 468px) {
-    max-width: 468px;
-  }
-  @media (min-width: 768px) {
-    display: none;
-  }
+  padding: 0 1rem;
 `;
 
+// Logo styling
 const Logo = styled.img`
   height: 40px;
 `;
 
+// Hamburger icon (mobile only)
 const Hamburger = styled.button`
   display: block;
   background: none;
@@ -43,6 +35,7 @@ const Hamburger = styled.button`
   }
 `;
 
+// Individual hamburger bars
 const Bar = styled.div`
   width: 28px;
   height: 4px;
@@ -51,6 +44,7 @@ const Bar = styled.div`
   border-radius: 2px;
 `;
 
+// Mobile menu dropdown
 const Menu = styled.div<{ $open: boolean }>`
   display: ${({ $open }) => ($open ? "block" : "none")};
   background: #fff;
@@ -66,6 +60,7 @@ const Menu = styled.div<{ $open: boolean }>`
   }
 `;
 
+// Links inside mobile menu
 const MenuLink = styled.a`
   display: block;
   padding: 1rem;
@@ -75,6 +70,30 @@ const MenuLink = styled.a`
 
   &:hover {
     background: #f0f0f0;
+  }
+`;
+
+// Desktop menu (hidden on mobile)
+const DesktopMenu = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+`;
+
+// Desktop menu links
+const DesktopMenuLink = styled.a`
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    background-color: #f5f5f5;
+    border-radius: 4px;
   }
 `;
 
@@ -90,7 +109,13 @@ const HamburgerMenu = () => {
           <Bar />
           <Bar />
         </Hamburger>
+        <DesktopMenu>
+          <DesktopMenuLink href="#home">Hem</DesktopMenuLink>
+          <DesktopMenuLink href="#about">Om författaren</DesktopMenuLink>
+          <DesktopMenuLink href="#contact">Kontakt</DesktopMenuLink>
+        </DesktopMenu>
       </NavBar>
+
       <Menu $open={open}>
         <MenuLink href="#home" onClick={() => setOpen(false)}>
           Hem
