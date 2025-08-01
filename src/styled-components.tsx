@@ -41,6 +41,7 @@ export const MainSection = styled(PageWrapper)`
 
   ${MediaQuery.tablet} {
     display: flex;
+    height: 200px;
     flex-direction: row;
     width: 100%;
     justify-content: center;
