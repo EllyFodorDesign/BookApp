@@ -108,13 +108,13 @@ const Footer = () => {
             <LinksTitle>Genvägar</LinksTitle>
             <LinksList>
               <LinkItem>
-                <Link href="#home">Hem</Link>
+                <Link href="/#home">Hem</Link>
               </LinkItem>
               <LinkItem>
                 <Link href="#about">Om författaren</Link>
               </LinkItem>
               <LinkItem>
-                <Link href="#contact">Kontakt</Link>
+                <Link href="/#csontact">Kontakt</Link>
               </LinkItem>
             </LinksList>
           </LinksSection>
