@@ -1,0 +1,134 @@
+import styled from "styled-components";
+
+const FooterSection = styled.footer`
+  background: hsl(85.16129032258064, 36.47058823529412%, 16.666666666666664%);
+  color: hsl(0, 0%, 98%);
+  padding: 3rem 0;
+`;
+
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+`;
+
+const BrandSection = styled.div`
+  @media (min-width: 768px) {
+    grid-column: span 2;
+  }
+`;
+
+const BrandTitle = styled.h3`
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+`;
+
+const BrandDescription = styled.p`
+  color: rgba(249, 250, 251, 0.8);
+  margin: 0 0 1rem 0;
+  max-width: 24rem;
+`;
+
+const LinksSection = styled.div``;
+
+const LinksTitle = styled.h4`
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+`;
+
+const LinksList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+const LinkItem = styled.li``;
+
+const Link = styled.a`
+  color: rgba(249, 250, 251, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: hsl(0, 0%, 98%);
+  }
+`;
+
+const ContactInfo = styled.div`
+  color: rgba(249, 250, 251, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+const Divider = styled.div`
+  border-top: 1px solid rgba(249, 250, 251, 0.2);
+  margin-top: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+`;
+
+const Copyright = styled.p`
+  color: rgba(249, 250, 251, 0.8);
+  margin: 0;
+`;
+
+const Footer = () => {
+  return (
+    <FooterSection>
+      <Container>
+        <Grid>
+          <BrandSection>
+            <BrandTitle>EllyFodor - Publishing</BrandTitle>
+            <BrandDescription>
+              Skriver om barn med NPF i skolan. Här hittar du böcker och
+              resurser för att stödja barn med neuropsykiatriska
+              funktionsnedsättningar i skolan.
+            </BrandDescription>
+          </BrandSection>
+          <LinksSection>
+            <LinksTitle>Genvägar</LinksTitle>
+            <LinksList>
+              <LinkItem>
+                <Link href="#home">Hem</Link>
+              </LinkItem>
+              <LinkItem>
+                <Link href="#about">Om författaren</Link>
+              </LinkItem>
+              <LinkItem>
+                <Link href="#contact">Kontakt</Link>
+              </LinkItem>
+            </LinksList>
+          </LinksSection>
+          <LinksSection>
+            <LinksTitle>Kontakt info</LinksTitle>
+            <ContactInfo>
+              <div>ellinor.j@hotmail.se</div>
+              <div>+46 (0) 738-131 993</div>
+              <div>11322 Stockholm</div>
+            </ContactInfo>
+          </LinksSection>
+        </Grid>
+
+        <Divider>
+          <Copyright>© 2025 EllyFodor. Alla rättigheter reserverade.</Copyright>
+        </Divider>
+      </Container>
+    </FooterSection>
+  );
+};
+
+export default Footer;
