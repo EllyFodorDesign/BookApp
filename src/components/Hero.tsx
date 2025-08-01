@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const HeroSection = styled.section`
-  background: linear-gradient(to bottom, hsl(0, 0%, 98%), hsl(85, 10%, 95%));
+const HeroSection = styled.section`  //controles content from Elyfodor to placeholder
+  color: white;
   display: flex;
   align-items: center;
 `;
@@ -12,7 +12,7 @@ const Content = styled.div`
   margin: 0 auto;
 `;
 
-const Title = styled.h1`
+const PageTitle = styled.h1`
   font-size: 2.5rem;
   font-weight: bold;
   color: hsl(85, 15%, 25%);
@@ -30,7 +30,7 @@ const Title = styled.h1`
 
 const Description = styled.p`
   font-size: 1.125rem;
-  color: hsl(85, 8%, 45%);
+  color: black;
   margin-bottom: 2rem;
   max-width: 32rem;
   margin-left: auto;
@@ -45,7 +45,7 @@ const Hero = () => {
   return (
     <HeroSection id="home">
       <Content>
-        <Title>EllyFodor - Publishing</Title>
+        <PageTitle>EllyFodor - Publishing</PageTitle>
         <Description>Placeholder text here.</Description>
       </Content>
     </HeroSection>

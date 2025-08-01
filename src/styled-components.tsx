@@ -18,7 +18,7 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   overflow: hidden;
   flex-wrap: wrap;
-  background-color: #f0f0f0;
+  background-color: white;
   padding: 0px;
   margin: 0px;
   width: 100%;
@@ -26,22 +26,36 @@ export const PageWrapper = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   box-sizing: border-box;
+
+  ${MediaQuery.tablet} {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 export const MainSection = styled(PageWrapper)`
   //Buttons and all the main content
 
-  ${MediaQuery.desktop} {
+  ${MediaQuery.tablet} {
+    display: flex;
+    flex-direction: row;
     width: 100%;
+    justify-content: center;
   }
 `;
 
 export const PageTitle = styled.h1`
   //Main heading
-  color: black;
+
   font-size: 2rem;
   margin: 20px;
+  text-align: center;
 `;
+
 export const HeaderSection = styled(PageWrapper)`
+  color: black;
   //This is Elly Fodor text and placeholder.
 `;
