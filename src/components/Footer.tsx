@@ -4,6 +4,11 @@ const FooterSection = styled.footer`
   background: hsl(85.16129032258064, 36.47058823529412%, 16.666666666666664%);
   color: hsl(0, 0%, 98%);
   padding: 3rem 0;
+
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    width: 100%;
+  }
 `;
 
 const Container = styled.div`

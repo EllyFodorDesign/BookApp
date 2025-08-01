@@ -48,7 +48,7 @@ const App: React.FC = () => {
             <Button $variant="outline">Läs mer här</Button>
           </ButtonGroup>
         </MainSection>
-        <Footer></Footer>
+        <Footer />
       </PageWrapper>
     </>
   );
