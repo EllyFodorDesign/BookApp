@@ -26,10 +26,6 @@ export const PageWrapper = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   box-sizing: border-box;
-
-  ${MediaQuery.desktop} {
-    width: 100%;
-  }
 `;
 
 export const MainSection = styled(PageWrapper)`
@@ -40,7 +36,7 @@ export const MainSection = styled(PageWrapper)`
   }
 `;
 
-export const Title = styled.h1`
+export const PageTitle = styled.h1`
   //Main heading
   color: black;
   font-size: 2rem;

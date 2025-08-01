@@ -1,5 +1,10 @@
 import React from "react";
-import { GlobalStyle, HeaderSection, MainSection, PageWrapper } from "./styled-components";
+import {
+  GlobalStyle,
+  HeaderSection,
+  MainSection,
+  PageWrapper,
+} from "./styled-components";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import { ButtonGroup, Button } from "./components/Button";
@@ -15,14 +20,25 @@ const MobileOnly = styled.div`
   }
 `;
 
+const DesktopOnly = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`;
+
 const App: React.FC = () => {
   return (
     <>
-     <GlobalStyle />
+      <GlobalStyle />
       <PageWrapper>
         <MobileOnly>
           <Navbar />
         </MobileOnly>
+        <DesktopOnly>
+          <Navbar />
+        </DesktopOnly>
         <HeaderSection>
           <Hero />
         </HeaderSection>
