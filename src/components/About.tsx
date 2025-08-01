@@ -106,18 +106,15 @@ const About = () => {
     <AboutSection id="about">
       <Container>
         <Content>
-          <Title>About BITJO</Title>
+          <Title>Om författaren</Title>
           <Grid>
             <TextContent>
               <Description>
-                At BITJO, we believe in the power of innovation to transform
-                businesses and create meaningful connections in the digital
-                world.
+                lorem. ipsum dolor sit amet, consectetur adipiscing elit. Sed
               </Description>
               <Description>
-                Our team is dedicated to delivering exceptional solutions that
-                not only meet your current needs but anticipate future
-                opportunities.
+                lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </Description>
               <StatsGrid>
                 <StatCard>
@@ -131,7 +128,7 @@ const About = () => {
               </StatsGrid>
             </TextContent>
             <ImagePlaceholder>
-              <PlaceholderText>BITJO</PlaceholderText>
+              <PlaceholderText>Soon</PlaceholderText>
               <PlaceholderSubtext>Building the future</PlaceholderSubtext>
             </ImagePlaceholder>
           </Grid>

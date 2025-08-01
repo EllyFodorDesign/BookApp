@@ -111,10 +111,10 @@ const Footer = () => {
                 <Link href="/#home">Hem</Link>
               </LinkItem>
               <LinkItem>
-                <Link href="#about">Om författaren</Link>
+                <Link href="/about">Om författaren</Link>
               </LinkItem>
               <LinkItem>
-                <Link href="/#csontact">Kontakt</Link>
+                <Link href="/contact">Kontakt</Link>
               </LinkItem>
             </LinksList>
           </LinksSection>
