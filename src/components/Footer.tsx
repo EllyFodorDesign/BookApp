@@ -62,7 +62,7 @@ const LinksList = styled.ul`
 
 const LinkItem = styled.li``;
 
-const Link = styled.a`
+const StyledAnchor = styled.a`
   color: rgba(249, 250, 251, 0.8);
   text-decoration: none;
   transition: color 0.3s ease;
@@ -108,13 +108,13 @@ const Footer = () => {
             <LinksTitle>Genvägar</LinksTitle>
             <LinksList>
               <LinkItem>
-                <Link href="/#home">Hem</Link>
+                <StyledAnchor href="#home">Hem</StyledAnchor>
               </LinkItem>
               <LinkItem>
-                <Link href="/about">Om författaren</Link>
+                <StyledAnchor href="#about">Om författaren</StyledAnchor>{" "}
               </LinkItem>
               <LinkItem>
-                <Link href="/contact">Kontakt</Link>
+                <StyledAnchor href="#contact">Kontakt</StyledAnchor>{" "}
               </LinkItem>
             </LinksList>
           </LinksSection>

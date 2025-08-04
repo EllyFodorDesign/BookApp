@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 
 export default function App() {
   return (
@@ -20,7 +20,7 @@ export default function App() {
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
+        <Routes>
           <Route path="/about">
             <About />
           </Route>
@@ -30,7 +30,7 @@ export default function App() {
           <Route path="/">
             <Home />
           </Route>
-        </Switch>
+        </Routes>
       </div>
     </Router>
   );

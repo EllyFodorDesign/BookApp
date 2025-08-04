@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "antd": "^5.26.7",
+    "bootstrap": "^5.3.7",
     "lucide-react": "^0.526.0",
     "react": "^19.1.0",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.1",
     "styled-components": "^6.1.19"
