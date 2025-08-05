@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import EllyFodorLogo from "../assets/ellyfodor-logo.png"; // Adjust the path as needed
+import EllyFodor from '../assets/EllyFodor.png'; // Adjust the path as necessary
 
 // NavBar container
 const NavBar = styled.nav`
@@ -103,7 +103,7 @@ const HamburgerMenu = () => {
   return (
     <>
       <NavBar>
-        <Logo src={EllyFodorLogo} alt="EllyFodor logo" />
+        <Logo src={EllyFodor} alt="EllyFodor logo" />
         <Hamburger onClick={() => setOpen((o) => !o)} aria-label="Open menu">
           <Bar />
           <Bar />
