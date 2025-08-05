@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import EllyFodor from '../assets/EllyFodor.png'; // Adjust the path as necessary
-
+import EllyFodor from "../assets/EllyFodor.png"; // Adjust the path as necessary
+import { Link } from "react-router-dom";
 // NavBar container
 const NavBar = styled.nav`
   display: flex;
@@ -85,7 +85,7 @@ const DesktopMenu = styled.div`
 `;
 
 // Desktop menu links
-const DesktopMenuLink = styled.a`
+const DesktopMenuLink = styled(Link)`
   color: #333;
   text-decoration: none;
   font-weight: 500;
@@ -110,9 +110,9 @@ const HamburgerMenu = () => {
           <Bar />
         </Hamburger>
         <DesktopMenu>
-          <DesktopMenuLink href="#home">Hem</DesktopMenuLink>
-          <DesktopMenuLink href="#about">Om författaren</DesktopMenuLink>
-          <DesktopMenuLink href="#contact">Kontakt</DesktopMenuLink>
+          <DesktopMenuLink to="home">Hem</DesktopMenuLink>
+          <DesktopMenuLink to="about">Om författaren</DesktopMenuLink>
+          <DesktopMenuLink to="contact">Kontakt</DesktopMenuLink>
         </DesktopMenu>
       </NavBar>
 
