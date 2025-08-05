@@ -10,7 +10,10 @@ import Hero from "./components/Hero";
 import { ButtonGroup, Button } from "./components/Button";
 import Navbar from "./components/Navbar";
 import styled from "styled-components";
+import About from "./components/About";
 
+import { Routes, Route } from "react-router-dom";
+import Contact from "./components/Contact";
 
 const MobileOnly = styled.div`
   display: flex;
@@ -29,39 +32,66 @@ const DesktopOnly = styled.div`
   }
 `;
 
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <PageWrapper>
+    <MobileOnly>
+      <Navbar />
+    </MobileOnly>
+    <DesktopOnly>
+      <Navbar />
+    </DesktopOnly>
+    {children}
+    <Footer />
+  </PageWrapper>
+);
+
 const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
-      <PageWrapper>
-        <MobileOnly>
-          <Navbar />
-        </MobileOnly>
-        <DesktopOnly>
-          <Navbar />
-        </DesktopOnly>
-        <HeaderSection>
-          <Hero />
-        </HeaderSection>
-        <MainSection>
-          <ButtonGroup>
-            <Button>Köp boken: Att leva som barn med NPF i skolan</Button>
-            <Button $variant="outline">Läs mer här</Button>
-          </ButtonGroup>
-        </MainSection>
-        <Footer />
-      </PageWrapper>
+      <Routes>
+        {/* Home */}
+        <Route
+          path="/home"
+          element={
+            <Layout>
+              <HeaderSection>
+                <Hero />
+              </HeaderSection>
+              <MainSection>
+                <ButtonGroup>
+                  <Button>Köp boken: Att leva som barn med NPF i skolan</Button>
+                  <Button $variant="outline">Läs mer här</Button>
+                </ButtonGroup>
+              </MainSection>
+            </Layout>
+          }
+        />
+
+        {/* About */}
+        <Route
+          path="/about"
+          element={
+            <Layout>
+              <MainSection>
+                <About />
+              </MainSection>
+            </Layout>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Layout>
+              <MainSection>
+                <Contact />
+              </MainSection>
+            </Layout>
+          }
+        />
+      </Routes>
     </>
   );
 };
 
 export default App;
-
-{
-  /* förankrar loggan med länk <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>*/
-}

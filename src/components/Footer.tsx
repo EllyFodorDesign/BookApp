@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const FooterSection = styled.footer`
   background: hsl(85.16129032258064, 36.47058823529412%, 16.666666666666664%);
@@ -62,7 +63,7 @@ const LinksList = styled.ul`
 
 const LinkItem = styled.li``;
 
-const StyledAnchor = styled.a`
+const StyledRouterLink = styled(Link)`
   color: rgba(249, 250, 251, 0.8);
   text-decoration: none;
   transition: color 0.3s ease;
@@ -108,13 +109,13 @@ const Footer = () => {
             <LinksTitle>Genvägar</LinksTitle>
             <LinksList>
               <LinkItem>
-                <StyledAnchor href="#home">Hem</StyledAnchor>
+                <StyledRouterLink to="/home">Hem</StyledRouterLink>
               </LinkItem>
               <LinkItem>
-                <StyledAnchor href="#about">Om författaren</StyledAnchor>{" "}
+                <StyledRouterLink to="/about">Om författaren</StyledRouterLink>
               </LinkItem>
               <LinkItem>
-                <StyledAnchor href="#contact">Kontakt</StyledAnchor>{" "}
+                <StyledRouterLink to="/contact">Kontakt</StyledRouterLink>
               </LinkItem>
             </LinksList>
           </LinksSection>
