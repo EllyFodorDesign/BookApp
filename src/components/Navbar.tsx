@@ -61,7 +61,7 @@ const Menu = styled.div<{ $open: boolean }>`
 `;
 
 // Links inside mobile menu
-const MenuLink = styled.a`
+const MenuLink = styled(Link)`
   display: block;
   padding: 1rem;
   color: #333;
@@ -117,13 +117,13 @@ const HamburgerMenu = () => {
       </NavBar>
 
       <Menu $open={open}>
-        <MenuLink href="#home" onClick={() => setOpen(false)}>
+        <MenuLink to="home" onClick={() => setOpen(false)}>
           Hem
         </MenuLink>
-        <MenuLink href="#about" onClick={() => setOpen(false)}>
+        <MenuLink to="about" onClick={() => setOpen(false)}>
           Om författaren
         </MenuLink>
-        <MenuLink href="#contact" onClick={() => setOpen(false)}>
+        <MenuLink to="contact" onClick={() => setOpen(false)}>
           Kontakt
         </MenuLink>
       </Menu>
