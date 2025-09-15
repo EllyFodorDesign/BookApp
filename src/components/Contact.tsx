@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ContactSection = styled.section`
+  width: 100%;
   padding: 5rem 0;
   background: hsl(0, 0%, 98%);
 `;
@@ -26,6 +27,7 @@ const Title = styled.h2`
   font-weight: bold;
   color: hsl(85, 15%, 25%);
   margin-bottom: 1rem;
+  margin-top: 0;
 
   @media (min-width: 768px) {
     font-size: 2.25rem;
@@ -54,7 +56,7 @@ const Card = styled.div`
 `;
 
 const CardHeader = styled.div`
-  padding: 1.5rem 1.5rem 0;
+  padding: 0;
 `;
 
 const CardDescription = styled.p`
@@ -63,7 +65,7 @@ const CardDescription = styled.p`
 `;
 
 const CardContent = styled.div`
-  padding: 0 1.5rem 1.5rem;
+  width: 100%;
 `;
 
 const Form = styled.form`
@@ -73,9 +75,9 @@ const Form = styled.form`
 `;
 
 const InputRow = styled.div`
-  display: column;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
 `;
 
 const Input = styled.input`
@@ -94,6 +96,12 @@ const Input = styled.input`
   &::placeholder {
     color: hsl(85, 8%, 45%);
   }
+`;
+
+const NameInput = styled(Input)`
+  max-width: 155px;
+  flex: 1;
+  justify-content: flex-start;
 `;
 
 const Textarea = styled.textarea`
@@ -152,9 +160,10 @@ const Contact = () => {
               <CardContent>
                 <Form>
                   <InputRow>
-                    <Input placeholder="Förnamn" />
-                    <Input placeholder="Efternamn" />
+                    <NameInput placeholder="Förnamn" type="surname" />
+                    <NameInput placeholder="Efternamn" type="lastname" />
                   </InputRow>
+                  <InputRow></InputRow>
                   <Input placeholder="Email" type="email" />
                   <Input placeholder="Ämne" />
                   <Textarea placeholder="Ditt meddelande" />
