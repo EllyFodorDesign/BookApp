@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 const ContactSection = styled.section`
   width: 100%;
@@ -143,6 +145,10 @@ const Button = styled.button`
 `;
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("xqadoqvn");
+  if (state.succeeded) {
+    return <p>Tack, ditt meddelande har skickat!!</p>;
+  }
   return (
     <ContactSection id="Contact">
       <Container>
@@ -158,16 +164,49 @@ const Contact = () => {
                 <CardDescription></CardDescription>
               </CardHeader>
               <CardContent>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <InputRow>
-                    <NameInput placeholder="Förnamn" type="surname" />
-                    <NameInput placeholder="Efternamn" type="lastname" />
+                    <NameInput
+                      name="firstName"
+                      placeholder="Förnamn"
+                      type="text"
+                      required
+                    />
+                    <NameInput
+                      name="lastName"
+                      placeholder="Efternamn"
+                      type="text"
+                      required
+                    />
                   </InputRow>
-                  <InputRow></InputRow>
-                  <Input placeholder="Email" type="email" />
-                  <Input placeholder="Ämne" />
-                  <Textarea placeholder="Ditt meddelande" />
-                  <Button type="submit">Skicka</Button>
+
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    required
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                  />
+
+                  <Input name="subject" placeholder="Ämne" />
+
+                  <Textarea
+                    name="message"
+                    placeholder="Ditt meddelande"
+                    required
+                  />
+                  <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                  />
+                  <Button type="submit" disabled={state.submitting}>
+                    Skicka
+                  </Button>
                 </Form>
               </CardContent>
             </Card>
