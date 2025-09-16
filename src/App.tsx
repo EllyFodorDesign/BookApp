@@ -9,6 +9,18 @@ import Contact from "./components/Contact";
 const App: React.FC = () => {
   return (
     <>
+      {/* 🚧 Banner at the top */}
+      <div
+        style={{
+          background: "black",
+          padding: "0.5rem",
+          textAlign: "center",
+          fontWeight: "normal",
+          color: "white",
+        }}
+      >
+        🚧 This site is under construction — more updates soon!
+      </div>
       <GlobalStyle />
       <Routes>
         <Route element={<Layout />}>
