@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from "react";
+
 import { useForm, ValidationError } from "@formspree/react";
 
 const ContactSection = styled.section`
@@ -74,6 +74,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-bottom: 0rem;
 `;
 
 const InputRow = styled.div`
@@ -134,8 +135,8 @@ const Button = styled.button`
   color: hsl(0, 0%, 98%);
   border: none;
   border-radius: 0.375rem;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.75rem;
+  font-weight: 800;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -154,10 +155,9 @@ const Contact = () => {
       <Container>
         <Content>
           <Header>
-            <Title>Hör av dig</Title>
+            <Title>Hör av dig!</Title>
             <Description></Description>
           </Header>
-
           <Grid>
             <Card>
               <CardHeader>

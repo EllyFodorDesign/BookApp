@@ -34,7 +34,7 @@ const BrandSection = styled.div`
 `;
 
 const BrandTitle = styled.h3`
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin: 0 0 1rem 0;
 `;
@@ -43,12 +43,17 @@ const BrandDescription = styled.p`
   color: rgba(249, 250, 251, 0.8);
   margin: 0 0 1rem 0;
   max-width: 24rem;
+  font-size: 1.2rem;
 `;
 
-const LinksSection = styled.div``;
+const LinksSection = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const LinksTitle = styled.h4`
-  font-weight: 600;
+  font-weight: 800px;
+  font-size: 1.3rem;
   margin: 0 0 1rem 0;
 `;
 
@@ -67,6 +72,7 @@ const StyledRouterLink = styled(Link)`
   color: rgba(249, 250, 251, 0.8);
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 1.1rem;
 
   &:hover {
     color: hsl(0, 0%, 98%);
@@ -78,6 +84,7 @@ const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  font-size: 1.1rem;
 `;
 
 const Divider = styled.div`
