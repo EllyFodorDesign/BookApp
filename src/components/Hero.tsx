@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import MediaQuery from "../styles/mediaQuery";
 
 const HeroSection = styled.section`  //controles content from Elyfodor to placeholder
   color: white;
@@ -18,6 +19,11 @@ const PageTitle = styled.h1`
   color: hsl(85, 15%, 25%);
   margin-bottom: 1.5rem;
   line-height: 1.1;
+
+ ${MediaQuery.phone} {
+    text-align: center;
+  }
+  
 
   @media (min-width: 768px) {
     font-size: 3.75rem;

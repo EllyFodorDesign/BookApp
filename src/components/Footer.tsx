@@ -1,5 +1,26 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import MediaQuery from "../styles/mediaQuery";
+
+export const Wrapper = styled.div`
+  box-sizing: border-box;
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 100%;
+`;
+
+export const FooterWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  ${MediaQuery.desktop} {
+    max-width: 1600px;
+  }
+`;
 
 const FooterSection = styled.footer`
   background: hsl(85.16129032258064, 36.47058823529412%, 16.666666666666664%);
@@ -101,6 +122,8 @@ const Copyright = styled.p`
 
 const Footer = () => {
   return (
+   <Wrapper>
+      <FooterWrapper>
     <FooterSection>
       <Container>
         <Grid>
@@ -141,6 +164,9 @@ const Footer = () => {
         </Divider>
       </Container>
     </FooterSection>
+    </FooterWrapper>
+    </Wrapper>
+      
   );
 };
 

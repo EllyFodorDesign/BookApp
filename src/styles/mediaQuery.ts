@@ -5,7 +5,7 @@ export const DeviceMinWidths = {
 } as const;
 
 export const DeviceMaxWidths = {
-  phone: 330,
+  phone: 320,
   desktop: 1800,
 } as const;
 
