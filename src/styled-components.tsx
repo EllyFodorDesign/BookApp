@@ -16,12 +16,12 @@ export const GlobalStyle = createGlobalStyle`
 export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
   flex-wrap: wrap;
   background-color: white;
   padding: 0px;
   margin: 0px;
-  width: 100%;
+ 
   min-height: 100%;
   justify-content: flex-start;
   align-items: flex-start;
