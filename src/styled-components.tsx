@@ -21,11 +21,15 @@ export const PageWrapper = styled.div`
   background-color: white;
   padding: 0px;
   margin: 0px;
- 
   min-height: 100%;
   justify-content: flex-start;
   align-items: flex-start;
   box-sizing: border-box;
+
+  ${MediaQuery.phone} {
+   width: 100%;
+    justify-content: center;
+  }
 
   ${MediaQuery.tablet} {
     margin: 0 auto;
@@ -54,9 +58,15 @@ export const PageTitle = styled.h1`
   font-size: 2rem;
   margin: 20px;
   text-align: center;
+
+  
 `;
 
 export const HeaderSection = styled(PageWrapper)`
   color: black;
   //This is Elly Fodor text and placeholder.
+
+  ${MediaQuery.phone} {
+    text-align: right;
+  }
 `;
