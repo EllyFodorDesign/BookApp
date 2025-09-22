@@ -27,8 +27,8 @@ export const PageWrapper = styled.div`
   box-sizing: border-box;
 
   ${MediaQuery.phone} {
-   width: 100%;
-    justify-content: center;
+    width: 100%;
+   
   }
 
   ${MediaQuery.tablet} {
@@ -36,7 +36,7 @@ export const PageWrapper = styled.div`
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: center;
+    justify-content: left;
   }
 `;
 
@@ -48,7 +48,7 @@ export const MainSection = styled(PageWrapper)`
     height: 200px;
     flex-direction: row;
     width: 100%;
-    justify-content: center;
+    justify-content: left;
   }
 `;
 
@@ -58,8 +58,6 @@ export const PageTitle = styled.h1`
   font-size: 2rem;
   margin: 20px;
   text-align: center;
-
-  
 `;
 
 export const HeaderSection = styled(PageWrapper)`

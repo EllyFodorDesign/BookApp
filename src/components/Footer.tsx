@@ -47,13 +47,20 @@ const Column = styled.div`
   align-items: flex-start;
   padding: 32px 0;
   gap: 48px;
+  margin: 0 auto;
 
   ${MediaQuery.phone} {
-    justify-content: center;
+    justify-content: left;
+   
   }
 `;
 
 const BrandSection = styled.div`
+
+${MediaQuery.phone} {
+    text-align: left;
+  
+  }
   @media (min-width: 768px) {
     grid-column: span 2;
   }
