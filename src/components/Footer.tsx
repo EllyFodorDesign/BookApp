@@ -49,7 +49,7 @@ const Column = styled.div`
   gap: 48px;
 
   ${MediaQuery.phone} {
-    justify-content: left;
+    justify-content: center;
   }
 `;
 
