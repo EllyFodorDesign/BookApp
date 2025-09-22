@@ -40,16 +40,17 @@ const Container = styled.div`
 `;
 
 const Column = styled.div`
-  display: grid;
   gap: 2rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   padding: 32px 0;
   gap: 48px;
 
-  ${MediaQuery.phone} {
+  @media (min-width: 480px) {
     justify-content: left;
+    display: flex;
+    flex-direction: row;
   }
 `;
 
@@ -131,6 +132,7 @@ const Footer = () => {
       <FooterWrapper>
         <FooterSection>
           <Container>
+            <Column>
             <BrandSection>
               <BrandTitle>EllyFodor - Publishing</BrandTitle>
               <BrandDescription>
@@ -139,7 +141,7 @@ const Footer = () => {
                 funktionsnedsättningar i skolan.
               </BrandDescription>
             </BrandSection>
-            <Column>
+            
               <LinksSection>
                 <LinksTitle>Genvägar</LinksTitle>
                 <LinksList>
