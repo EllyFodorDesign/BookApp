@@ -133,15 +133,15 @@ const Footer = () => {
         <FooterSection>
           <Container>
             <Column>
-            <BrandSection>
-              <BrandTitle>EllyFodor - Publishing</BrandTitle>
-              <BrandDescription>
-                Skriver om barn med NPF i skolan. Här hittar du böcker och
-                resurser för att stödja barn med neuropsykiatriska
-                funktionsnedsättningar i skolan.
-              </BrandDescription>
-            </BrandSection>
-            
+              <BrandSection>
+                <BrandTitle>EllyFodor - Publishing</BrandTitle>
+                <BrandDescription>
+                  Skriver om barn med NPF i skolan. Här hittar du böcker och
+                  resurser för att stödja barn med neuropsykiatriska
+                  funktionsnedsättningar i skolan.
+                </BrandDescription>
+              </BrandSection>
+
               <LinksSection>
                 <LinksTitle>Genvägar</LinksTitle>
                 <LinksList>
