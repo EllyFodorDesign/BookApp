@@ -39,11 +39,19 @@ const Container = styled.div`
   padding: 0 1rem;
 `;
 
-const Grid = styled.div`
+const Column = styled.div`
   display: grid;
   gap: 2rem;
 
-  @media (min-width: 768px) {
+ ${MediaQuery.phone} {
+    display: flex;
+    flex-direction: row
+    align-items: flex-start;
+    padding: 32px 0;
+    gap: 48px;
+
+}
+${MediaQuery.tablet}{
     grid-template-columns: 2fr 1fr 1fr;
   }
 `;
@@ -126,7 +134,7 @@ const Footer = () => {
       <FooterWrapper>
     <FooterSection>
       <Container>
-        <Grid>
+        
           <BrandSection>
             <BrandTitle>EllyFodor - Publishing</BrandTitle>
             <BrandDescription>
@@ -135,6 +143,7 @@ const Footer = () => {
               funktionsnedsättningar i skolan.
             </BrandDescription>
           </BrandSection>
+          <Column>
           <LinksSection>
             <LinksTitle>Genvägar</LinksTitle>
             <LinksList>
@@ -157,7 +166,7 @@ const Footer = () => {
               <div>11322 Stockholm</div>
             </ContactInfo>
           </LinksSection>
-        </Grid>
+        </Column>
 
         <Divider>
           <Copyright>© 2025 EllyFodor. Alla rättigheter reserverade.</Copyright>
