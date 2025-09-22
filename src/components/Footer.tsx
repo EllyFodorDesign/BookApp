@@ -64,14 +64,14 @@ const Column = styled.div`
 const ColumnLinksInfo = styled(Column)`
   gap: 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   padding: 32px 0;
   gap: 48px;
 
   @media (min-width: 480px) {
-    //Links and contact info stack on 480px and over. Brand to the left of them.
-    //3, 2 fr? 
+    flex-direction: column;
+    
    
   }
 `;
