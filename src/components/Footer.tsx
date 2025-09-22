@@ -42,19 +42,16 @@ const Container = styled.div`
 const Column = styled.div`
   display: grid;
   gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 32px 0;
+  gap: 48px;
 
- ${MediaQuery.phone} {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 32px 0;
-    gap: 48px;
- }
-
-${MediaQuery.tablet}{
-    grid-template-columns: 2fr 1fr 1fr;
+  ${MediaQuery.phone} {
+    justify-content: center;
   }
-  `;
+`;
 
 const BrandSection = styled.div`
   @media (min-width: 768px) {
