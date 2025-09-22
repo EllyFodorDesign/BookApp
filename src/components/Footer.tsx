@@ -4,11 +4,11 @@ import MediaQuery from "../styles/mediaQuery";
 
 export const Wrapper = styled.div`
   box-sizing: border-box;
- 
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   width: 100%;
 `;
 
@@ -45,16 +45,16 @@ const Column = styled.div`
 
  ${MediaQuery.phone} {
     display: flex;
-    flex-direction: row
+    flex-direction: row;
     align-items: flex-start;
     padding: 32px 0;
     gap: 48px;
+ }
 
-}
 ${MediaQuery.tablet}{
     grid-template-columns: 2fr 1fr 1fr;
   }
-`;
+  `;
 
 const BrandSection = styled.div`
   @media (min-width: 768px) {
@@ -130,52 +130,54 @@ const Copyright = styled.p`
 
 const Footer = () => {
   return (
-   <Wrapper>
+    <Wrapper>
       <FooterWrapper>
-    <FooterSection>
-      <Container>
-        
-          <BrandSection>
-            <BrandTitle>EllyFodor - Publishing</BrandTitle>
-            <BrandDescription>
-              Skriver om barn med NPF i skolan. Här hittar du böcker och
-              resurser för att stödja barn med neuropsykiatriska
-              funktionsnedsättningar i skolan.
-            </BrandDescription>
-          </BrandSection>
-          <Column>
-          <LinksSection>
-            <LinksTitle>Genvägar</LinksTitle>
-            <LinksList>
-              <LinkItem>
-                <StyledRouterLink to="/home">Hem</StyledRouterLink>
-              </LinkItem>
-              <LinkItem>
-                <StyledRouterLink to="/about">Om författaren</StyledRouterLink>
-              </LinkItem>
-              <LinkItem>
-                <StyledRouterLink to="/contact">Kontakt</StyledRouterLink>
-              </LinkItem>
-            </LinksList>
-          </LinksSection>
-          <LinksSection>
-            <LinksTitle>Kontakt info</LinksTitle>
-            <ContactInfo>
-              <div>ellinor.j@hotmail.se</div>
-              <div>+46 (0) 738-131 993</div>
-              <div>11322 Stockholm</div>
-            </ContactInfo>
-          </LinksSection>
-        </Column>
+        <FooterSection>
+          <Container>
+            <BrandSection>
+              <BrandTitle>EllyFodor - Publishing</BrandTitle>
+              <BrandDescription>
+                Skriver om barn med NPF i skolan. Här hittar du böcker och
+                resurser för att stödja barn med neuropsykiatriska
+                funktionsnedsättningar i skolan.
+              </BrandDescription>
+            </BrandSection>
+            <Column>
+              <LinksSection>
+                <LinksTitle>Genvägar</LinksTitle>
+                <LinksList>
+                  <LinkItem>
+                    <StyledRouterLink to="/home">Hem</StyledRouterLink>
+                  </LinkItem>
+                  <LinkItem>
+                    <StyledRouterLink to="/about">
+                      Om författaren
+                    </StyledRouterLink>
+                  </LinkItem>
+                  <LinkItem>
+                    <StyledRouterLink to="/contact">Kontakt</StyledRouterLink>
+                  </LinkItem>
+                </LinksList>
+              </LinksSection>
+              <LinksSection>
+                <LinksTitle>Kontakt info</LinksTitle>
+                <ContactInfo>
+                  <div>ellinor.j@hotmail.se</div>
+                  <div>+46 (0) 738-131 993</div>
+                  <div>11322 Stockholm</div>
+                </ContactInfo>
+              </LinksSection>
+            </Column>
 
-        <Divider>
-          <Copyright>© 2025 EllyFodor. Alla rättigheter reserverade.</Copyright>
-        </Divider>
-      </Container>
-    </FooterSection>
-    </FooterWrapper>
+            <Divider>
+              <Copyright>
+                © 2025 EllyFodor. Alla rättigheter reserverade.
+              </Copyright>
+            </Divider>
+          </Container>
+        </FooterSection>
+      </FooterWrapper>
     </Wrapper>
-      
   );
 };
 
