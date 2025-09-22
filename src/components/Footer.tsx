@@ -47,20 +47,13 @@ const Column = styled.div`
   align-items: flex-start;
   padding: 32px 0;
   gap: 48px;
-  margin: 0 auto;
 
   ${MediaQuery.phone} {
-    justify-content: left;
-   
+    justify-content: center;
   }
 `;
 
 const BrandSection = styled.div`
-
-${MediaQuery.phone} {
-    text-align: left;
-  
-  }
   @media (min-width: 768px) {
     grid-column: span 2;
   }
@@ -172,13 +165,12 @@ const Footer = () => {
                 </ContactInfo>
               </LinksSection>
             </Column>
-
-            <Divider>
-              <Copyright>
-                © 2025 EllyFodor. Alla rättigheter reserverade.
-              </Copyright>
-            </Divider>
           </Container>
+          <Divider>
+            <Copyright>
+              © 2025 EllyFodor. Alla rättigheter reserverade.
+            </Copyright>
+          </Divider>
         </FooterSection>
       </FooterWrapper>
     </Wrapper>
