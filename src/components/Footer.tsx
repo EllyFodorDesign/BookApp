@@ -37,9 +37,31 @@ const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+
+  @media (min-width: 480px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4.5rem;
+    
+  }
 `;
 
 const Column = styled.div`
+  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 32px 0;
+  gap: 48px;
+
+  @media (min-width: 480px) {
+    //Links and contact info stack on 480px and over. Brand to the left of them.
+    //3, 2 fr? 
+   
+  }
+`;
+
+const ColumnLinksInfo = styled(Column)`
   gap: 2rem;
   display: flex;
   flex-direction: column;
@@ -48,9 +70,9 @@ const Column = styled.div`
   gap: 48px;
 
   @media (min-width: 480px) {
-    justify-content: left;
-    display: flex;
-    flex-direction: row;
+    //Links and contact info stack on 480px and over. Brand to the left of them.
+    //3, 2 fr? 
+   
   }
 `;
 
@@ -80,8 +102,13 @@ const LinksSection = styled.div`
 
 const LinksTitle = styled.h4`
   font-weight: 800px;
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin: 0 0 1rem 0;
+
+  @media (min-width: 480px) {
+    font-size: 1.1rem;
+
+  }
 `;
 
 const LinksList = styled.ul`
@@ -91,6 +118,7 @@ const LinksList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
 `;
 
 const LinkItem = styled.li``;
@@ -104,6 +132,10 @@ const StyledRouterLink = styled(Link)`
   &:hover {
     color: hsl(0, 0%, 98%);
   }
+
+  @media (min-width: 480px) {
+    font-size: 0.9rem;
+  } 
 `;
 
 const ContactInfo = styled.div`
@@ -112,6 +144,10 @@ const ContactInfo = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   font-size: 1.1rem;
+
+   @media (min-width: 480px) {
+    font-size: 0.9rem;
+  } 
 `;
 
 const Divider = styled.div`
@@ -132,16 +168,16 @@ const Footer = () => {
       <FooterWrapper>
         <FooterSection>
           <Container>
+            <BrandSection>
+              <BrandTitle>EllyFodor - Publishing</BrandTitle>
+              <BrandDescription>
+                Skriver om barn med NPF i skolan. Här hittar du böcker och
+                resurser för att stödja barn med neuropsykiatriska
+                funktionsnedsättningar i skolan.
+              </BrandDescription>
+            </BrandSection>
             <Column>
-              <BrandSection>
-                <BrandTitle>EllyFodor - Publishing</BrandTitle>
-                <BrandDescription>
-                  Skriver om barn med NPF i skolan. Här hittar du böcker och
-                  resurser för att stödja barn med neuropsykiatriska
-                  funktionsnedsättningar i skolan.
-                </BrandDescription>
-              </BrandSection>
-
+            <ColumnLinksInfo>
               <LinksSection>
                 <LinksTitle>Genvägar</LinksTitle>
                 <LinksList>
@@ -166,6 +202,7 @@ const Footer = () => {
                   <div>11322 Stockholm</div>
                 </ContactInfo>
               </LinksSection>
+              </ColumnLinksInfo>
             </Column>
           </Container>
           <Divider>
