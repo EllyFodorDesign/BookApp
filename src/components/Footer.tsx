@@ -192,6 +192,9 @@ const Footer = () => {
                   <LinkItem>
                     <StyledRouterLink to="/contact">Kontakt</StyledRouterLink>
                   </LinkItem>
+                  <LinkItem>
+                    <StyledRouterLink to="/projects">Projekt</StyledRouterLink>
+                  </LinkItem>
                 </LinksList>
               </LinksSection>
               <LinksSection>
