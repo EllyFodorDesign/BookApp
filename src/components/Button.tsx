@@ -32,7 +32,7 @@ const Button = styled.button<{ $variant?: "outline" }>`
       background: hsl(75, 73.41772151898734%, 30.980392156862745%);
       color: hsl(0, 0%, 98%);
       &:hover {
-        background: hsl(84.77064220183486, 63.74269005847953%, 33.529411764705884%);
+        background: black;
       }
     `}
 `;
