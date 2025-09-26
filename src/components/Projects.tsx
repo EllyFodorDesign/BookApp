@@ -135,7 +135,7 @@ const Projects = () => {
             </PlaceholderSubtextAuthor>
           </PortraitPlaceholder>
           <LinkPlaceholder>
-            <PlaceholderLinkText>Klicka för fulltext</PlaceholderLinkText>
+            <PlaceholderLinkText>Klicka för fulltext</PlaceholderLinkText>{/* Add link to full project */}
           </LinkPlaceholder>
         </Content>
       </Container>
