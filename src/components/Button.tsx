@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 
+
 const ButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,33 +8,22 @@ const ButtonGroup = styled.div`
   justify-content: center;
 `;
 
-const Button = styled.button<{ $variant?: "outline" }>`
+const Button = styled.button<{ $variant?: "primary" | "secondary" | "form" }>`
   padding: 0.75rem 2rem;
-  font-size: 1.125rem;
-  font-weight: 500;
+  font-size: ${({ theme }) => theme.fontSizes.button};
   border-radius: 0.375rem;
-  border: 2px solid
-    hsl(83.57142857142857, 31.11111111111111%, 17.647058823529413%);
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 20px;
 
-  ${(props) =>
-    props.$variant === "outline"
-      ? `
-      background: transparent;
-      color: hsl(85.16129032258065, 32.631578947368425%, 18.627450980392158%);
-      &:hover {
-        background: hsl(85, 35%, 35%);
-        color: hsl(0, 6.89655172413793%, 54.509803921568626%);
-      }
-    `
-      : `
-      background: hsl(75, 73.41772151898734%, 30.980392156862745%);
-      color: hsl(0, 0%, 98%);
-      &:hover {
-        background: black;
-      }
-    `}
+  ${({ $variant, theme }) => {
+    const btn = $variant ? theme.button[$variant] : theme.button.primary;
+    return `
+      background: ${btn.backgroundColor || btn.background};
+      color: ${btn.color};
+      border: ${btn.border || "none"};
+    `;
+  }}
 `;
+
 export { ButtonGroup, Button };
