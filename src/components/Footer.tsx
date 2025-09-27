@@ -163,7 +163,7 @@ const Footer = () => {
         <FooterSection>
           <Container>
             <BrandSection>
-              <BrandTitle>EllyFodor - Publishing</BrandTitle>
+              <BrandTitle>Ellinor Fodor Johansson</BrandTitle>
               <BrandDescription>
                 Skriver om barn med NPF i skolan. Här hittar du böcker och
                 resurser för att stödja barn med neuropsykiatriska

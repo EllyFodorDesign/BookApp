@@ -51,7 +51,7 @@ const Hero = () => {
   return (
     <HeroSection id="home">
       <Content>
-        <PageTitle>EllyFodor - Publishing</PageTitle>
+        <PageTitle></PageTitle>
         <Description></Description>
       </Content>
     </HeroSection>
