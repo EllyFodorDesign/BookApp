@@ -2,8 +2,9 @@ import styled from "styled-components";
 import authorImage from "../assets/author.jpg"; // Import the author image
 
 const AboutSection = styled.section`
-  padding: 5rem 0;
-  background: hsl(0, 0%, 98%);
+  display: flex;
+  align-items: center;
+  margin: 1rem;
 `;
 
 const Container = styled.div`
@@ -39,6 +40,7 @@ const TextContent = styled.div`
 const Description = styled.p`
   font-size: 1.125rem;
   color: hsl(85, 8%, 45%);
+  text-align: left;
 `;
 
 const StatsGrid = styled.div`
@@ -106,6 +108,10 @@ const PlaceholderTextAuthor = styled.div`
 const PlaceholderSubtextAuthor = styled.div`
   color: hsl(85, 8%, 45%);
   font-size: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: left;
 `;
 
 const About = () => {
@@ -116,8 +122,7 @@ const About = () => {
           <Title>Om författaren</Title>
           <TextContent>
             <Description>
-              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            
             </Description>
             <StatsGrid></StatsGrid>
           </TextContent>
@@ -127,12 +132,12 @@ const About = () => {
               Ellinor Fodor Johansson
             </PlaceholderTextAuthor>
             <PlaceholderSubtextAuthor>
-              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magn. lorem ipsum
-              dolor sit amet, consectetur adipiscing elit. <br />
-              Sed do eiusmod tempor incididunt ut labore et dolore magna. lorem
-              ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-              tempor incididunt ut labore et dolore magn.
+               Ellinor har skrivit sedan barnsben och har en passion för att
+              skapa berättelser som engagerar och inspirerar. Hennes böcker
+              fokuserar på barn med neuropsykiatriska funktionsnedsättningar
+              (NPF) i skolan, med målet att öka förståelsen och stödet för dessa
+              barn i utbildningsmiljön. Genom sina verk vill hon ge röst åt de
+              som ofta missförstås och bidra till en mer inkluderande skola.
             </PlaceholderSubtextAuthor>
           </PortraitPlaceholder>
           <ImagePlaceholder>
