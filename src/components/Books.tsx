@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import authorImage from "../assets/author.jpg"; // Import the author image
+import Divider from "antd/es/divider";
+
 
 const AboutSection = styled.section`
   padding: 5rem 0;
@@ -19,10 +21,12 @@ const Content = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bolder;
   color: hsl(85, 15%, 25%);
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  margin-top: 0rem;
+  text-align: left;
 
   @media (min-width: 768px) {
     font-size: 2.25rem;
@@ -53,40 +57,6 @@ const SubTitleSmaller = styled(Title)`
   }
 `;
 
-const TextContent = styled.div`
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-`;
-
-const Description = styled.p`
-  font-size: 1.125rem;
-  color: hsl(85, 8%, 45%);
-`;
-
-const StatsGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  padding-top: 1rem;
-`;
-
-const ImagePlaceholder = styled.div`
-  background: linear-gradient(
-    135deg,
-    hsl(85, 35%, 35%, 0.1),
-    hsl(85, 35%, 35%, 0.2)
-  );
-  border-radius: 0.5rem;
-  height: 16rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 2rem;
-`;
-
 const PortraitPlaceholder = styled.div`
   background: linear-gradient(
     135deg,
@@ -99,7 +69,7 @@ const PortraitPlaceholder = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   padding-bottom: 1.5rem;
 `;
 const Image = styled.img`
@@ -109,27 +79,11 @@ const Image = styled.img`
   border-radius: 0.5rem;
 `;
 
-const PlaceholderText = styled.div`
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: hsl(85, 35%, 35%);
-  margin-bottom: 1rem;
-`;
-
-const PlaceholderSubtext = styled.div`
-  color: hsl(85, 8%, 45%);
-`;
-
-const PlaceholderTextAuthor = styled.div`
-  font-size: 2rem;
-  font-weight: 400px;
-  color: hsl(85, 35%, 35%);
-  margin-bottom: 1rem;
-`;
-
-const PlaceholderSubtextAuthor = styled.div`
+const PlaceholderSubtextBooks = styled.div`
   color: hsl(85, 8%, 45%);
   font-size: 1rem;
+  text-align: left;
+  margin: 1rem;
 `;
 
 const Books = () => {
@@ -138,33 +92,21 @@ const Books = () => {
       <Container>
         <Content>
           <Title>Böcker av författaren</Title>
+          <Divider></Divider>
           <SubTitle>"Att leva som barn med NPF i skolan"</SubTitle>
           <SubTitleSmaller>För pedagoger och lärare</SubTitleSmaller>
-          <TextContent>
-            <Description>
-              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Description>
-            <StatsGrid></StatsGrid>
-          </TextContent>
           <PortraitPlaceholder>
             <Image src={authorImage} alt="Författare" />
-            <PlaceholderTextAuthor>
-              Ellinor Fodor Johansson
-            </PlaceholderTextAuthor>
-            <PlaceholderSubtextAuthor>
+            {/* replace with actual image*/}
+            <PlaceholderSubtextBooks>
               lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magn. lorem ipsum
               dolor sit amet, consectetur adipiscing elit. <br />
               Sed do eiusmod tempor incididunt ut labore et dolore magna. lorem
               ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
               tempor incididunt ut labore et dolore magn.
-            </PlaceholderSubtextAuthor>
+            </PlaceholderSubtextBooks>
           </PortraitPlaceholder>
-          <ImagePlaceholder>
-            <PlaceholderText>Kommande</PlaceholderText>
-            <PlaceholderSubtext>Nytt boksläpp väntar...</PlaceholderSubtext>
-          </ImagePlaceholder>
         </Content>
       </Container>
     </AboutSection>
