@@ -23,8 +23,9 @@ export const PageWrapper = styled.div`
   margin: 0px;
   min-height: 100%;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   box-sizing: border-box;
+  width: 100%;
 
   ${MediaQuery.phone} {
     width: 100%;
