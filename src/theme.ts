@@ -33,8 +33,10 @@ const theme = {
   button: {
     primary: { color: "#fff", backgroundColor: "#0070f3", border: "none" },
     secondary: { color: "#fff", backgroundColor: "#1DB954", border: "none" },
-    form: { color: "#000", background: "#fafafa" },
-  },
+    form: { color: "#000", backgroundColor: "#fafafa", border: "1px solid #ccc" } // <-- consistent keys
+  }
+
+
 } as const;
 
 export type Theme = typeof theme;

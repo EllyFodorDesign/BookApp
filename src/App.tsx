@@ -7,37 +7,33 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Books from "./components/Books";
-import theme from "./theme";
-import { ThemeProvider } from "styled-components";
 
 const App: React.FC = () => {
   return (
     <>
-      <ThemeProvider theme={theme}>
-        {/* 🚧 Banner at the top */}
-        <div
-          style={{
-            background: "black",
-            padding: "0.5rem",
-            textAlign: "center",
-            fontWeight: "normal",
-            color: "white",
-          }}
-        >
-          🚧 This site is under construction — more updates soon!
-        </div>
-        <GlobalStyle />
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/books" element={<Books />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/projects" element={<Projects />} />
-          </Route>
-        </Routes>
-      </ThemeProvider>
+      {/* 🚧 Banner at the top */}
+      <div
+        style={{
+          background: "black",
+          padding: "0.5rem",
+          textAlign: "center",
+          fontWeight: "normal",
+          color: "white",
+        }}
+      >
+        🚧 This site is under construction — more updates soon!
+      </div>
+      <GlobalStyle />
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/books" element={<Books />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<Projects />} />
+        </Route>
+      </Routes>
     </>
   );
 };
