@@ -43,13 +43,6 @@ const Description = styled.p`
   text-align: left;
 `;
 
-const StatsGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  padding-top: 1rem;
-`;
-
 const ImagePlaceholder = styled.div`
   background: linear-gradient(
     135deg,
@@ -121,10 +114,8 @@ const About = () => {
         <Content>
           <Title>Om författaren</Title>
           <TextContent>
-            <Description>
-            
+            <Description> 
             </Description>
-            <StatsGrid></StatsGrid>
           </TextContent>
           <PortraitPlaceholder>
             <Image src={authorImage} alt="Författare" />

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import productImage from "../assets/sensorytubes.jpg"; // Import the author image
+import { Divider } from "antd";
 
 const AboutSection = styled.section`
   padding: 5rem 0;
@@ -22,7 +23,8 @@ const Title = styled.h2`
   font-size: 1.875rem;
   font-weight: bold;
   color: hsl(85, 15%, 25%);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 0rem;
 
   @media (min-width: 768px) {
     font-size: 2.25rem;
@@ -34,18 +36,6 @@ const TextContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-`;
-
-const Description = styled.p`
-  font-size: 1.125rem;
-  color: hsl(85, 8%, 45%);
-`;
-
-const StatsGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  padding-top: 1rem;
 `;
 
 const LinkPlaceholder = styled.div`
@@ -98,15 +88,26 @@ const PlaceholderLinkText = styled(PlaceholderText)`
 `;
 
 const PlaceholderTextAuthor = styled.div`
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400px;
-  color: hsl(85, 35%, 35%);
+  color: hsl(85.13513513513513, 100%, 14.50980392156863%);
+  margin-bottom: 1rem;
+`;
+
+const TextBelowImage = styled(PlaceholderTextAuthor)`
+  font-size: 1.3rem;
+  font-weight: 400px;
+  color: black;
   margin-bottom: 1rem;
 `;
 
 const PlaceholderSubtextAuthor = styled.div`
-  color: hsl(85, 8%, 45%);
+  color: hsl(0, 0%, 0%);
   font-size: 1rem;
+  text-align: left;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
 `;
 
 const Projects = () => {
@@ -114,28 +115,30 @@ const Projects = () => {
     <AboutSection id="about">
       <Container>
         <Content>
-          <Title>Om projekten</Title>
+          <Title>Projekt</Title>
+          <Divider> </Divider>
+
+          <PlaceholderTextAuthor>Sensory Knit(ting)</PlaceholderTextAuthor>
+
           <TextContent>
+            {/* replace with actual image
             <Description>
               lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Description>
-            <StatsGrid></StatsGrid>
+            </Description>*/}
           </TextContent>
           <PortraitPlaceholder>
             <Image src={productImage} alt="Stickadetuber" />
-            <PlaceholderTextAuthor>
-             Textile Lego
-            </PlaceholderTextAuthor>
+            <TextBelowImage>Textile Lego</TextBelowImage>
             <PlaceholderSubtextAuthor>
               lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magn. lorem ipsum
               dolor sit amet, consectetur adipiscing elit. <br />
-            
             </PlaceholderSubtextAuthor>
           </PortraitPlaceholder>
           <LinkPlaceholder>
-            <PlaceholderLinkText>Klicka för fulltext</PlaceholderLinkText>{/* Add link to full project */}
+            <PlaceholderLinkText>Klicka för fulltext</PlaceholderLinkText>
+            {/* Add link to full project */}
           </LinkPlaceholder>
         </Content>
       </Container>
