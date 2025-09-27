@@ -107,7 +107,6 @@ const PlaceholderSubtextAuthor = styled.div`
   text-align: left;
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-bottom: 2rem;
 `;
 
 const Projects = () => {
@@ -121,11 +120,6 @@ const Projects = () => {
           <PlaceholderTextAuthor>Sensory Knit(ting)</PlaceholderTextAuthor>
 
           <TextContent>
-            {/* replace with actual image
-            <Description>
-              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Description>*/}
           </TextContent>
           <PortraitPlaceholder>
             <Image src={productImage} alt="Stickadetuber" />
