@@ -52,7 +52,7 @@ const Hero = () => {
     <HeroSection id="home">
       <Content>
         <PageTitle>EllyFodor - Publishing</PageTitle>
-        <Description>Placeholder text here.</Description>
+        <Description></Description>
       </Content>
     </HeroSection>
   );
