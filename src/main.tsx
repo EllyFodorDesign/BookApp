@@ -6,7 +6,6 @@ import theme from "./theme";
 import { ThemeProvider } from "styled-components"; // Import ThemeProvider
 import React from "react";
 
-// Wrap App with ThemeProvider to provide the theme to all styled-components
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
