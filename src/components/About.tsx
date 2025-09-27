@@ -9,7 +9,7 @@ const AboutSection = styled.section`
 const Container = styled.div`
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0px;
 `;
 
 const Content = styled.div`
