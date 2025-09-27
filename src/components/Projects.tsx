@@ -91,14 +91,14 @@ const PlaceholderTextAuthor = styled.div`
   font-size: 1.5rem;
   font-weight: 400px;
   color: hsl(85.13513513513513, 100%, 14.50980392156863%);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 `;
 
 const TextBelowImage = styled(PlaceholderTextAuthor)`
   font-size: 1.3rem;
   font-weight: 400px;
   color: black;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `;
 
 const PlaceholderSubtextAuthor = styled.div`
