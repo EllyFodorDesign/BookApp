@@ -42,7 +42,6 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4.5rem;
-    
   }
 `;
 
@@ -51,13 +50,12 @@ const Column = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 32px 0;
+  padding: 0px;
   gap: 48px;
 
   @media (min-width: 480px) {
     //Links and contact info stack on 480px and over. Brand to the left of them.
-    //3, 2 fr? 
-   
+    //3, 2 fr?
   }
 `;
 
@@ -71,8 +69,6 @@ const ColumnLinksInfo = styled(Column)`
 
   @media (min-width: 480px) {
     flex-direction: column;
-    
-   
   }
 `;
 
@@ -107,7 +103,6 @@ const LinksTitle = styled.h4`
 
   @media (min-width: 480px) {
     font-size: 1.1rem;
-
   }
 `;
 
@@ -118,7 +113,6 @@ const LinksList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-
 `;
 
 const LinkItem = styled.li``;
@@ -135,7 +129,7 @@ const StyledRouterLink = styled(Link)`
 
   @media (min-width: 480px) {
     font-size: 0.9rem;
-  } 
+  }
 `;
 
 const ContactInfo = styled.div`
@@ -145,9 +139,9 @@ const ContactInfo = styled.div`
   gap: 0.5rem;
   font-size: 1.1rem;
 
-   @media (min-width: 480px) {
+  @media (min-width: 480px) {
     font-size: 0.9rem;
-  } 
+  }
 `;
 
 const Divider = styled.div`
@@ -177,34 +171,38 @@ const Footer = () => {
               </BrandDescription>
             </BrandSection>
             <Column>
-            <ColumnLinksInfo>
-              <LinksSection>
-                <LinksTitle>Genvägar</LinksTitle>
-                <LinksList>
-                  <LinkItem>
-                    <StyledRouterLink to="/home">Hem</StyledRouterLink>
-                  </LinkItem>
-                  <LinkItem>
-                    <StyledRouterLink to="/about">
-                      Om författaren
-                    </StyledRouterLink>
-                  </LinkItem>
-                  <LinkItem>
-                    <StyledRouterLink to="/contact">Kontakt</StyledRouterLink>
-                  </LinkItem>
-                  <LinkItem>
-                    <StyledRouterLink to="/projects">Projekt</StyledRouterLink>
-                  </LinkItem>
-                </LinksList>
-              </LinksSection>
-              <LinksSection>
-                <LinksTitle>Kontakt info</LinksTitle>
-                <ContactInfo>
-                  <div>ellinor.j@hotmail.se</div>
-                  <div>+46 (0) 738-131 993</div>
-                  <div>11322 Stockholm</div>
-                </ContactInfo>
-              </LinksSection>
+              <ColumnLinksInfo>
+                <LinksSection>
+                  <LinksTitle>Genvägar</LinksTitle>
+                  <LinksList>
+                    <LinkItem>
+                      <StyledRouterLink to="/home">Hem</StyledRouterLink>
+                    </LinkItem>
+                    <LinkItem>
+                      <StyledRouterLink to="/about">
+                        Om författaren
+                      </StyledRouterLink>
+                    </LinkItem>
+                    <LinkItem>
+                      <StyledRouterLink to="/contact">Kontakt</StyledRouterLink>
+                    </LinkItem>
+                    <LinkItem>
+                      <StyledRouterLink to="/books">Böcker</StyledRouterLink>
+                    </LinkItem>
+                    <LinkItem>
+                      <StyledRouterLink to="/projects">
+                        Projekt
+                      </StyledRouterLink>
+                    </LinkItem>
+                  </LinksList>
+                </LinksSection>
+                <LinksSection>
+                  <LinksTitle>Kontakt info</LinksTitle>
+                  <ContactInfo>
+                    <div>ellinor.j@hotmail.se</div>
+                    <div>+46 (0) 738-131 993</div>
+                  </ContactInfo>
+                </LinksSection>
               </ColumnLinksInfo>
             </Column>
           </Container>
