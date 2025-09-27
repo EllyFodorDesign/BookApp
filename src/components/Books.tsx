@@ -18,11 +18,35 @@ const Content = styled.div`
   text-align: center;
 `;
 
-const Title = styled.h2`
-  font-size: 1.875rem;
-  font-weight: bold;
+const Title = styled.h1`
+  font-size: 2rem;
+  font-weight: bolder;
+  color: hsl(85, 15%, 25%);
+  margin-bottom: 4rem;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+`;
+
+const SubTitle = styled.h4`
+  font-size: 2rem;
+  font-weight: normal;
   color: hsl(85, 15%, 25%);
   margin-bottom: 2rem;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+`;
+
+const SubTitleSmaller = styled(Title)`
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: hsl(85, 15%, 25%);
+  margin-bottom: 2rem;
+  text-align: left;
 
   @media (min-width: 768px) {
     font-size: 2.25rem;
@@ -113,7 +137,9 @@ const Books = () => {
     <AboutSection id="about">
       <Container>
         <Content>
-          <Title>Om författaren</Title>
+          <Title>Böcker av författaren</Title>
+          <SubTitle>"Att leva som barn med NPF i skolan"</SubTitle>
+          <SubTitleSmaller>För pedagoger och lärare</SubTitleSmaller>
           <TextContent>
             <Description>
               lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do

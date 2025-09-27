@@ -12,7 +12,7 @@ const Home: React.FC = () => (
     <MainSection>
       <ButtonGroup>
         <Button>Köp boken: Att leva som barn med NPF i skolan</Button>
-        <ScheduleButton buttoText="Läs författarens BA projekt här" />
+        <ScheduleButton buttoText="Läs mer om böckerna här" />
       </ButtonGroup>
     </MainSection>
   </>
