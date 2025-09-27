@@ -3,22 +3,21 @@ import { styled } from "styled-components";
 const ButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
+  align-items: center;
 `;
 
 const Button = styled.button`
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
+ 
+  font-size: 1.5rem;
   border-radius: 0.375rem;
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 20px;
 
   /* Default styles */
-  background-color: #0070f3;
+  background-color: #65a56d;
   color: #fff;
-  border: none;
+  border: 2px solid black;
 
   /* Optional hover effect */
   &:hover {
