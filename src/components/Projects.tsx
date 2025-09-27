@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import productImage from "../assets/sensorytubes.jpg"; // Import the author image
 import { Divider } from "antd";
+import ProjectButton from "./ProjectButton";
 
 const AboutSection = styled.section`
   padding: 5rem 0;
@@ -38,20 +39,6 @@ const TextContent = styled.div`
   gap: 1.5rem;
 `;
 
-const LinkPlaceholder = styled.div`
-  background: linear-gradient(
-    135deg,
-    hsl(85, 35%, 35%, 0.1),
-    hsl(85, 35%, 35%, 0.2)
-  );
-  border-radius: 0.5rem;
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
-
 const PortraitPlaceholder = styled.div`
   background: linear-gradient(
     135deg,
@@ -72,19 +59,6 @@ const Image = styled.img`
   height: auto;
   object-fit: cover;
   border-radius: 0.5rem;
-`;
-
-const PlaceholderText = styled.div`
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: hsl(85, 35%, 35%);
-  margin-bottom: 1rem;
-`;
-
-const PlaceholderLinkText = styled(PlaceholderText)`
-  font-size: 1.5rem;
-  color: hsl(0, 0%, 1.9607843137254901%);
-  margin: 0;
 `;
 
 const PlaceholderTextAuthor = styled.div`
@@ -119,8 +93,7 @@ const Projects = () => {
 
           <PlaceholderTextAuthor>Sensory Knit(ting)</PlaceholderTextAuthor>
 
-          <TextContent>
-          </TextContent>
+          <TextContent></TextContent>
           <PortraitPlaceholder>
             <Image src={productImage} alt="Stickadetuber" />
             <TextBelowImage>Textile Lego</TextBelowImage>
@@ -130,10 +103,7 @@ const Projects = () => {
               dolor sit amet, consectetur adipiscing elit. <br />
             </PlaceholderSubtextAuthor>
           </PortraitPlaceholder>
-          <LinkPlaceholder>
-            <PlaceholderLinkText>Klicka för fulltext</PlaceholderLinkText>
-            {/* Add link to full project */}
-          </LinkPlaceholder>
+          <ProjectButton buttonText="Klicka för fulltext" />
         </Content>
       </Container>
     </AboutSection>
