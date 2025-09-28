@@ -37,7 +37,7 @@ padding: 0.75rem 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 0px;
-      background: #080707;
+      background: #342d2d;
       color: hsl(0, 0%, 98%);
 
 

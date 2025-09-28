@@ -40,8 +40,12 @@ const Container = styled.div`
 
   @media (min-width: 480px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4.5rem;
+    grid-template-columns: repeat(1, 2fr);
+    gap: 0.5rem;
+    margin-left:1rem;
+    margin-top: 0rem;
+
+    justify-content: left;
   }
 `;
 
@@ -54,8 +58,7 @@ const Column = styled.div`
   gap: 48px;
 
   @media (min-width: 480px) {
-    //Links and contact info stack on 480px and over. Brand to the left of them.
-    //3, 2 fr?
+ 
   }
 `;
 
@@ -68,7 +71,8 @@ const ColumnLinksInfo = styled(Column)`
   gap: 48px;
 
   @media (min-width: 480px) {
-    flex-direction: column;
+    gap: 9rem;
+
   }
 `;
 
@@ -76,6 +80,8 @@ const BrandSection = styled.div`
   @media (min-width: 768px) {
     grid-column: span 2;
   }
+
+
 `;
 
 const BrandTitle = styled.h3`
@@ -103,6 +109,7 @@ const LinksTitle = styled.h4`
 
   @media (min-width: 480px) {
     font-size: 1.1rem;
+    
   }
 `;
 
