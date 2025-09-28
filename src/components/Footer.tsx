@@ -74,6 +74,11 @@ const ColumnLinksInfo = styled(Column)`
     gap: 9rem;
 
   }
+
+   @media (min-width: 768px) {
+    gap: 9rem;
+
+  }
 `;
 
 const BrandSection = styled.div`
