@@ -39,8 +39,8 @@ const Container = styled.div`
   padding: 0 1rem;
 
   @media (min-width: 480px) {
-    display: grid;
-    grid-template-columns: repeat(1, 2fr);
+    display: flex;
+    flex-direction: row;
     gap: 0.5rem;
     margin-left: 1rem;
     margin-top: 0rem;
@@ -49,8 +49,26 @@ const Container = styled.div`
   }
 `;
 
+const ContainerTablet = styled(Container)`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 480px) {
+    display: flex;
+    
+    gap: 0.5rem;
+    margin-left: 1rem;
+    margin-top: 0rem;
+
+    justify-content: left;
+  }
+  `;
+
 const Column = styled.div`
   @media (min-width: 480px) {
+
+  
   }
 `;
 
@@ -59,11 +77,12 @@ const ColumnLinksInfo = styled(Column)`
   flex-direction: row;
   align-items: flex-start;
   padding: 0px;
-  margin-top: 4rem;
+  margin-top: 3rem;
   gap: 60px;
 
   @media (min-width: 480px) {
-    gap: 9rem;
+   margin-top: 2rem;
+   gap: 8rem;
   }
 
   @media (min-width: 768px) {
@@ -72,15 +91,21 @@ const ColumnLinksInfo = styled(Column)`
 `;
 
 const BrandSection = styled.div`
-  @media (min-width: 768px) {
-    grid-column: span 2;
+  @media (min-width: 480px) {
+   
   }
+
+  
 `;
 
 const BrandTitle = styled.h3`
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0 0 1rem 0;
+
+   @media (min-width: 480px) {
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const BrandDescription = styled.p`
@@ -88,11 +113,30 @@ const BrandDescription = styled.p`
   margin: 0 0 1rem 0;
   max-width: 24rem;
   font-size: 1.2rem;
+
+   @media (min-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const LinksSection = styled.div`
   display: flex;
   flex-direction: column;
+
+   @media (min-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+const ShortCuts = styled(LinksSection)`
+  display: flex;
+  flex-direction: column;
+
+   @media (min-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const LinksTitle = styled.h4`
@@ -102,6 +146,7 @@ const LinksTitle = styled.h4`
 
   @media (min-width: 480px) {
     font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
 `;
 
@@ -111,7 +156,9 @@ const LinksList = styled.ul`
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.3rem;
+
+  
 `;
 
 const LinkItem = styled.li``;
@@ -160,7 +207,7 @@ const Footer = () => {
     <Wrapper>
       <FooterWrapper>
         <FooterSection>
-          <Container>
+          <ContainerTablet>
             <BrandSection>
               <BrandTitle>Ellinor Fodor Johansson</BrandTitle>
               <BrandDescription>
@@ -169,9 +216,12 @@ const Footer = () => {
                 funktionsnedsättningar i skolan.
               </BrandDescription>
             </BrandSection>
+           </ContainerTablet>
+            <Container>
             <Column>
               <ColumnLinksInfo>
                 <LinksSection>
+                <ShortCuts>
                   <LinksTitle>Genvägar</LinksTitle>
                   <LinksList>
                     <LinkItem>
@@ -185,6 +235,7 @@ const Footer = () => {
                     <LinkItem>
                       <StyledRouterLink to="/contact">Kontakt</StyledRouterLink>
                     </LinkItem>
+                    
                     <LinkItem>
                       <StyledRouterLink to="/books">Böcker</StyledRouterLink>
                     </LinkItem>
@@ -194,7 +245,9 @@ const Footer = () => {
                       </StyledRouterLink>
                     </LinkItem>
                   </LinksList>
+                  </ShortCuts>
                 </LinksSection>
+                
                 <LinksSection>
                   <LinksTitle>Kontakt info</LinksTitle>
                   <ContactInfo>
