@@ -22,6 +22,39 @@ export const FooterWrapper = styled.div`
   }
 `;
 
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    margin-top: 0rem;
+
+    justify-content: left;
+  }
+`;
+
+const ContainerTwo = styled(Container)`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "brand shortcuts"
+    "contact contact"
+gap 2rem 4rem;
+align-items: start;
+  }
+`;
+
 const FooterSection = styled.footer`
   background: hsl(85.16129032258064, 36.47058823529412%, 16.666666666666664%);
   color: hsl(0, 0%, 98%);
@@ -33,42 +66,35 @@ const FooterSection = styled.footer`
   }
 `;
 
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-
-  @media (min-width: 480px) {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    margin-left: 1rem;
-    margin-top: 0rem;
-
-    justify-content: left;
+const BrandSection = styled.div`
+  @media (min-width: 768px) {
+   grid-area: brand;
   }
 `;
 
-const ContainerTablet = styled(Container)`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+const BrandTitle = styled.h3`
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
 
   @media (min-width: 480px) {
-    display: flex;
-    
-    gap: 0.5rem;
-    margin-left: 1rem;
-    margin-top: 0rem;
-
-    justify-content: left;
+    margin-bottom: 0.5rem;
   }
-  `;
+`;
+
+const BrandDescription = styled.p`
+  color: rgba(249, 250, 251, 0.8);
+  margin: 0 0 1rem 0;
+  max-width: 24rem;
+  font-size: 1.2rem;
+
+  @media (min-width: 480px) {
+    font-size: 1rem;
+  }
+`;
 
 const Column = styled.div`
   @media (min-width: 480px) {
-
-  
   }
 `;
 
@@ -81,41 +107,13 @@ const ColumnLinksInfo = styled(Column)`
   gap: 60px;
 
   @media (min-width: 480px) {
-   margin-top: 2rem;
-   gap: 8rem;
+    margin-top: 2rem;
+    gap: 8rem;
   }
 
   @media (min-width: 768px) {
     gap: 9rem;
-  }
-`;
-
-const BrandSection = styled.div`
-  @media (min-width: 480px) {
-   
-  }
-
-  
-`;
-
-const BrandTitle = styled.h3`
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin: 0 0 1rem 0;
-
-   @media (min-width: 480px) {
-    margin-bottom: 0.5rem;
-  }
-`;
-
-const BrandDescription = styled.p`
-  color: rgba(249, 250, 251, 0.8);
-  margin: 0 0 1rem 0;
-  max-width: 24rem;
-  font-size: 1.2rem;
-
-   @media (min-width: 480px) {
-    font-size: 1rem;
+    grid-area: shortcuts;
   }
 `;
 
@@ -123,7 +121,7 @@ const LinksSection = styled.div`
   display: flex;
   flex-direction: column;
 
-   @media (min-width: 480px) {
+  @media (min-width: 480px) {
     display: flex;
     flex-direction: column;
   }
@@ -133,9 +131,23 @@ const ShortCuts = styled(LinksSection)`
   display: flex;
   flex-direction: column;
 
-   @media (min-width: 480px) {
+  @media (min-width: 480px) {
     display: flex;
     flex-direction: column;
+  }
+`;
+
+const ContactLinks = styled(ShortCuts)`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+    @media (min-width: 768px) {
+  grid-area: contact;
   }
 `;
 
@@ -157,8 +169,6 @@ const LinksList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-
-  
 `;
 
 const LinkItem = styled.li``;
@@ -207,7 +217,8 @@ const Footer = () => {
     <Wrapper>
       <FooterWrapper>
         <FooterSection>
-          <ContainerTablet>
+          <Container>
+            <ContainerTwo></ContainerTwo>
             <BrandSection>
               <BrandTitle>Ellinor Fodor Johansson</BrandTitle>
               <BrandDescription>
@@ -216,45 +227,43 @@ const Footer = () => {
                 funktionsnedsättningar i skolan.
               </BrandDescription>
             </BrandSection>
-           </ContainerTablet>
-            <Container>
             <Column>
               <ColumnLinksInfo>
                 <LinksSection>
-                <ShortCuts>
-                  <LinksTitle>Genvägar</LinksTitle>
-                  <LinksList>
-                    <LinkItem>
-                      <StyledRouterLink to="/home">Hem</StyledRouterLink>
-                    </LinkItem>
-                    <LinkItem>
-                      <StyledRouterLink to="/about">
-                        Om författaren
-                      </StyledRouterLink>
-                    </LinkItem>
-                    <LinkItem>
-                      <StyledRouterLink to="/contact">Kontakt</StyledRouterLink>
-                    </LinkItem>
-                    
-                    <LinkItem>
-                      <StyledRouterLink to="/books">Böcker</StyledRouterLink>
-                    </LinkItem>
-                    <LinkItem>
-                      <StyledRouterLink to="/projects">
-                        Projekt
-                      </StyledRouterLink>
-                    </LinkItem>
-                  </LinksList>
+                  <ShortCuts>
+                    <LinksTitle>Genvägar</LinksTitle>
+                    <LinksList>
+                      <LinkItem>
+                        <StyledRouterLink to="/home">Hem</StyledRouterLink>
+                      </LinkItem>
+                      <LinkItem>
+                        <StyledRouterLink to="/about">
+                          Om författaren
+                        </StyledRouterLink>
+                      </LinkItem>
+                      <LinkItem>
+                        <StyledRouterLink to="/contact">
+                          Kontakt
+                        </StyledRouterLink>
+                      </LinkItem>
+                      <LinkItem>
+                        <StyledRouterLink to="/books">Böcker</StyledRouterLink>
+                      </LinkItem>
+                      <LinkItem>
+                        <StyledRouterLink to="/projects">
+                          Projekt
+                        </StyledRouterLink>
+                      </LinkItem>
+                    </LinksList>
                   </ShortCuts>
                 </LinksSection>
-                
-                <LinksSection>
+                <ContactLinks>
                   <LinksTitle>Kontakt info</LinksTitle>
                   <ContactInfo>
                     <div>ellinor.j@hotmail.se</div>
                     <div>+46 (0) 738-131 993</div>
                   </ContactInfo>
-                </LinksSection>
+                </ContactLinks>
               </ColumnLinksInfo>
             </Column>
           </Container>
