@@ -42,7 +42,7 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 2fr);
     gap: 0.5rem;
-    margin-left:1rem;
+    margin-left: 1rem;
     margin-top: 0rem;
 
     justify-content: left;
@@ -50,34 +50,24 @@ const Container = styled.div`
 `;
 
 const Column = styled.div`
-  gap: 2rem;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 48px;
-
   @media (min-width: 480px) {
- 
   }
 `;
 
 const ColumnLinksInfo = styled(Column)`
-  gap: 2rem;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 32px 0;
-  gap: 48px;
+  padding: 0px;
+  margin-top: 4rem;
+  gap: 60px;
 
   @media (min-width: 480px) {
     gap: 9rem;
-
   }
 
-   @media (min-width: 768px) {
+  @media (min-width: 768px) {
     gap: 9rem;
-
   }
 `;
 
@@ -85,8 +75,6 @@ const BrandSection = styled.div`
   @media (min-width: 768px) {
     grid-column: span 2;
   }
-
-
 `;
 
 const BrandTitle = styled.h3`
@@ -114,7 +102,6 @@ const LinksTitle = styled.h4`
 
   @media (min-width: 480px) {
     font-size: 1.1rem;
-    
   }
 `;
 
