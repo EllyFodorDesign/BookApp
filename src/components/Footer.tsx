@@ -74,7 +74,7 @@ const BrandSection = styled.div`
 
 const BrandTitle = styled.h3`
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: normal;
   margin: 0 0 1rem 0;
 
   @media (min-width: 480px) {
