@@ -8,12 +8,17 @@ const ButtonGroup = styled.div`
 
 const Button = styled.button`
  
-  font-size: 1.2rem;
-  border-radius: 0.375rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-bottom: 20px;
 
+  
   /* Default styles */
   background-color: #dedede;
   color: black;

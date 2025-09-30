@@ -9,7 +9,7 @@ interface ScheduleButtonProps {
 const ScheduleButton = ({ buttoText }: ScheduleButtonProps) => {
   const handleClick = () => {
     window.open(
-      "https://lovable.dev/@3Sz5emS6E8aoPFYUCqbgKyh4bu93",
+      "https://book-app-alpha-two.vercel.app/books",
       "_blank"
     );
   };

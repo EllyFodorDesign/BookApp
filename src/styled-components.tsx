@@ -29,7 +29,6 @@ export const PageWrapper = styled.div`
 
   ${MediaQuery.phone} {
     width: 100%;
-   
   }
 
   ${MediaQuery.tablet} {
@@ -67,5 +66,21 @@ export const HeaderSection = styled(PageWrapper)`
 
   ${MediaQuery.phone} {
     text-align: right;
+  }
+`;
+
+export const Heading = styled.h1`
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: hsl(85, 15%, 25%);
+  margin-bottom: 2rem;
+  margin-top: 0rem;
+  text-align: center;
+  padding: 2px;
+  margin: 4px;
+  margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
   }
 `;
