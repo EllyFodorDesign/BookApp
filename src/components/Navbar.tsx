@@ -113,6 +113,8 @@ const HamburgerMenu = () => {
           <DesktopMenuLink to="home">Hem</DesktopMenuLink>
           <DesktopMenuLink to="about">Om författaren</DesktopMenuLink>
           <DesktopMenuLink to="contact">Kontakt</DesktopMenuLink>
+          <DesktopMenuLink to="books">Böcker</DesktopMenuLink>
+          <DesktopMenuLink to="projects">Projekt</DesktopMenuLink>
         </DesktopMenu>
       </NavBar>
 
@@ -125,6 +127,12 @@ const HamburgerMenu = () => {
         </MenuLink>
         <MenuLink to="contact" onClick={() => setOpen(false)}>
           Kontakt
+        </MenuLink>
+        <MenuLink to="books" onClick={() => setOpen(false)}>
+          Böcker
+        </MenuLink>
+        <MenuLink to="projects" onClick={() => setOpen(false)}>
+          Projekt
         </MenuLink>
       </Menu>
     </>
