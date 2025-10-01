@@ -27,36 +27,15 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 1rem;
 
-  @media (min-width: 480px) {
-    grid-template-columns: repeat(1, 2fr);
-    gap: 0.5rem;
-    margin-left: 1rem;
-    margin-top: 1rem;
-  }
+  display: grid;
+  grid-template-columns: 1fr; /* mobile = single column */
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "brand"
+    "links";
 
   @media (min-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-left: 1rem;
-    margin-top: 1rem;
-  }
-`;
-
-const ContainerTwo = styled(Container)`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "brand shortcuts"
-      "contact contact"
-      gap 2rem 4rem;
-    align-items: start;
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -65,14 +44,16 @@ const FooterSection = styled.footer`
   color: hsl(0, 0%, 98%);
 
   @media (min-width: 768px) {
-    margin: 0 auto;
     width: 100%;
   }
 `;
 
 const BrandSection = styled.div`
+  grid-area: brand;
+  margin: 0;
+  text-align: left;
+  max-width: none;
   @media (min-width: 768px) {
-    grid-area: brand;
   }
 `;
 
@@ -96,10 +77,11 @@ const BrandTitle = styled.h3`
 
 const BrandDescription = styled.p`
   color: rgba(249, 250, 251, 0.8);
-  margin: 0rem;
-  padding: 0rem;
+  margin: 0;
+  padding: 0;
   max-width: 24rem;
   font-size: 1rem;
+  text-align: left;
 
   @media (min-width: 480px) {
     font-size: 1rem;
@@ -112,32 +94,15 @@ const BrandDescription = styled.p`
   }
 `;
 
-const Column = styled.div`
-  @media (min-width: 480px) {
-  }
-`;
-
-const ColumnLinksInfo = styled(Column)`
+const ColumnLinksInfo = styled.div`
+  grid-area: links;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  gap: 3rem;
   margin-top: 2rem;
-  margin-right: 0rem;
-  gap: 15px;
-
-  @media (min-width: 375px) {
-    gap: 5rem;
-  }
-
-  @media (min-width: 480px) {
-    margin-top: 2rem;
-    gap: 8rem;
-  }
-
-  @media (min-width: 768px) {
-    gap: 9rem;
-    grid-area: shortcuts;
-  }
+  max-width: none;
+  width: 100%;
 `;
 
 const LinksSection = styled.div`
@@ -249,38 +214,34 @@ const Footer = () => {
                 funktionsnedsättningar i skolan.
               </BrandDescription>
             </BrandSection>
-            <Column>
-              <ColumnLinksInfo>
-                <LinksSection>
-                  <ShortCuts>
-                    <LinksTitle>Genvägar</LinksTitle>
-                    <LinksList>
-                      <LinkItem>
-                        <StyledRouterLink to="/about">
-                          Om författaren
-                        </StyledRouterLink>
-                      </LinkItem>
-                      <LinkItem>
-                        <StyledRouterLink to="/contact">
-                          Kontakt
-                        </StyledRouterLink>
-                      </LinkItem>
-                      <LinkItem>
-                        <StyledRouterLink to="/books">Böcker</StyledRouterLink>
-                      </LinkItem>
-                      <LinkItem></LinkItem>
-                    </LinksList>
-                  </ShortCuts>
-                </LinksSection>
-                <ContactLinks>
-                  <LinksTitle>Kontakt info</LinksTitle>
-                  <ContactInfo>
-                    <div>ellinor.j@hotmail.se</div>
-                    <div>+46 (0) 738-131 993</div>
-                  </ContactInfo>
-                </ContactLinks>
-              </ColumnLinksInfo>
-            </Column>
+
+            <ColumnLinksInfo>
+              <LinksSection>
+                <ShortCuts>
+                  <LinksTitle>Genvägar</LinksTitle>
+                  <LinksList>
+                    <LinkItem>
+                      <StyledRouterLink to="/about">
+                        Om författaren
+                      </StyledRouterLink>
+                    </LinkItem>
+                    <LinkItem>
+                      <StyledRouterLink to="/contact">Kontakt</StyledRouterLink>
+                    </LinkItem>
+                    <LinkItem>
+                      <StyledRouterLink to="/books">Böcker</StyledRouterLink>
+                    </LinkItem>
+                  </LinksList>
+                </ShortCuts>
+              </LinksSection>
+              <ContactLinks>
+                <LinksTitle>Kontakt info</LinksTitle>
+                <ContactInfo>
+                  <div>ellinor.j@hotmail.se</div>
+                  <div>+46 (0) 738-131 993</div>
+                </ContactInfo>
+              </ContactLinks>
+            </ColumnLinksInfo>
           </Container>
           <Divider>
             <Copyright>
