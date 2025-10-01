@@ -33,6 +33,14 @@ const Container = styled.div`
     margin-left: 1rem;
     margin-top: 1rem;
   }
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
 `;
 
 const ContainerTwo = styled(Container)`
@@ -79,6 +87,11 @@ const BrandTitle = styled.h3`
   @media (min-width: 480px) {
     margin-bottom: 0.5rem;
   }
+
+  @media (min-width: 768px) {
+    text-align: left;
+    font-size: 1.4rem;
+  }
 `;
 
 const BrandDescription = styled.p`
@@ -90,6 +103,12 @@ const BrandDescription = styled.p`
 
   @media (min-width: 480px) {
     font-size: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    max-width: 70%;
+    text-align: left;
   }
 `;
 
@@ -222,7 +241,6 @@ const Footer = () => {
       <FooterWrapper>
         <FooterSection>
           <Container>
-            <ContainerTwo></ContainerTwo>
             <BrandSection>
               <BrandTitle>Ellinor Fodor Johansson</BrandTitle>
               <BrandDescription>
@@ -238,9 +256,6 @@ const Footer = () => {
                     <LinksTitle>Genvägar</LinksTitle>
                     <LinksList>
                       <LinkItem>
-                        <StyledRouterLink to="/home">Hem</StyledRouterLink>
-                      </LinkItem>
-                      <LinkItem>
                         <StyledRouterLink to="/about">
                           Om författaren
                         </StyledRouterLink>
@@ -253,11 +268,7 @@ const Footer = () => {
                       <LinkItem>
                         <StyledRouterLink to="/books">Böcker</StyledRouterLink>
                       </LinkItem>
-                      <LinkItem>
-                        <StyledRouterLink to="/projects">
-                          Projekt
-                        </StyledRouterLink>
-                      </LinkItem>
+                      <LinkItem></LinkItem>
                     </LinksList>
                   </ShortCuts>
                 </LinksSection>

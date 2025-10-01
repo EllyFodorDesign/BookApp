@@ -14,7 +14,7 @@ padding: 0.75rem 1.5rem;
   border: 2px solid
   black;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   margin: 20px;
       background: #bd9256;
       color: hsl(0, 0%, 98%);
@@ -23,6 +23,7 @@ padding: 0.75rem 1.5rem;
   &:hover {
    background: black;
     color: hsl(0, 0%, 98%);
+  
   }
 `;
 

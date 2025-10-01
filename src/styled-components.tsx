@@ -45,10 +45,11 @@ export const MainSection = styled(PageWrapper)`
 
   ${MediaQuery.tablet} {
     display: flex;
-    height: 200px;
-    flex-direction: row;
+    height: 100%;
+    flex-direction: column;
     width: 100%;
-    justify-content: left;
+    justify-content: center;
+    margin-bottom: 40px;
   }
 `;
 
@@ -81,6 +82,6 @@ export const Heading = styled.h1`
   margin-bottom: 20px;
 
   @media (min-width: 768px) {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
   }
 `;

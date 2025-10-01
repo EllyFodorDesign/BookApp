@@ -4,6 +4,11 @@ const ButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+
+@media (min-width: 768px) {
+  margin-top: 2rem;
+}
 `;
 
 const Button = styled.button`
@@ -18,6 +23,11 @@ const Button = styled.button`
   padding-bottom: 14px;
   margin-bottom: 20px;
 
+  @media (min-width: 768px) {
+  font-size: 1.5rem;
+  
+}
+;
   
   /* Default styles */
   background-color: #dedede;
