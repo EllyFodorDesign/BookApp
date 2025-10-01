@@ -34,8 +34,18 @@ const Container = styled.div`
     "brand"
     "links";
 
+  @media (min-width: 480px) {
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+
   @media (min-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr; /* two columns for desktop */
+    grid-template-areas: "brand links"; /* brand on left, links on right */
+    margin-left: 1rem;
+
+    margin-bottom: 2rem;
+    margin-right: 2rem;
   }
 `;
 
@@ -53,7 +63,10 @@ const BrandSection = styled.div`
   margin: 0;
   text-align: left;
   max-width: none;
+
   @media (min-width: 768px) {
+    /* optional: limit width to match links height */
+    max-width: 90%;
   }
 `;
 
@@ -89,7 +102,7 @@ const BrandDescription = styled.p`
 
   @media (min-width: 768px) {
     font-size: 1rem;
-    max-width: 70%;
+
     text-align: left;
   }
 `;
@@ -103,6 +116,16 @@ const ColumnLinksInfo = styled.div`
   margin-top: 2rem;
   max-width: none;
   width: 100%;
+
+  @media (min-width: 480px) {
+    gap: 7.5rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    gap: 4rem;
+    margin-top: 1.5rem;
+  }
 `;
 
 const LinksSection = styled.div`
@@ -122,6 +145,10 @@ const ShortCuts = styled(LinksSection)`
   @media (min-width: 480px) {
     display: flex;
     flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 0;
   }
 `;
 
@@ -185,6 +212,8 @@ const ContactInfo = styled.div`
 
   @media (min-width: 480px) {
     font-size: 0.9rem;
+    flex-wrap: nowrap;
+    
   }
 `;
 
