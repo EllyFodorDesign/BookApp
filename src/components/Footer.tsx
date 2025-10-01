@@ -31,9 +31,7 @@ const Container = styled.div`
     grid-template-columns: repeat(1, 2fr);
     gap: 0.5rem;
     margin-left: 1rem;
-    margin-top: 0rem;
-
-    justify-content: left;
+    margin-top: 1rem;
   }
 `;
 
@@ -85,8 +83,8 @@ const BrandTitle = styled.h3`
 
 const BrandDescription = styled.p`
   color: rgba(249, 250, 251, 0.8);
-margin: 0rem;
-padding: 0rem;
+  margin: 0rem;
+  padding: 0rem;
   max-width: 24rem;
   font-size: 1rem;
 
@@ -105,7 +103,7 @@ const ColumnLinksInfo = styled(Column)`
   flex-direction: row;
   align-items: flex-start;
   margin-top: 2rem;
-  margin-right:0rem;
+  margin-right: 0rem;
   gap: 15px;
 
   @media (min-width: 375px) {
