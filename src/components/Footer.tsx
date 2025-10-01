@@ -28,8 +28,7 @@ const Container = styled.div`
   padding: 0 1rem;
 
   @media (min-width: 480px) {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(1, 2fr);
     gap: 0.5rem;
     margin-left: 1rem;
     margin-top: 0rem;
@@ -48,17 +47,16 @@ const ContainerTwo = styled(Container)`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
-    "brand shortcuts"
-    "contact contact"
-gap 2rem 4rem;
-align-items: start;
+      "brand shortcuts"
+      "contact contact"
+      gap 2rem 4rem;
+    align-items: start;
   }
 `;
 
 const FooterSection = styled.footer`
   background: hsl(85.16129032258064, 36.47058823529412%, 16.666666666666664%);
   color: hsl(0, 0%, 98%);
-  padding: 3rem 0;
 
   @media (min-width: 768px) {
     margin: 0 auto;
@@ -68,14 +66,17 @@ const FooterSection = styled.footer`
 
 const BrandSection = styled.div`
   @media (min-width: 768px) {
-   grid-area: brand;
+    grid-area: brand;
   }
 `;
 
 const BrandTitle = styled.h3`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: normal;
-  margin: 0 0 1rem 0;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+
+  text-align: left;
 
   @media (min-width: 480px) {
     margin-bottom: 0.5rem;
@@ -84,9 +85,10 @@ const BrandTitle = styled.h3`
 
 const BrandDescription = styled.p`
   color: rgba(249, 250, 251, 0.8);
-  margin: 0 0 1rem 0;
+margin: 0rem;
+padding: 0rem;
   max-width: 24rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 
   @media (min-width: 480px) {
     font-size: 1rem;
@@ -102,9 +104,13 @@ const ColumnLinksInfo = styled(Column)`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
-  margin-top: 3rem;
-  gap: 60px;
+  margin-top: 2rem;
+  margin-right:0rem;
+  gap: 15px;
+
+  @media (min-width: 375px) {
+    gap: 5rem;
+  }
 
   @media (min-width: 480px) {
     margin-top: 2rem;
@@ -146,8 +152,8 @@ const ContactLinks = styled(ShortCuts)`
     flex-direction: column;
   }
 
-    @media (min-width: 768px) {
-  grid-area: contact;
+  @media (min-width: 768px) {
+    grid-area: contact;
   }
 `;
 
@@ -177,7 +183,7 @@ const StyledRouterLink = styled(Link)`
   color: rgba(249, 250, 251, 0.8);
   text-decoration: none;
   transition: color 0.3s ease;
-  font-size: 1.1rem;
+  font-size: 1rem;
 
   &:hover {
     color: hsl(0, 0%, 98%);
@@ -193,7 +199,7 @@ const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
 
   @media (min-width: 480px) {
     font-size: 0.9rem;
