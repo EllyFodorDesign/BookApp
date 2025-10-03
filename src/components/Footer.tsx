@@ -68,6 +68,11 @@ const BrandSection = styled.div`
     /* optional: limit width to match links height */
     max-width: 90%;
   }
+
+    @media (min-width: 1200px) {
+    /* optional: limit width to match links height */
+    max-width: 100%;
+  }
 `;
 
 const BrandTitle = styled.h3`
@@ -86,6 +91,11 @@ const BrandTitle = styled.h3`
     text-align: left;
     font-size: 1.4rem;
   }
+
+   @media (min-width: 1200px) {
+    text-align: left;
+    font-size: 2rem;
+  }
 `;
 
 const BrandDescription = styled.p`
@@ -102,6 +112,12 @@ const BrandDescription = styled.p`
 
   @media (min-width: 768px) {
     font-size: 1rem;
+
+    text-align: left;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1.5rem;
 
     text-align: left;
   }

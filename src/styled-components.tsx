@@ -1,17 +1,7 @@
-import styled, { createGlobalStyle } from "styled-components";
+
+import { styled } from "styled-components";
 import MediaQuery from "./styles/mediaQuery";
 
-export const GlobalStyle = createGlobalStyle`
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-`;
 
 export const PageWrapper = styled.div`
   display: flex;
