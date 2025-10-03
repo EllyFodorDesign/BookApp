@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import MediaQuery from "../styles/mediaQuery";
+import theme from "../styles/GlobalStyle";
 
 export const Wrapper = styled.div`
   box-sizing: border-box;
@@ -183,8 +184,8 @@ const ContactLinks = styled(ShortCuts)`
 `;
 
 const LinksTitle = styled.h4`
-  font-weight: 800px;
-  font-size: var (--fs-xxl);
+  font-weight: 800;
+  font-size: ${theme.fontSizes.H1};
   margin: 0 0 1rem 0;
 
   @media (min-width: 480px) {
@@ -224,19 +225,13 @@ const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: 1rem;
 
-  @media (min-width: 480px) {
-    font-size: 0.9rem;
-    flex-wrap: nowrap;
-    
-  }
 `;
 
 const Divider = styled.div`
   border-top: 1px solid rgba(249, 250, 251, 0.2);
   margin-top: 2rem;
-  padding-top: 2rem;
+  padding-top: ${theme.spacing.M};
   text-align: center;
 `;
 

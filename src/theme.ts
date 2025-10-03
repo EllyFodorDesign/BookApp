@@ -14,12 +14,12 @@ const theme = {
     formBackground: "#fafafa",
   },
   fontSizes: {
-    H1: "32px",
-    H2: "24px",
-    H3: "20px",
-    lead: "18px",
-    body: "16px",
-    button: "14px",
+    H1: "50px",
+    H2: "35px",
+    H3: "25px",
+    lead: "20px",
+    body: "18px",
+    button: "15px",
   },
   spacing: {
     XXL: "64px",

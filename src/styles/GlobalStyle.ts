@@ -4,18 +4,19 @@ import { createGlobalStyle } from "styled-components";
  * Global styles consume CSS variables from variables.css.
  * This keeps tokens centralized and responsive across both
  * plain CSS and styled-components. Wraps tokens for type-safe access (theme.colors.primary → var(--color-primary)).
-
-Example:export const GlobalStyle = createGlobalStyle`
-body {
-font-family: var(--font-sans);
-font-size: var(--fs-body);
-background-color: var(--color-background);
-color: var(--color-foreground);
-}
-h1 { font-size: var(--fs-h1); }
-`;
-
-Makes tokens available in styled-components without hardcoding.
+ *
+ * Example:
+ * export const GlobalStyle = createGlobalStyle`
+ * body {
+ *   font-family: var(--font-sans);
+ *   font-size: var(--fs-body);
+ *   background-color: var(--color-background);
+ *   color: var(--color-foreground);
+ * }
+ * h1 { font-size: var(--fs-h1); }
+ * `;
+ *
+ * Makes tokens available in styled-components without hardcoding.
  */
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -30,23 +31,23 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: var(--font-sans);
-    font-size: var(--fs-body);
+    font-size: var(--fs-body); /* 16px default */
     background-color: var(--color-background);
     color: var(--color-foreground);
     line-height: 1.5;
   }
 
   h1 {
-    font-size: var(--fs-h1);
+    font-size: var(--fs-h1); /* 32px mobile, 36px tablet, 42px desktop */
   }
   h2 {
-    font-size: var(--fs-h2);
+    font-size: var(--fs-h2); /* 24px mobile, 28px tablet, 32px desktop */
   }
   h3 {
-    font-size: var(--fs-h3);
+    font-size: var(--fs-h3); /* 20px mobile, 22px tablet, 24px desktop */
   }
   p, span, a {
-    font-size: var(--fs-body);
+    font-size: var(--fs-body); /* 16px mobile, 16px tablet, 18px desktop */
   }
 `;
 
@@ -66,26 +67,26 @@ const theme = {
     formBackground: "var(--color-form-bg)",
   },
   fontSizes: {
-    H1: "var(--fs-h1)",
-    H2: "var(--fs-h2)",
-    H3: "var(--fs-h3)",
-    lead: "var(--fs-lead)",
-    body: "var(--fs-body)",
-    button: "var(--fs-button)",
+    H1: "var(--fs-h1)",    // 32px mobile, 36px tablet, 42px desktop
+    H2: "var(--fs-h2)",    // 24px mobile, 28px tablet, 32px desktop
+    H3: "var(--fs-h3)",    // 20px mobile, 22px tablet, 24px desktop
+    lead: "var(--fs-lead)",// 18px mobile/tablet, 20px desktop
+    body: "var(--fs-body)",// 16px mobile/tablet, 18px desktop
+    button: "var(--fs-button)", // 14px mobile/tablet, 16px desktop
   },
   spacing: {
-    XXL: "var(--space-xxl)",
-    XL: "var(--space-xl)",
-    L: "var(--space-l)",
-    M: "var(--space-m)",
-    S: "var(--space-s)",
-    XS: "var(--space-xs)",
-    XXS: "var(--space-xxs)",
+    XXL: "var(--space-xxl)", // 64px
+    XL: "var(--space-xl)",   // 32px
+    L: "var(--space-l)",     // 24px
+    M: "var(--space-m)",     // 16px
+    S: "var(--space-s)",     // 8px
+    XS: "var(--space-xs)",   // 4px
+    XXS: "var(--space-xxs)", // 2px
   },
   radii: {
-    sm: "var(--radius-sm)",
-    md: "var(--radius-md)",
-    lg: "var(--radius-lg)",
+    sm: "var(--radius-sm)", // 4px
+    md: "var(--radius-md)", // 8px
+    lg: "var(--radius-lg)", // 12px
   },
 };
 
