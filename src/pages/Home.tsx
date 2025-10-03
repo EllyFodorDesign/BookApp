@@ -1,8 +1,9 @@
 import React from "react";
-import { HeaderSection, MainSection, Heading } from "../styled-components";
+import { HeaderSection, MainSection } from "../styled-components";
 import Hero from "../components/Hero";
 import { ButtonGroup, Button } from "../components/Button";
 import ScheduleButton from "../components/ScheduleButton";
+import { Heading } from "../components/styled-components/texts";
 
 const Home: React.FC = () => (
   <>

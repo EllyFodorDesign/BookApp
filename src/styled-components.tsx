@@ -43,13 +43,7 @@ export const MainSection = styled(PageWrapper)`
   }
 `;
 
-export const PageTitle = styled.h1`
-  //Main heading
 
-  font-size: 2rem;
-  margin: 20px;
-  text-align: center;
-`;
 
 export const HeaderSection = styled(PageWrapper)`
   color: black;
@@ -60,18 +54,4 @@ export const HeaderSection = styled(PageWrapper)`
   }
 `;
 
-export const Heading = styled.h1`
-  font-size: 1.2rem;
-  font-weight: bolder;
-  color: hsl(85, 15%, 25%);
-  margin-bottom: 2rem;
-  margin-top: 0rem;
-  text-align: center;
-  padding: 2px;
-  margin: 4px;
-  margin-bottom: 20px;
 
-  @media (min-width: 768px) {
-    font-size: 1.5rem;
-  }
-`;

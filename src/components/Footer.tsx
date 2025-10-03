@@ -184,7 +184,7 @@ const ContactLinks = styled(ShortCuts)`
 
 const LinksTitle = styled.h4`
   font-weight: 800px;
-  font-size: 1rem;
+  font-size: var (--fs-xxl);
   margin: 0 0 1rem 0;
 
   @media (min-width: 480px) {

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import authorImage from "../assets/author.jpg"; // Import the author image
+import { Content, Description, PlaceholderSubtext, PlaceholderSubtextAuthor, PlaceholderText, PlaceholderTextAuthor, TextContent, Title } from "./styled-components/texts";
 
 const AboutSection = styled.section`
   display: flex;
@@ -11,36 +12,6 @@ const Container = styled.div`
   max-width: 100%;
   margin: 0 auto;
   padding: 0px;
-`;
-
-const Content = styled.div`
-  max-width: 64rem;
-  margin: 0 auto;
-  text-align: center;
-`;
-
-const Title = styled.h2`
-  font-size: 1.875rem;
-  font-weight: bold;
-  color: hsl(85, 15%, 25%);
-  margin-bottom: 2rem;
-
-  @media (min-width: 768px) {
-    font-size: 2.25rem;
-  }
-`;
-
-const TextContent = styled.div`
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-`;
-
-const Description = styled.p`
-  font-size: 1.125rem;
-  color: hsl(85, 8%, 45%);
-  text-align: left;
 `;
 
 const ImagePlaceholder = styled.div`
@@ -80,32 +51,7 @@ const Image = styled.img`
   border-radius: 0.5rem;
 `;
 
-const PlaceholderText = styled.div`
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: hsl(85, 35%, 35%);
-  margin-bottom: 1rem;
-`;
 
-const PlaceholderSubtext = styled.div`
-  color: hsl(85, 8%, 45%);
-`;
-
-const PlaceholderTextAuthor = styled.div`
-  font-size: 2rem;
-  font-weight: 400px;
-  color: hsl(85, 35%, 35%);
-  margin-bottom: 1rem;
-`;
-
-const PlaceholderSubtextAuthor = styled.div`
-  color: hsl(85, 8%, 45%);
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  text-align: left;
-`;
 
 const About = () => {
   return (
