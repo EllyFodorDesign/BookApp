@@ -1,12 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { GlobalStyle } from "./styled-components";
+
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Books from "./components/Books";
+import { GlobalStyle } from "./styles/GlobalStyle";
 
 const App: React.FC = () => {
   return (
