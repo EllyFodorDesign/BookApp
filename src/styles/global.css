@@ -1,0 +1,126 @@
+/* Handles resets, root container, logo animation, generic .card, .PageWrapper, etc.
+
+Uses CSS variables for all tokens. example: body {
+font-family: var(--font-sans);
+font-size: var(--fs-body);
+background: var(--color-background);
+color: var(--color-foreground);
+line-height: 1.5;
+}
+Good for non-React parts, keeps layout + base styling. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  line-height: 1.5;
+}
+
+/* Container */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-m);
+  text-align: center;
+}
+
+/* Logo Animations */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em var(--color-primary-lighter));
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Cards */
+.card {
+  padding: var(--space-l);
+  background: var(--color-cards-one);
+  border-radius: var(--radius-md);
+}
+
+.read-the-docs {
+  color: #888; /* Could also be a muted var if you define one */
+}
+
+/* Sections (matching styled-components structure) */
+.PageWrapper {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  background-color: var(--color-background);
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .PageWrapper {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .PageWrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+}
+
+.MainSection {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .MainSection {
+    height: 100%;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+}
+
+.HeaderSection {
+  color: var(--color-foreground);
+}
+
+@media (max-width: 480px) {
+  .HeaderSection {
+    text-align: right;
+  }
+}

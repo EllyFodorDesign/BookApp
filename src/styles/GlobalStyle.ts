@@ -1,71 +1,93 @@
 import { createGlobalStyle } from "styled-components";
-import MediaQuery from "./mediaQuery";
 
+/**
+ * Global styles consume CSS variables from variables.css.
+ * This keeps tokens centralized and responsive across both
+ * plain CSS and styled-components. Wraps tokens for type-safe access (theme.colors.primary → var(--color-primary)).
+
+Example:export const GlobalStyle = createGlobalStyle`
+body {
+font-family: var(--font-sans);
+font-size: var(--fs-body);
+background-color: var(--color-background);
+color: var(--color-foreground);
+}
+h1 { font-size: var(--fs-h1); }
+`;
+
+Makes tokens available in styled-components without hardcoding.
+ */
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
   }
 
-  html, body {
+  html, body, #root {
+    height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-  }
-
-  /* Typography scale variables */
-  :root {
-    --fs-xs: 0.75rem;   /* 12px */
-    --fs-sm: 0.875rem;  /* 14px */
-    --fs-base: 1rem;    /* 16px */
-    --fs-md: 1.125rem;  /* 18px */
-    --fs-lg: 1.25rem;   /* 20px */
-    --fs-xl: 1.5rem;    /* 24px */
-    --fs-xxl: 2rem;     /* 32px */
-  }
-
-  /* Tablet adjustments */
-  ${MediaQuery.tablet} {
-    :root {
-      --fs-base: 1.125rem; /* 18px */
-      --fs-md: 1.25rem;    /* 20px */
-      --fs-lg: 1.5rem;     /* 24px */
-      --fs-xl: 1.75rem;    /* 28px */
-      --fs-xxl: 2.25rem;   /* 36px */
-    }
-  }
-
-  /* Desktop adjustments */
-  ${MediaQuery.desktop} {
-    :root {
-      --fs-base: 1.25rem;  /* 20px */
-      --fs-md: 1.375rem;   /* 22px */
-      --fs-lg: 1.75rem;    /* 28px */
-      --fs-xl: 2rem;       /* 32px */
-      --fs-xxl: 2.5rem;    /* 40px */
-    }
   }
 
   body {
-    font-size: var(--fs-base);
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
     line-height: 1.5;
-    font-family: system-ui, sans-serif;
-    color: black;
-    background-color: white;
   }
 
   h1 {
-    font-size: var(--fs-xxl);
+    font-size: var(--fs-h1);
   }
-
   h2 {
-    font-size: var(--fs-xl);
+    font-size: var(--fs-h2);
   }
-
   h3 {
-    font-size: var(--fs-lg);
+    font-size: var(--fs-h3);
   }
-
-  p {
-    font-size: var(--fs-base);
+  p, span, a {
+    font-size: var(--fs-body);
   }
 `;
+
+// Wrap tokens for type-safe access inside styled-components
+const theme = {
+  colors: {
+    primary: "var(--color-primary)",
+    primaryLighter: "var(--color-primary-lighter)",
+    primaryLightest: "var(--color-primary-lightest)",
+    primaryDarker: "var(--color-primary-darker)",
+    primaryDarkest: "var(--color-primary-darkest)",
+    secondary: "var(--color-secondary)",
+    background: "var(--color-background)",
+    foreground: "var(--color-foreground)",
+    cardsOne: "var(--color-cards-one)",
+    cardsTwo: "var(--color-cards-two)",
+    formBackground: "var(--color-form-bg)",
+  },
+  fontSizes: {
+    H1: "var(--fs-h1)",
+    H2: "var(--fs-h2)",
+    H3: "var(--fs-h3)",
+    lead: "var(--fs-lead)",
+    body: "var(--fs-body)",
+    button: "var(--fs-button)",
+  },
+  spacing: {
+    XXL: "var(--space-xxl)",
+    XL: "var(--space-xl)",
+    L: "var(--space-l)",
+    M: "var(--space-m)",
+    S: "var(--space-s)",
+    XS: "var(--space-xs)",
+    XXS: "var(--space-xxs)",
+  },
+  radii: {
+    sm: "var(--radius-sm)",
+    md: "var(--radius-md)",
+    lg: "var(--radius-lg)",
+  },
+};
+
+export type Theme = typeof theme;
+export default theme;
