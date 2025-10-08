@@ -50,7 +50,7 @@ export const HeaderSection = styled(PageWrapper)`
   //This is Elly Fodor text and placeholder.
 
   ${MediaQuery.phone} {
-    text-align: right;
+    text-align: center;
   }
 `;
 

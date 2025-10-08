@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+{/*import Footer from "./components/Footer";/*/}
 import { PageWrapper } from "./styled-components";
 
 // Mobile-only and Desktop-only wrappers
@@ -38,7 +38,7 @@ const Layout: React.FC = () => {
       <Outlet />
 
       {/* Global Footer */}
-      <Footer />
+      {/*<Footer />*/}
     </PageWrapper>
   );
 };
