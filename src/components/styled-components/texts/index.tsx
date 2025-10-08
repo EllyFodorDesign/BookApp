@@ -80,3 +80,6 @@ export const Content = styled.div`
   margin: 0 auto;
   text-align: center;
 `;
+
+export const SubHeading = styled.h2`
+`;

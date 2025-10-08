@@ -30,6 +30,8 @@ export const PageWrapper = styled.div`
 
 export const MainSection = styled(PageWrapper)`
   background: ${({ theme }) => theme.colors.background};
+  margin-bottom: ${({ theme }) => theme.spacing.XL};
+  margin-top: ${({ theme }) => theme.spacing.M};
 
   ${MediaQuery.tablet} {
     display: flex;

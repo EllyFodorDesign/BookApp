@@ -16,6 +16,13 @@ const theme = {
     lead: "1.125rem",//20.25px
     body: "1rem", //18px
     button: "15px",
+    LH1: "2rem", //32 px
+    LH2: "1.5rem", //24px
+    LH3: "1.25rem", //20px
+    Lp: "1rem",
+    Lli: "1rem",
+    Lul: "1rem",
+
   },
   spacing: {
     XXL: "64px",
