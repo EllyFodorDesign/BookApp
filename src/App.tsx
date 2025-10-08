@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "./styles/variables.css";
 import Layout from "./Layout";
 import Home from "./pages/Home";
+import Landing from "./pages/Landing";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
@@ -12,22 +13,11 @@ import { GlobalStyle } from "./styles/GlobalStyle";
 const App: React.FC = () => {
   return (
     <>
-      {/* 🚧 Banner at the top */}
-      <div
-        style={{
-          background: "black",
-          padding: "0.5rem",
-          textAlign: "center",
-          fontWeight: "normal",
-          color: "white",
-        }}
-      >
-        🚧 This site is under construction — more updates soon!
-      </div>
-      <GlobalStyle />
+           <GlobalStyle />
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
+            <Route path="/landing" element={<Landing />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/books" element={<Books />} />
