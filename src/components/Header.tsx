@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const HeaderEl = styled.header`
+const HeaderLanding = styled.header`
   background: ${({ theme }) => theme.colors.background};
   padding: ${({ theme }) => theme.spacing.M} 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -21,21 +21,17 @@ const Title = styled.h1`
   line-height: 1;
 `;
 
-const Subtitle = styled.p`
-  margin: 0;
-  color: ${({ theme }) => theme.colors.muted};
-  font-size: ${({ theme }) => theme.fontSizes.H3};
-`;
+
 
 export default function Header() {
   return (
-    <HeaderEl>
+    <HeaderLanding>
       <Inner>
         <div>
           <Title>Ellinor Fodor Johansson</Title>
-          <Subtitle>Författare — skriver om barn med NPF i skolan</Subtitle>
+          <h1>Kommer snart:</h1>
         </div>
       </Inner>
-    </HeaderEl>
+    </HeaderLanding>
   );
 }
