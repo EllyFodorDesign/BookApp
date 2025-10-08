@@ -41,6 +41,9 @@ Single source of truth for design tokens.
   --fs-lead: 18px;
   --fs-body: 16px;
   --fs-button: 14px;
+ --fs-LH1: 2 rem;
+  --fs-LH2: 1.5 rem;
+   --fs-LH3: 1.25 rem;
 
   /* 📏 Spacing Scale */
   --space-xxl: 64px;

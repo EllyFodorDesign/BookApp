@@ -17,8 +17,8 @@ const theme = {
     body: "1rem", //18px
     button: "15px",
     LH1: "2rem", //32 px
-    LH2: "1.5rem", //24px
-    LH3: "1.25rem", //20px
+    LH2: "1.7rem", //
+    LH3: "1.25rem", 
     Lp: "1rem",
     Lli: "1rem",
     Lul: "1rem",

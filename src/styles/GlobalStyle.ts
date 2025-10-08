@@ -70,6 +70,9 @@ const theme = {
     H1: "var(--fs-h1)",    // 32px mobile, 36px tablet, 42px desktop
     H2: "var(--fs-h2)",    // 24px mobile, 28px tablet, 32px desktop
     H3: "var(--fs-h3)",    // 20px mobile, 22px tablet, 24px desktop
+    LH1: "var(--fs-LH1)",
+  LH2: "var(--fs-LH2)",
+  LH3: "var(--fs-LH3)",
     lead: "var(--fs-lead)",// 18px mobile/tablet, 20px desktop
     body: "var(--fs-body)",// 16px mobile/tablet, 18px desktop
     button: "var(--fs-button)", // 14px mobile/tablet, 16px desktop
