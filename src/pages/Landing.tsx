@@ -5,11 +5,11 @@ import Footer from "../components/Footer";
 import BookPreview from "../components/BookPreview";
 
 const LandingPageWrapper = styled.main`
-  padding-top: ${({ theme }) => theme.spacing.xl};
-  padding-bottom: ${({ theme }) => theme.spacing.xl};
+
+
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing.l};
+  
 `;
 
 const Intro = styled.section`
@@ -17,7 +17,7 @@ const Intro = styled.section`
   max-width: 68ch;
 `;
 
-const LandingPage: React.FC = () => {
+const Landing: React.FC = () => {
   // Set target date for countdown (edit as needed)
   const publicationDate: Date = new Date("2026-01-15T00:00:00");
 
@@ -44,4 +44,4 @@ const LandingPage: React.FC = () => {
   );
 };
 
-export default LandingPage;
+export default Landing;

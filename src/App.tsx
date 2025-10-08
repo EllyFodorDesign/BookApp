@@ -2,8 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./styles/variables.css";
 import Layout from "./Layout";
-import LandingPage from "./pages/LandingPage";
-import Home from "./components/Home";
+import Landing from "./pages/Landing";
+import Home from "./pages/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
@@ -17,7 +17,7 @@ const App: React.FC = () => {
       <GlobalStyle />
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/books" element={<Books />} />
