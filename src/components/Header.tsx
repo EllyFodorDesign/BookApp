@@ -6,23 +6,26 @@ const HeaderLanding = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 `;
 
-const Inner = styled.div`
+const LandingTitle = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 ${({ theme }) => theme.spacing.M};
+    background: ${({ theme }) => theme.colors.backgroundLanding};
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
+
+
 `;
 
 export default function Header() {
   return (
     <HeaderLanding>
-      <Inner>
-        <div>
-          <h1>Kommer snart</h1>
-        </div>
-      </Inner>
+      <LandingTitle>
+        <h1>Kommer snart</h1>
+      </LandingTitle>
     </HeaderLanding>
   );
 }

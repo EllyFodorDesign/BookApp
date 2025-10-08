@@ -43,9 +43,12 @@ export const MainSection = styled(PageWrapper)`
 
 export const HeaderSection = styled(PageWrapper)`
   background: ${({ theme }) => theme.colors.background};
-  margin: 
-  //This is Elly Fodor text and placeholder.
-    ${MediaQuery.phone} {
-    text-align: center;
+  ${MediaQuery.tablet} {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 40px;
   }
 `;
