@@ -3,7 +3,8 @@ const theme = {
   colors: {
     primary: "#2E6B5A", 
    primaryLight: "#7FBFA7",
-    background: "#FFFFFF",
+   background: "#ffffffff",
+    backgroundLanding: "#ab8f8f",
     text: "#0B2A26",
     muted: "#6B6B6B",
     formBackground: "#fafafa",

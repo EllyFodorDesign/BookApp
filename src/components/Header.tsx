@@ -15,21 +15,12 @@ const Inner = styled.div`
   justify-content: space-between;
 `;
 
-const Title = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.H1};
-  color: ${({ theme }) => theme.colors.primary};
-  line-height: 1;
-`;
-
-
-
 export default function Header() {
   return (
     <HeaderLanding>
       <Inner>
         <div>
-          <Title>Ellinor Fodor Johansson</Title>
-          <h1>Kommer snart:</h1>
+          <h1>Kommer snart</h1>
         </div>
       </Inner>
     </HeaderLanding>

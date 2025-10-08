@@ -1,7 +1,5 @@
-
 import { styled } from "styled-components";
 import MediaQuery from "./styles/mediaQuery";
-
 
 export const PageWrapper = styled.div`
   display: flex;
@@ -31,7 +29,7 @@ export const PageWrapper = styled.div`
 `;
 
 export const MainSection = styled(PageWrapper)`
-  //Buttons and all the main content
+  background: ${({ theme }) => theme.colors.background};
 
   ${MediaQuery.tablet} {
     display: flex;
@@ -43,15 +41,11 @@ export const MainSection = styled(PageWrapper)`
   }
 `;
 
-
-
 export const HeaderSection = styled(PageWrapper)`
-  color: black;
+  background: ${({ theme }) => theme.colors.background};
+  margin: 
   //This is Elly Fodor text and placeholder.
-
-  ${MediaQuery.phone} {
+    ${MediaQuery.phone} {
     text-align: center;
   }
 `;
-
-

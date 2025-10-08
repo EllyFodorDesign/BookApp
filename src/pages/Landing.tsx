@@ -24,6 +24,7 @@ const Landing: React.FC = () => {
       <HeaderSection>
         <Header />
       <MainSection>
+        
          <Image src={omslag} alt="Bokomslag" />
        { /* Lägg in bild här på omslaget.
         Samt en nedräkning till release? 
