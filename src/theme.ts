@@ -1,7 +1,7 @@
 // theme.ts
 const theme = {
   colors: {
-    primary: "#0070f3",
+    primary: "#2E6B5A", 
     primaryLighter: "#3291ff",
     primaryLightest: "#cffafe",
     primaryDarker: "#0369a1",
@@ -14,11 +14,11 @@ const theme = {
     formBackground: "#fafafa",
   },
   fontSizes: {
-    H1: "50px",
-    H2: "35px",
-    H3: "25px",
-    lead: "20px",
-    body: "18px",
+    H1: "2.2rem",
+    H2: "1.5rem",
+    H3: "1.25rem",
+    lead: "1.125rem",
+    body: "1rem",
     button: "15px",
   },
   spacing: {
