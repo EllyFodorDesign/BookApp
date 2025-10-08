@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 {/*import Footer from "./components/Footer";/*/}
 import { PageWrapper } from "./styled-components";
+import { Hamburger } from "lucide-react";
 
 // Mobile-only and Desktop-only wrappers
 const MobileOnly = styled.div`
@@ -24,15 +25,14 @@ const DesktopOnly = styled.div`
 `;
 
 const Layout: React.FC = () => {
+  const location = useLocation ();
+  const showHeader = location.pathname !== "/";
   return (
+    <>
+    {showHeader && <Hamburger />}
     <PageWrapper>
       {/* Responsive Navbar */}
-      <MobileOnly>
-        <Navbar />
-      </MobileOnly>
-      <DesktopOnly>
-        <Navbar />
-      </DesktopOnly>
+  
 
       {/* Route content */}
       <Outlet />
@@ -40,6 +40,7 @@ const Layout: React.FC = () => {
       {/* Global Footer */}
       {/*<Footer />*/}
     </PageWrapper>
+    </>
   );
 };
 
