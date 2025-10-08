@@ -16,6 +16,9 @@ const Landing: React.FC = () => {
       <HeaderSection>
         <Header />
       <MainSection>
+       { /* Lägg in bild här på omslaget.
+        Samt en nedräkning till release? 
+        Öka avståndet mellan footer och övrigt.  */}
         <Intro aria-labelledby="about-heading">
          
         </Intro>
