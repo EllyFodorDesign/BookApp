@@ -2,23 +2,18 @@
 const theme = {
   colors: {
     primary: "#2E6B5A", 
-    primaryLighter: "#3291ff",
-    primaryLightest: "#cffafe",
-    primaryDarker: "#0369a1",
-    primaryDarkest: "#012e40",
-    secondary: "#1DB954",
+   primaryLight: "#7FBFA7",
     background: "#FFFFFF",
-    foreground: "#000000",
-    cardsOne: "#f5f5f5",
-    cardsTwo: "#e0e0e0",
+    text: "#0B2A26",
+    muted: "#6B6B6B",
     formBackground: "#fafafa",
   },
   fontSizes: {
-    H1: "2.2rem",
-    H2: "1.5rem",
-    H3: "1.25rem",
-    lead: "1.125rem",
-    body: "1rem",
+    H1: "2.2rem", //39.6px (1rem=18px)
+    H2: "1.5rem", //27px
+    H3: "1.25rem",//22.5px
+    lead: "1.125rem",//20.25px
+    body: "1rem", //18px
     button: "15px",
   },
   spacing: {
@@ -29,15 +24,8 @@ const theme = {
     S: "8px",
     XS: "4px",
     XXS: "2px",
-  },
-  button: {
-    primary: { color: "#fff", backgroundColor: "#0070f3", border: "none" },
-    secondary: { color: "#fff", backgroundColor: "#1DB954", border: "none" },
-    form: { color: "#000", backgroundColor: "#fafafa", border: "1px solid #ccc" } // <-- consistent keys
-  }
-
-
-} as const;
+   },
+};
 
 export type Theme = typeof theme;
 export default theme;
