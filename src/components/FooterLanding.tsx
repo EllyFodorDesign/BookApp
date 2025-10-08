@@ -5,9 +5,9 @@ const StyledFooterLanding = styled.footer`
   border-top: 1px solid rgba(0, 0, 0, 0.04);
   text-align: left;
   margin-left: ${({ theme }) => theme.spacing.M};
-  color: ${({ theme }) => theme.colors.muted};
+  color: ${({ theme }) => theme.colors.primary};
   font-size: 0.95rem;
-
+background-color: ${({ theme }) => theme.colors.primaryLightest};
   @media (min-width: 768px) {
   margin-left: ${({ theme }) => theme.spacing.XXL};
   }

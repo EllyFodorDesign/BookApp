@@ -9,7 +9,7 @@ import MediaQuery from "../styles/mediaQuery";
 const Intro = styled.section`
   text-align: left;
   max-width: 68ch;
-  margin: ${({ theme }) => `${theme.spacing.L} ${theme.spacing.L} 0`};
+  margin-left: ${({ theme }) => theme.spacing.XL};
   color: ${({ theme }) => theme.colors.text};
 
   h2,
@@ -22,6 +22,7 @@ const Intro = styled.section`
   h2 {
     font-size: ${({ theme }) => theme.fontSizes.LH2};
     margin-bottom: ${({ theme }) => theme.spacing.M};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.primaryLightest};
   }
 
   h3 {
@@ -39,8 +40,7 @@ const Intro = styled.section`
     font-size: ${({ theme }) => theme.fontSizes.Lli};
   }
 
-  /* 📱 Tablet */
-  ${MediaQuery.tablet} {
+  ${MediaQuery.phone} {
     h2 {
       font-size: ${({ theme }) => theme.fontSizes.LH1};
       margin-right: ${({ theme }) => theme.spacing.XXL};
@@ -50,8 +50,23 @@ const Intro = styled.section`
     }
   }
 
+  /* 📱 Tablet */
+  ${MediaQuery.tablet} {
+    max-width: 68ch;
+    margin-left: 0px;
+    h2 {
+      font-size: ${({ theme }) => theme.fontSizes.LH1};
+      margin-right: ${({ theme }) => theme.spacing.XL};
+    }
+    h3 {
+      font-size: ${({ theme }) => theme.fontSizes.LH2};
+    }
+  }
+
   /* 💻 Desktop */
   ${MediaQuery.desktop} {
+    margin-left: 0;
+  padding-left: 0;
     h2 {
       font-size: ${({ theme }) => theme.fontSizes.LH1}; /* 2rem / 32px */
     }
@@ -69,13 +84,14 @@ const Image = styled.img`
   width: 90%;
   height: auto;
   object-fit: cover;
-  border-radius: 0.5rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   ${MediaQuery.tablet} {
     width: 80%;
   }
   ${MediaQuery.desktop} {
-    width: 70%;
+    width: 90%;
   }
 `;
 

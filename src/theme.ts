@@ -1,13 +1,15 @@
 // theme.ts
 const theme = {
   colors: {
-    primary: "#2E6B5A", 
-   primaryLight: "#7FBFA7",
+    primary: "#000000ff", 
+   primaryLightest: "#fbdbc0ff",
    background: "#ffffffff",
-    backgroundLanding: "#ffffffff",
     text: "#0B2A26",
-    muted: "#6B6B6B",
+    muted: "#fae8d7ff",
     formBackground: "#fafafa",
+    landing: "#96723cff",
+   heroBackground: "#fbdbc0ff",
+    
   },
   fontSizes: {
     H1: "2.2rem", //39.6px (1rem=18px)

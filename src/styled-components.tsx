@@ -14,6 +14,7 @@ export const PageWrapper = styled.div`
   align-items: center;
   box-sizing: border-box;
   width: 100%;
+  background-color: ${({ theme }) => theme.colors.primaryLightest};
 
   ${MediaQuery.phone} {
     width: 100%;
@@ -29,7 +30,7 @@ export const PageWrapper = styled.div`
 `;
 
 export const MainSection = styled(PageWrapper)`
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.muted};
   margin-bottom: ${({ theme }) => theme.spacing.XL};
   margin-top: ${({ theme }) => theme.spacing.M};
 
@@ -44,13 +45,5 @@ export const MainSection = styled(PageWrapper)`
 `;
 
 export const HeaderSection = styled(PageWrapper)`
-  background: ${({ theme }) => theme.colors.background};
-  ${MediaQuery.tablet} {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 40px;
-  }
+  background: ${({ theme }) => theme.colors.muted};
 `;
