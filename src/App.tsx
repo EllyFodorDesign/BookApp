@@ -2,12 +2,13 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./styles/variables.css";
 import Layout from "./Layout";
-import Home from "./pages/Home";
+import LandingPage from "./pages/LandingPage";
+import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Books from "./components/Books";
-import Landing from "./pages/Landing";
+
 import { GlobalStyle } from "./styles/GlobalStyle";
 
 const App: React.FC = () => {
@@ -16,8 +17,8 @@ const App: React.FC = () => {
       <GlobalStyle />
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Landing />} />
-          <Route path="/landing" element={<Landing />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/books" element={<Books />} />
           <Route path="/contact" element={<Contact />} />
