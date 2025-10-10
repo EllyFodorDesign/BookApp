@@ -2,11 +2,12 @@
 const theme = {
   colors: {
     primary: "#000000ff", 
-   primaryLightest: "#fbdbc0ff",
+   primaryLightest: "#fae8d7ff",
+   cardBackground: "#f7ecdcff",
    background: "#ffffffff",
     text: "#0B2A26",
     muted: "#fae8d7ff",
-    formBackground: "#fafafa",
+    formBackground: "#fae8d7ff",
     landing: "#96723cff",
    heroBackground: "#fbdbc0ff",
     

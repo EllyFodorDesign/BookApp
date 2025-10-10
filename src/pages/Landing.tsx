@@ -5,6 +5,7 @@ import { HeaderSection, MainSection } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
 import omslag from "../assets/omslag.jpg"; // Import the book cover image
 import MediaQuery from "../styles/mediaQuery";
+import NotifyForm from "@/components/NotifyForm";
 
 
 const Intro = styled.section`
@@ -81,7 +82,7 @@ const Landing: React.FC = () => {
           </Intro>
         </MainSection>
       </HeaderSection>
-
+<NotifyForm />
       <FooterLanding />
     </>
   );
