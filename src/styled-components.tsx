@@ -27,6 +27,14 @@ export const PageWrapper = styled.div`
     width: 100%;
     justify-content: left;
   }
+
+  ${MediaQuery.desktop} {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: left;
+  }
 `;
 
 export const MainSection = styled(PageWrapper)`
@@ -37,13 +45,20 @@ export const MainSection = styled(PageWrapper)`
   ${MediaQuery.tablet} {
     display: flex;
     height: 100%;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 40px;
+  }
+
+  ${MediaQuery.desktop} {
+    max-width: 1200px;
   }
 `;
 
 export const HeaderSection = styled(PageWrapper)`
   background: ${({ theme }) => theme.colors.muted};
+    ${MediaQuery.desktop} {
+    max-width: 1200px;
+  }
 `;

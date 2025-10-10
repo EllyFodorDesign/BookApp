@@ -12,29 +12,35 @@ const theme = {
     
   },
   fontSizes: {
-    H1: "2.2rem", //39.6px (1rem=18px)
-    H2: "1.5rem", //27px
-    H3: "1.25rem",//22.5px
-    lead: "1.125rem",//20.25px
-    body: "1rem", //18px
-    button: "15px",
-    LH1: "2rem", //32 px
-    LH2: "1.7rem", //
-    LH3: "1.25rem", 
-    Lp: "1rem",
-    Lli: "1rem",
-    Lul: "1rem",
-
-  },
+  H1: "var(--fs-h1)",
+  H2: "var(--fs-h2)",
+  H3: "var(--fs-h3)",
+  LH1: "var(--fs-h1)",  // you can alias these for mobile versions
+  LH2: "var(--fs-h2)",
+  LH3: "var(--fs-h3)",
+  lead: "var(--fs-lead)",
+  body: "var(--fs-body)",
+  small: "var(--fs-small)",
+  Lp: "var(--fs-body)",
+  Lli: "var(--fs-li)",
+  Lul: "var(--fs-lul)",
+  button: "var(--fs-button)",
+},
+ 
   spacing: {
-    XXL: "64px",
-    XL: "32px",
-    L: "24px",
-    M: "16px",
-    S: "8px",
-    XS: "4px",
-    XXS: "2px",
-   },
+  XXL: "var(--space-xxl)",
+  XL: "var(--space-xl)",
+  L: "var(--space-l)",
+  M: "var(--space-m)",
+  S: "var(--space-s)",
+  XS: "var(--space-xs)",
+  XXS: "var(--space-xxs)",
+},
+   radii: {
+    SM: "var(--radius-SM)",
+    MD: "var(--radius-MD)",
+    LG: "var(--radius-LG)",
+  },
 };
 
 export type Theme = typeof theme;

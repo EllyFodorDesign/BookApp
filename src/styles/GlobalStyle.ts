@@ -29,24 +29,36 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-  body {
-    font-family: var(--font-sans);
-    font-size: var(--fs-body); /* 16px default */
+    body {
+    margin: 0;
+    font-family: var(--font-sans, system-ui, sans-serif);
+    font-size: var(--fs-body);
+    line-height: 1.6;
     background-color: var(--color-background);
     color: var(--color-foreground);
-    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
 
-  h1 {
-    font-size: var(--fs-h1); /* 32px mobile, 36px tablet, 42px desktop */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 var(--space-m);
+    color: var(--color-foreground);
   }
-  h2 {
-    font-size: var(--fs-h2); /* 24px mobile, 28px tablet, 32px desktop */
+  h1 { font-size: var(--fs-h1); }
+  h2 { font-size: var(--fs-h2); }
+  h3 { font-size: var(--fs-h3); }
+
+  p, li {
+    font-size: var(--fs-body);
+    line-height: 1.6;
   }
-  h3 {
-    font-size: var(--fs-h3); /* 20px mobile, 22px tablet, 24px desktop */
+
+    ul, ol {
+    padding-left: var(--space-l);
   }
-  p, span, a {
+
+  span, a {
     font-size: var(--fs-body); /* 16px mobile, 16px tablet, 18px desktop */
   }
 `;
