@@ -6,6 +6,7 @@ import FooterLanding from "../components/FooterLanding";
 import omslag from "../assets/omslag.jpg"; // Import the book cover image
 import MediaQuery from "../styles/mediaQuery";
 
+
 const Intro = styled.section`
   text-align: left;
   margin: ${({ theme }) => theme.spacing.L};
@@ -44,8 +45,6 @@ const Intro = styled.section`
       font-size: ${({ theme }) => theme.fontSizes.LH2};
     }
   }
-
- 
 `;
 
 const Image = styled.img`
@@ -82,6 +81,7 @@ const Landing: React.FC = () => {
           </Intro>
         </MainSection>
       </HeaderSection>
+
       <FooterLanding />
     </>
   );
