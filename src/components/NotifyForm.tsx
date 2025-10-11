@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Bell } from "lucide-react";
 import { toast } from "sonner";
@@ -115,17 +115,75 @@ const FooterNote = styled.p`
   margin-top: ${({ theme }) => theme.spacing.M};
 `;
 
+const ThankYou = styled.div`
+  padding: ${({ theme }) => theme.spacing.M};
+  text-align: center;
+`;
+
 // ====== Component ======
 const NotifyForm = () => {
   const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (!sent) return;
+    const timer = setTimeout(() => setSent(false), 1500);
+    return () => clearTimeout(timer);
+  }, [sent]);
+
+  /**
+   * AJAX submit to FormSubmit's /ajax endpoint so the user stays on the page
+   * and we can show inline success/failure via toast.
+   * Note: the recipient email (ellyfodor@gmail.com) must be verified once via
+   * FormSubmit for reliable delivery. The submitter (visitor) does not need
+   * to verify their email.
+   */
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (email) {
-      toast.success("Tack! Vi meddelar dig när boken är tillgänglig.", {
-        description: `Vi skickar ett mail till ${email}`,
-      });
-      setEmail("");
+
+    if (!email) {
+      toast.error("Fyll i en giltig e-postadress.");
+      return;
+    }
+
+    setSubmitting(true);
+
+    try {
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("_subject", "Ny anmälan från webben");
+      // Disable FormSubmit's captcha if you prefer (use with caution)
+      formData.append("_captcha", "false");
+
+      const res = await fetch(
+        "https://formsubmit.co/ajax/ellyfodor@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+          body: formData,
+        }
+      );
+
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok) {
+        toast.success("Tack! Mejl kommer när boken är tillgänglig.", {
+          description: `Vi skickar ett mail till ${email}`,
+        });
+        setEmail("");
+        setSent(true);
+      } else {
+        // FormSubmit may return validation or other errors in data
+        toast.error(data.message || "Något gick fel vid utskick.");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("Nätverksfel, försök igen senare.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -136,21 +194,30 @@ const NotifyForm = () => {
           <IconWrapper>
             <Bell />
           </IconWrapper>
-
-          <Description>
-            Registrera din e-postadress för notis om boksläpp!
-          </Description>
-
-          <Form onSubmit={handleSubmit}>
-            <Input
-              type="email"
-              placeholder="din.email@exempel.se"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <Button type="submit">Anmäl Intresse</Button>
-          </Form>
+          {!sent && (
+            <Description>
+              Registrera din e-postadress för notis om boksläpp!
+            </Description>
+          )}
+          {sent ? (
+            <ThankYou>
+              <h3>Tack! Vi hör av oss via mejl när boken är tillgänglig.</h3>
+            </ThankYou>
+          ) : (
+            <Form onSubmit={handleSubmit}>
+              <Input
+                name="email"
+                type="email"
+                placeholder="din.email@exempel.se"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <Button type="submit" disabled={submitting}>
+                {submitting ? "Skickar…" : "Anmäl Intresse"}
+              </Button>
+            </Form>
+          )}
 
           <FooterNote>E-postadress delas ej med tredje part.</FooterNote>
         </Card>
