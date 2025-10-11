@@ -9,6 +9,7 @@ const theme = {
     muted: "#fae8d7ff",
     formBackground: "#fae8d7ff",
     landing: "#96723cff",
+    landingDarker: "rgba(93, 69, 35, 1)",
    heroBackground: "#fbdbc0ff",
     
   },

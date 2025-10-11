@@ -21,6 +21,15 @@ const LandingTitle = styled.h1`
   ${MediaQuery.phone} {
     width: 100%;
   }
+  
+`;
+
+export const LandingTitleSub = styled(LandingTitle)`
+font-size: ${({ theme }) => theme.fontSizes.H2};
+  color: ${({ theme }) => theme.colors.landingDarker};
+  max-width: 95%;
+  font-weight: normal;
+
 `;
 
 export default function Header() {
@@ -28,6 +37,7 @@ export default function Header() {
     <HeaderSection>
       <HeaderLanding>
         <LandingTitle>Kommer snart</LandingTitle>
+      <LandingTitleSub>Bok om elever i skolan</LandingTitleSub>
       </HeaderLanding>
     </HeaderSection>
   );

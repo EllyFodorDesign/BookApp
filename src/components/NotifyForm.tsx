@@ -12,13 +12,12 @@ const fadeInScale = keyframes`
 `;
 
 const Section = styled.section`
- margin-bottom: ${({ theme }) => theme.spacing.XL};
+  margin-bottom: ${({ theme }) => theme.spacing.XL};
   margin-top: ${({ theme }) => theme.spacing.M};
 
   @media (min-width: 375px) {
-
-  margin-top: 0px;
-   margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   ${MediaQuery.tablet} {
@@ -33,31 +32,30 @@ const Section = styled.section`
   ${MediaQuery.desktop} {
     max-width: 1200px;
   }
-
 `;
 
 const Container = styled.div`
- @media (min-width: 375px) {
- 
- }
+  @media (min-width: 375px) {
+    margin-top: ${({ theme }) => theme.spacing.M};
+  }
 `;
 
 const Card = styled.div`
   background: ${({ theme }) => theme.colors.cardBackground};
-  border-radius: 1.5rem;
-margin: ${({ theme }) => theme.spacing.S};
-padding: ${({ theme }) => theme.spacing.M};
+  border-radius: 0.6rem;
+  margin: ${({ theme }) => theme.spacing.S};
+  padding: ${({ theme }) => theme.spacing.M};
   border: 0.5px solid rgba(127, 129, 131, 0.2);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
   animation: ${fadeInScale} 0.4s ease forwards;
   text-align: center;
 
- @media (min-width: 375px) {
-  margin: 0 auto;
-  padding: 0 auto;
-  max-width: 95%;
-  
- }
+  ${MediaQuery.phone} {
+    margin: 0 auto;
+    padding: 0 auto;
+    max-width: 90%;
+    max-height: 340px;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -89,10 +87,14 @@ const Form = styled.form`
   margin-left: ${({ theme }) => theme.spacing.XS};
   margin-bottom: ${({ theme }) => theme.spacing.L};
   margin-top: ${({ theme }) => theme.spacing.S};
-  padding-top: 1rem;
+  max-height: 5rem;
+ 
 
   @media (min-width: 375px) {
     align-items: center;
+  }
+
+  @media (min-width: 480px) {
   }
 `;
 
@@ -217,41 +219,41 @@ const NotifyForm = () => {
 
   return (
     <MainSection>
-    <Section>
-      <Container>
-        <Card>
-          <IconWrapper>
-            <Bell />
-          </IconWrapper>
-          {!sent && (
-            <Description>
-              Registrera din e-postadress för notis om boksläpp!
-            </Description>
-          )}
-          {sent ? (
-            <ThankYou>
-              <h3>Tack! Vi hör av oss via mejl när boken är tillgänglig.</h3>
-            </ThankYou>
-          ) : (
-            <Form onSubmit={handleSubmit}>
-              <Input
-                name="email"
-                type="email"
-                placeholder="din.email@exempel.se"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <Button type="submit" disabled={submitting}>
-                {submitting ? "Skickar…" : "Anmäl Intresse"}
-              </Button>
-            </Form>
-          )}
+      <Section>
+        <Container>
+          <Card>
+            <IconWrapper>
+              <Bell />
+            </IconWrapper>
+            {!sent && (
+              <Description>
+                Registrera din e-postadress för notis om boksläpp!
+              </Description>
+            )}
+            {sent ? (
+              <ThankYou>
+                <h3>Tack! Vi hör av oss via mejl när boken är tillgänglig.</h3>
+              </ThankYou>
+            ) : (
+              <Form onSubmit={handleSubmit}>
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="din.email@exempel.se"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <Button type="submit" disabled={submitting}>
+                  {submitting ? "Skickar…" : "Anmäl Intresse"}
+                </Button>
+              </Form>
+            )}
 
-          <FooterNote>E-postadress delas ej med tredje part.</FooterNote>
-        </Card>
-      </Container>
-    </Section>
+            <FooterNote>E-postadress delas ej med tredje part.</FooterNote>
+          </Card>
+        </Container>
+      </Section>
     </MainSection>
   );
 };

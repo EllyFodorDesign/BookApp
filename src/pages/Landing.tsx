@@ -44,6 +44,11 @@ const Intro = styled.section`
     h3 {
       font-size: ${({ theme }) => theme.fontSizes.LH2};
     }
+
+    @media (min-width: 480px) {
+      margin: ${({ theme }) => theme.spacing.XXL};
+      margin-top: ${({ theme }) => theme.spacing.XL};
+    }
   }
 `;
 
@@ -55,9 +60,20 @@ const Image = styled.img`
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
+  @media (min-width: 480px) {
+    width: 80%;
+  }
+
   ${MediaQuery.desktop} {
     max-width: 90%;
   }
+`;
+
+export const BookFrame = styled.div`
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 88%;
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 const Landing: React.FC = () => {
@@ -67,18 +83,19 @@ const Landing: React.FC = () => {
         <Header />
       </HeaderSection>
       <MainSection>
-        <Image src={omslag} alt="Bokomslag" />
-        {/* 
+        <BookFrame>
+          <Image src={omslag} alt="Bokomslag" />
+          {/* 
         Öka avståndet mellan footer och övrigt.  */}
-        <Intro aria-labelledby="about-heading">
-          <h2>Bok om elever med NPF i skolan</h2>
-          <h3>Innehåll</h3>
-          <ul style={{ paddingLeft: "15px" }}>
-            <li>Strategier</li>
-            <li>Praktiska tips</li>
-            <li>Exempel från verkligheten</li>
-          </ul>
-        </Intro>
+          <Intro aria-labelledby="about-heading">
+            <h3>Innehåll</h3>
+            <ul style={{ paddingLeft: "15px" }}>
+              <li>Strategier</li>
+              <li>Praktiska tips</li>
+              <li>Exempel från verkligheten</li>
+            </ul>
+          </Intro>
+        </BookFrame>
         <NotifyForm />
       </MainSection>
       <FooterLanding />
