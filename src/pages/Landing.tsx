@@ -7,7 +7,6 @@ import omslag from "../assets/omslag.jpg"; // Import the book cover image
 import MediaQuery from "../styles/mediaQuery";
 import NotifyForm from "@/components/NotifyForm";
 
-
 const Intro = styled.section`
   text-align: left;
   margin: ${({ theme }) => theme.spacing.L};
@@ -66,23 +65,22 @@ const Landing: React.FC = () => {
     <>
       <HeaderSection>
         <Header />
-        <MainSection>
-          <Image src={omslag} alt="Bokomslag" />
-          {/* Lägg in bild här på omslaget.
-        Samt en nedräkning till release? 
-        Öka avståndet mellan footer och övrigt.  */}
-          <Intro aria-labelledby="about-heading">
-            <h2>Bok om elever med NPF i skolan</h2>
-            <h3>Innehåll</h3>
-            <ul style={{ paddingLeft: "15px" }}>
-              <li>Strategier</li>
-              <li>Praktiska tips</li>
-              <li>Exempel från verkligheten</li>
-            </ul>
-          </Intro>
-        </MainSection>
       </HeaderSection>
-<NotifyForm />
+      <MainSection>
+        <Image src={omslag} alt="Bokomslag" />
+        {/* 
+        Öka avståndet mellan footer och övrigt.  */}
+        <Intro aria-labelledby="about-heading">
+          <h2>Bok om elever med NPF i skolan</h2>
+          <h3>Innehåll</h3>
+          <ul style={{ paddingLeft: "15px" }}>
+            <li>Strategier</li>
+            <li>Praktiska tips</li>
+            <li>Exempel från verkligheten</li>
+          </ul>
+        </Intro>
+        <NotifyForm />
+      </MainSection>
       <FooterLanding />
     </>
   );

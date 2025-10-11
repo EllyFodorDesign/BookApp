@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Bell } from "lucide-react";
 import { toast } from "sonner";
+import MediaQuery from "@/styles/mediaQuery";
+import { MainSection } from "@/styled-components";
 
 // ====== Styled Components ======
 const fadeInScale = keyframes`
@@ -10,25 +12,52 @@ const fadeInScale = keyframes`
 `;
 
 const Section = styled.section`
-  display: flex;
-  justify-content: center;
+ margin-bottom: ${({ theme }) => theme.spacing.XL};
+  margin-top: ${({ theme }) => theme.spacing.M};
+
+  @media (min-width: 375px) {
+
+  margin-top: 0px;
+   margin-bottom: 0px;
+  }
+
+  ${MediaQuery.tablet} {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    width: 100%;
+    justify-content: left;
+    margin-bottom: 40px;
+  }
+
+  ${MediaQuery.desktop} {
+    max-width: 1200px;
+  }
+
 `;
 
 const Container = styled.div`
-  max-width: 48rem;
-  width: 100%;
+ @media (min-width: 375px) {
+ 
+ }
 `;
 
 const Card = styled.div`
   background: ${({ theme }) => theme.colors.cardBackground};
   border-radius: 1.5rem;
-  padding: ${({ theme }) => theme.spacing.M} ${({ theme }) => theme.spacing.XXL};
-  margin: ${({ theme }) => theme.spacing.S};
-
+margin: ${({ theme }) => theme.spacing.S};
+padding: ${({ theme }) => theme.spacing.M};
   border: 0.5px solid rgba(127, 129, 131, 0.2);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
   animation: ${fadeInScale} 0.4s ease forwards;
   text-align: center;
+
+ @media (min-width: 375px) {
+  margin: 0 auto;
+  padding: 0 auto;
+  max-width: 95%;
+  
+ }
 `;
 
 const IconWrapper = styled.div`
@@ -48,7 +77,6 @@ const IconWrapper = styled.div`
 `;
 
 const Description = styled.p`
-  font-size: 1.125rem;
   color: #555;
   margin-bottom: 0;
 `;
@@ -56,15 +84,15 @@ const Description = styled.p`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: 1rem;
-  max-width: 28rem;
   margin-left: ${({ theme }) => theme.spacing.XS};
   margin-bottom: ${({ theme }) => theme.spacing.L};
   margin-top: ${({ theme }) => theme.spacing.S};
   padding-top: 1rem;
 
-  @media (min-width: 640px) {
-    flex-direction: row;
+  @media (min-width: 375px) {
+    align-items: center;
   }
 `;
 
@@ -188,6 +216,7 @@ const NotifyForm = () => {
   };
 
   return (
+    <MainSection>
     <Section>
       <Container>
         <Card>
@@ -223,6 +252,7 @@ const NotifyForm = () => {
         </Card>
       </Container>
     </Section>
+    </MainSection>
   );
 };
 

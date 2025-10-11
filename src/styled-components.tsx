@@ -9,11 +9,9 @@ export const PageWrapper = styled.div`
   background-color: white;
   padding: 0px;
   margin: 0px;
-  min-height: 100%;
-  justify-content: flex-start;
   align-items: center;
   box-sizing: border-box;
-  width: 100%;
+  max-width: 100vh;
   background-color: ${({ theme }) => theme.colors.primaryLightest};
 
   ${MediaQuery.phone} {
@@ -41,6 +39,10 @@ export const MainSection = styled(PageWrapper)`
   background: ${({ theme }) => theme.colors.muted};
   margin-bottom: ${({ theme }) => theme.spacing.XL};
   margin-top: ${({ theme }) => theme.spacing.M};
+
+   ${MediaQuery.phone} {
+    margin-bottom:  ${({ theme }) => theme.spacing.M};
+  }
 
   ${MediaQuery.tablet} {
     display: flex;
