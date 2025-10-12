@@ -6,9 +6,12 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   overflow-x: hidden;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   align-items: center;
   box-sizing: border-box;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  width: 100%;
   background-color: ${({ theme }) => theme.colors.primaryLightest};
 
   ${MediaQuery.phone} {
@@ -16,7 +19,6 @@ export const PageWrapper = styled.div`
   }
 
   ${MediaQuery.tablet} {
-    margin: 0 auto;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -24,7 +26,6 @@ export const PageWrapper = styled.div`
 
   ${MediaQuery.desktop} {
     margin: 0 auto;
-    display: flex;
     flex-direction: row;
     max-width: 100%;
     align-items: flex-start;
@@ -39,22 +40,17 @@ export const MainSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: ${({ theme }) => theme.spacing.XS};
-
-  ${MediaQuery.tablet} {
-    margin: 0;
-    padding: 0;
-  }
-
-  ${MediaQuery.desktop} {
-  }
+  justify-content: flex-start;
+    box-sizing: border-box;
+  padding: ${({ theme }) => theme.spacing.S} 0;
 `;
 
 export const HeaderSection = styled(PageWrapper)`
   background: ${({ theme }) => theme.colors.muted};
+  width: 100%;
 
   ${MediaQuery.desktop} {
     max-width: 1200px;
+    margin: 0 auto;
   }
 `;

@@ -12,7 +12,6 @@ const Intro = styled.section`
   margin: ${({ theme }) => theme.spacing.XXS};
   color: ${({ theme }) => theme.colors.text};
 
-  
   ${MediaQuery.phone} {
     h2 {
       font-size: ${({ theme }) => theme.fontSizes.LH1};
@@ -29,24 +28,16 @@ const Intro = styled.section`
 `;
 
 const Image = styled.img`
+  display: block;
   height: auto;
   object-fit: cover;
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
-  margin: 0 auto;
-
-  @media (min-width: 375px) {
-    padding: ${({ theme }) => theme.spacing.S};
-  }
-
-  @media (min-width: 480px) {
-  }
-
-  @media (min-width: 768px) {
-  }
+  width: 100%;
+  margin-bottom:  ${({ theme }) => theme.spacing.S};
 
   ${MediaQuery.desktop} {
+    max-width: 90%;
   }
 `;
 
@@ -54,26 +45,23 @@ export const BookFrame = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  align-items: center;
+
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-color: ${({ theme }) => theme.colors.background};
-  width: 90%;
+  width: 80%;
   overflow: hidden;
-  margin: ${({ theme }) => theme.spacing.M} auto;
+  margin: ${({ theme }) => theme.spacing.S} auto;
   padding: ${({ theme }) => theme.spacing.S};
+  box-sizing: border-box;
 
   @media (min-width: 768px) {
-    width: 55%;
-
-    margin: 0;
+    padding: ${({ theme }) => theme.spacing.M};
   }
 
   @media (min-width: 1200px) {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    width: 650px;
   }
 `;
 
