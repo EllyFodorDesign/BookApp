@@ -9,7 +9,7 @@ export const PageWrapper = styled.div`
   margin: 0 auto;
   align-items: center;
   box-sizing: border-box;
-  justify-content: flex-start;
+  justify-content: center;
   box-sizing: border-box;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.primaryLightest};
@@ -42,7 +42,7 @@ export const MainSection = styled.div`
   align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
-  padding: ${({ theme }) => theme.spacing.S} 0;
+  padding: 0;
 `;
 
 export const HeaderSection = styled(PageWrapper)`

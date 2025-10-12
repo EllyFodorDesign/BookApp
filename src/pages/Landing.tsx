@@ -30,11 +30,12 @@ const Intro = styled.section`
 const Image = styled.img`
   display: block;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 0.6rem;
+  width: 85%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
-  margin-bottom:  ${({ theme }) => theme.spacing.S};
+margin: 0 auto ${({ theme }) => theme.spacing.S};
 
   ${MediaQuery.desktop} {
     max-width: 90%;
@@ -50,10 +51,13 @@ export const BookFrame = styled.div`
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-color: ${({ theme }) => theme.colors.background};
-  width: (80%, 650px);
+  width: 100%;
+  max-width: 280px;
   overflow: hidden;
-  margin: ${({ theme }) => theme.spacing.S} auto;
-  padding: ${({ theme }) => theme.spacing.S};
+  margin: ${({ theme }) => theme.spacing.M} auto;
+  padding-left: ${({ theme }) => theme.spacing.S};
+  padding-right: ${({ theme }) => theme.spacing.S};
+  padding-top: ${({ theme }) => theme.spacing.S};
   box-sizing: border-box;
 
   @media (min-width: 768px) {
