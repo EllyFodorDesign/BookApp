@@ -50,7 +50,7 @@ export const BookFrame = styled.div`
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-color: ${({ theme }) => theme.colors.background};
-  width: 80%;
+  width: (80%, 650px);
   overflow: hidden;
   margin: ${({ theme }) => theme.spacing.S} auto;
   padding: ${({ theme }) => theme.spacing.S};

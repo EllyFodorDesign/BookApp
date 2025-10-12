@@ -26,10 +26,10 @@ export const PageWrapper = styled.div`
 
   ${MediaQuery.desktop} {
     margin: 0 auto;
-    flex-direction: row;
+    flex-direction: column;
     max-width: 100%;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
   }
 `;
 
@@ -41,7 +41,7 @@ export const MainSection = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-    box-sizing: border-box;
+  box-sizing: border-box;
   padding: ${({ theme }) => theme.spacing.S} 0;
 `;
 
