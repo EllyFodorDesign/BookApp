@@ -9,34 +9,10 @@ import NotifyForm from "@/components/NotifyForm";
 
 const Intro = styled.section`
   text-align: left;
-  margin: ${({ theme }) => theme.spacing.L};
+  margin: ${({ theme }) => theme.spacing.XXS};
   color: ${({ theme }) => theme.colors.text};
 
-  h2,
-  h3,
-  ul,
-  li {
-    line-height: 1.5;
-  }
-
-  h2 {
-    font-size: ${({ theme }) => theme.fontSizes.LH2};
-    border-bottom: 1px solid ${({ theme }) => theme.colors.primaryLightest};
-  }
-
-  h3 {
-    font-size: ${({ theme }) => theme.fontSizes.LH3};
-    margin: ${({ theme }) => `${theme.spacing.L} 0 ${theme.spacing.S}`};
-  }
-
-  ul {
-    font-size: ${({ theme }) => theme.fontSizes.Lp};
-  }
-
-  li {
-    font-size: ${({ theme }) => theme.fontSizes.Lli};
-  }
-
+  
   ${MediaQuery.phone} {
     h2 {
       font-size: ${({ theme }) => theme.fontSizes.LH1};
@@ -58,7 +34,6 @@ const Image = styled.img`
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 100%;
-  display: block;
   margin: 0 auto;
 
   @media (min-width: 375px) {
@@ -79,13 +54,13 @@ export const BookFrame = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-color: ${({ theme }) => theme.colors.background};
-  width: 100%;
+  width: 90%;
   overflow: hidden;
-  margin: 0 auto;
+  margin: ${({ theme }) => theme.spacing.M} auto;
   padding: ${({ theme }) => theme.spacing.S};
 
   @media (min-width: 768px) {
