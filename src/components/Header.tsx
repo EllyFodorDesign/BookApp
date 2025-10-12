@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { HeaderSection } from "../styled-components";
-import MediaQuery from "../styles/mediaQuery";
 
 const HeaderLanding = styled.header`
   background: ${({ theme }) => theme.colors.heroBackground};
@@ -8,6 +7,7 @@ const HeaderLanding = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   display: inline-block;
   width: 100%;
+
 `;
 
 const LandingTitle = styled.h1`
@@ -18,18 +18,21 @@ const LandingTitle = styled.h1`
   margin-bottom: ${({ theme }) => theme.spacing.XS};
   background: ${({ theme }) => theme.colors.heroBackground};
 
-  ${MediaQuery.phone} {
-    width: 100%;
+  @media (min-width: 480px) {
+    margin-left: ${({ theme }) => theme.spacing.L};
   }
-  
+
+   @media (min-width: 768px) {
+    padding-left: ${({ theme }) => theme.spacing.XXL};
+    padding-right:  ${({ theme }) => theme.spacing.XXL};
+  }
 `;
 
 export const LandingTitleSub = styled(LandingTitle)`
-font-size: ${({ theme }) => theme.fontSizes.H2};
+  font-size: ${({ theme }) => theme.fontSizes.H2};
   color: ${({ theme }) => theme.colors.landingDarker};
   max-width: 95%;
   font-weight: normal;
-
 `;
 
 export default function Header() {
@@ -37,7 +40,7 @@ export default function Header() {
     <HeaderSection>
       <HeaderLanding>
         <LandingTitle>Kommer snart</LandingTitle>
-      <LandingTitleSub>Bok om elever i skolan</LandingTitleSub>
+        <LandingTitleSub>Bok om elever i skolan</LandingTitleSub>
       </HeaderLanding>
     </HeaderSection>
   );

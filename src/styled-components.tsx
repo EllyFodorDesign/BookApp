@@ -11,7 +11,6 @@ export const PageWrapper = styled.div`
   margin: 0px;
   align-items: center;
   box-sizing: border-box;
-  max-width: 100vh;
   background-color: ${({ theme }) => theme.colors.primaryLightest};
 
   ${MediaQuery.phone} {
@@ -21,8 +20,7 @@ export const PageWrapper = styled.div`
   ${MediaQuery.tablet} {
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    flex-direction: column;
     justify-content: left;
   }
 
@@ -39,28 +37,27 @@ export const MainSection = styled(PageWrapper)`
   background: ${({ theme }) => theme.colors.muted};
   margin-bottom: ${({ theme }) => theme.spacing.XL};
   margin-top: ${({ theme }) => theme.spacing.M};
-
-   ${MediaQuery.phone} {
-    margin-bottom:  ${({ theme }) => theme.spacing.M};
-  }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: ${({ theme }) => theme.spacing.L};
 
   ${MediaQuery.tablet} {
-    display: flex;
-    height: 100%;
-    flex-direction: row;
-    width: 100%;
-    justify-content: left;
-    margin-bottom: 40px;
+    padding: 0;
+    padding-right: ${({ theme }) => theme.spacing.XXL};
+    margin: auto;
+    margin-top: ${({ theme }) => theme.spacing.XL};
   }
 
   ${MediaQuery.desktop} {
-    max-width: 1200px;
   }
 `;
 
 export const HeaderSection = styled(PageWrapper)`
   background: ${({ theme }) => theme.colors.muted};
-    ${MediaQuery.desktop} {
+  ${MediaQuery.desktop} {
     max-width: 1200px;
   }
 `;
