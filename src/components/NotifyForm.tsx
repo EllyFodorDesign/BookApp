@@ -25,7 +25,7 @@ const Section = styled.section`
     height: 100%;
     flex-direction: row;
     width: 100%;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 40px;
   }
 
@@ -36,8 +36,6 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-  width: 100%;
-
   @media (min-width: 375px) {
     margin-top: ${({ theme }) => theme.spacing.M};
   }
@@ -46,8 +44,8 @@ const Container = styled.div`
 const Card = styled.div`
   background: ${({ theme }) => theme.colors.cardBackground};
   border-radius: 0.6rem;
-  padding: 0;
-  width: 280px;
+  margin: ${({ theme }) => theme.spacing.S};
+  padding: ${({ theme }) => theme.spacing.M};
   border: 0.5px solid rgba(127, 129, 131, 0.2);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
   animation: ${fadeInScale} 0.4s ease forwards;
@@ -65,10 +63,10 @@ const IconWrapper = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
-  margin-top: ${({ theme }) => theme.spacing.L};
-  background: rgba(166, 142, 56, 0.15);
+  padding: 0rem;
+  background: rgba(255, 200, 0, 0.15);
   border-radius: 9999px;
+  margin-bottom: ${({ theme }) => theme.spacing.XXS};
 
   svg {
     width: 2rem;
@@ -79,8 +77,7 @@ const IconWrapper = styled.div`
 
 const Description = styled.p`
   color: #555;
-  padding-bottom: ${({ theme }) => theme.spacing.S};
-  padding-top: ${({ theme }) => theme.spacing.XXS};
+  margin-bottom: 0;
 `;
 
 const Form = styled.form`
@@ -92,8 +89,6 @@ const Form = styled.form`
   margin-bottom: ${({ theme }) => theme.spacing.L};
   margin-top: ${({ theme }) => theme.spacing.S};
   max-height: 5rem;
-  padding-left: ${({ theme }) => theme.spacing.S};
-  padding-right: ${({ theme }) => theme.spacing.S};
 
   @media (min-width: 375px) {
     align-items: center;
@@ -126,8 +121,8 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  height: 2rem;
-
+  height: 3rem;
+  padding: 0 2rem;
   font-size: 1rem;
   font-weight: 600;
   color: #0f0f0f;
@@ -148,8 +143,6 @@ const FooterNote = styled.p`
   font-size: 0.875rem;
   color: #777;
   margin-top: ${({ theme }) => theme.spacing.M};
-  padding-left: ${({ theme }) => theme.spacing.S};
-  padding-right: ${({ theme }) => theme.spacing.S};
 `;
 
 const ThankYou = styled.div`
@@ -233,8 +226,8 @@ const NotifyForm = () => {
               <Bell />
             </IconWrapper>
             {!sent && (
-              <Description aria-labelledby="för-notis-om-boksläpp!">
-                Registrera din e-postadress!
+              <Description>
+                Registrera din e-postadress för notis om boksläpp!
               </Description>
             )}
             {sent ? (

@@ -84,14 +84,14 @@ export const BookFrame = styled.div`
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-color: ${({ theme }) => theme.colors.background};
   width: 100%;
-  max-width: 1200px;
   overflow: hidden;
   margin: 0 auto;
   padding: ${({ theme }) => theme.spacing.S};
 
   @media (min-width: 768px) {
-   width: 75%;
-  
+    width: 55%;
+
+    margin: 0;
   }
 
   @media (min-width: 1200px) {

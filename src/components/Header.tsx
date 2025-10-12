@@ -8,10 +8,8 @@ const HeaderLanding = styled.header`
   display: inline-block;
   width: 100%;
 
-    @media (min-width: 768px) {
-  
+  @media (min-width: 768px) {
   }
-
 `;
 
 const LandingTitle = styled.h1`
@@ -26,9 +24,9 @@ const LandingTitle = styled.h1`
     margin-left: ${({ theme }) => theme.spacing.L};
   }
 
-   @media (min-width: 768px) {
+  @media (min-width: 768px) {
     padding-left: ${({ theme }) => theme.spacing.XXL};
-    padding-right:  ${({ theme }) => theme.spacing.XXL};
+    padding-right: ${({ theme }) => theme.spacing.XXL};
   }
 `;
 
