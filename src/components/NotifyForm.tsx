@@ -31,6 +31,7 @@ const Section = styled.section`
 
   ${MediaQuery.desktop} {
     max-width: 1200px;
+    justify-content: center;
   }
 `;
 

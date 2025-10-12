@@ -6,9 +6,8 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   overflow-x: hidden;
   flex-wrap: wrap;
-  background-color: white;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   align-items: center;
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors.primaryLightest};
@@ -19,9 +18,9 @@ export const PageWrapper = styled.div`
 
   ${MediaQuery.tablet} {
     margin: 0 auto;
-    display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   ${MediaQuery.desktop} {
@@ -29,26 +28,24 @@ export const PageWrapper = styled.div`
     display: flex;
     flex-direction: row;
     max-width: 100%;
-    justify-content: left;
+    align-items: flex-start;
+    justify-content: center;
   }
 `;
 
 export const MainSection = styled(PageWrapper)`
   background: ${({ theme }) => theme.colors.muted};
-  margin-bottom: ${({ theme }) => theme.spacing.XL};
-  margin-top: ${({ theme }) => theme.spacing.M};
+  margin: ${({ theme }) => theme.spacing.M} 0 ${({ theme }) => theme.spacing.XL};
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: ${({ theme }) => theme.spacing.L};
 
   ${MediaQuery.tablet} {
+    margin: 0;
     padding: 0;
-    padding-right: ${({ theme }) => theme.spacing.XXL};
-    margin: auto;
-    margin-top: ${({ theme }) => theme.spacing.XL};
   }
 
   ${MediaQuery.desktop} {
@@ -57,6 +54,7 @@ export const MainSection = styled(PageWrapper)`
 
 export const HeaderSection = styled(PageWrapper)`
   background: ${({ theme }) => theme.colors.muted};
+
   ${MediaQuery.desktop} {
     max-width: 1200px;
   }

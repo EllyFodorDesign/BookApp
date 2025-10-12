@@ -8,6 +8,10 @@ const HeaderLanding = styled.header`
   display: inline-block;
   width: 100%;
 
+    @media (min-width: 768px) {
+  
+  }
+
 `;
 
 const LandingTitle = styled.h1`

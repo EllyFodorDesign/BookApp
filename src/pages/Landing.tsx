@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-import { HeaderSection, MainSection } from "../styled-components";
+import { HeaderSection, MainSection, PageWrapper } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
 import bokomslag from "../assets/bokomslag.jpg"; // Import the book cover image
 import MediaQuery from "../styles/mediaQuery";
@@ -57,17 +57,15 @@ const Image = styled.img`
   object-fit: cover;
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
+  max-width: 100%;
   display: block;
   margin: 0 auto;
 
   @media (min-width: 375px) {
     padding: ${({ theme }) => theme.spacing.S};
-    max-width: 100%;
   }
 
   @media (min-width: 480px) {
-    max-width: 95%;
   }
 
   @media (min-width: 768px) {
@@ -78,16 +76,26 @@ const Image = styled.img`
 `;
 
 export const BookFrame = styled.div`
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-color: ${({ theme }) => theme.colors.background};
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   margin: 0 auto;
   padding: ${({ theme }) => theme.spacing.S};
 
   @media (min-width: 768px) {
+    width: 55%;
+
+    margin: 0;
+  }
+
+  @media (min-width: 1200px) {
+    width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -97,26 +105,28 @@ export const BookFrame = styled.div`
 const Landing: React.FC = () => {
   return (
     <>
-      <HeaderSection>
-        <Header />
-      </HeaderSection>
-      <MainSection>
-        <BookFrame>
-          <Image src={bokomslag} alt="Bokomslag" />
-          {/* 
+      <PageWrapper>
+        <HeaderSection>
+          <Header />
+        </HeaderSection>
+        <MainSection>
+          <BookFrame>
+            <Image src={bokomslag} alt="Bokomslag" />
+            {/* 
         Öka avståndet mellan footer och övrigt.  */}
-          <Intro aria-labelledby="about-heading">
-            <h3>Innehåll</h3>
-            <ul style={{ paddingLeft: "15px" }}>
-              <li>Strategier</li>
-              <li>Praktiska tips</li>
-              <li>Exempel från verkligheten</li>
-            </ul>
-          </Intro>
-        </BookFrame>
-        <NotifyForm />
-      </MainSection>
-      <FooterLanding />
+            <Intro aria-labelledby="about-heading">
+              <h3>Innehåll</h3>
+              <ul style={{ paddingLeft: "15px" }}>
+                <li>Strategier</li>
+                <li>Praktiska tips</li>
+                <li>Exempel från verkligheten</li>
+              </ul>
+            </Intro>
+          </BookFrame>
+          <NotifyForm />
+        </MainSection>
+        <FooterLanding />
+      </PageWrapper>
     </>
   );
 };
