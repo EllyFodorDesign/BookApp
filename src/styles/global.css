@@ -29,10 +29,12 @@ body {
 
 /* Container */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+   width: 100%;
+  max-width: none;
+  margin: 0;
   padding: var(--space-m);
-  text-align: center;
+  text-align: left;
+
 }
 
 /* Logo Animations */

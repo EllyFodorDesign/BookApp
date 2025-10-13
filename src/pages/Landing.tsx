@@ -1,18 +1,42 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-import { HeaderSection, MainSection, PageWrapper } from "../styled-components";
+import { HeaderSection, MainSection } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
-import bokomslag from "../assets/bokomslag.jpg"; // Import the book cover image
+import omslag from "../assets/omslag.jpg"; // Import the book cover image
 import MediaQuery from "../styles/mediaQuery";
-import NotifyForm from "@/components/NotifyForm";
+
 
 const Intro = styled.section`
   text-align: left;
-  margin: ${({ theme }) => theme.spacing.XXS};
+  margin: ${({ theme }) => theme.spacing.L};
   color: ${({ theme }) => theme.colors.text};
 
-  
+  h2,
+  h3,
+  ul,
+  li {
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: ${({ theme }) => theme.fontSizes.LH2};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.primaryLightest};
+  }
+
+  h3 {
+    font-size: ${({ theme }) => theme.fontSizes.LH3};
+    margin: ${({ theme }) => `${theme.spacing.L} 0 ${theme.spacing.S}`};
+  }
+
+  ul {
+    font-size: ${({ theme }) => theme.fontSizes.Lp};
+  }
+
+  li {
+    font-size: ${({ theme }) => theme.fontSizes.li};
+  }
+
   ${MediaQuery.phone} {
     h2 {
       font-size: ${({ theme }) => theme.fontSizes.LH1};
@@ -20,94 +44,52 @@ const Intro = styled.section`
     h3 {
       font-size: ${({ theme }) => theme.fontSizes.LH2};
     }
-
-       li {
-      font-size: ${({ theme }) => theme.fontSizes.li};
-    }
-
-    @media (min-width: 480px) {
-      margin: ${({ theme }) => theme.spacing.XXL};
-      margin-top: ${({ theme }) => theme.spacing.XL};
-    }
   }
 `;
 
 const Image = styled.img`
-  display: block;
+  width: 95%;
+  margin: ${({ theme }) => theme.spacing.S};
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 0.6rem;
-  width: 85%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  margin: 0 auto ${({ theme }) => theme.spacing.S};
 
   ${MediaQuery.desktop} {
     max-width: 90%;
   }
 `;
 
-export const BookFrame = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 0.6rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background-color: ${({ theme }) => theme.colors.background};
-  max-width: ${({ theme }) => theme.sizes.M}; 
-  overflow: hidden;
-  margin: ${({ theme }) => theme.spacing.XL} auto;
-  padding-left: ${({ theme }) => theme.spacing.S};
-  padding-right: ${({ theme }) => theme.spacing.S};
-  padding-top: ${({ theme }) => theme.spacing.S};
-  box-sizing: border-box;
-
-  @media (min-width: 375px) {
-    padding: ${({ theme }) => theme.spacing.M};
-
-  }
-
-  @media (min-width: 1200px) {
-    width: 650px;
-  }
-`;
-
-export const TextContent = styled.section`
-width: 420px;
-
-
-
-`;
+export const BookFrame = styled(MainSection)`
+background-color: ${({ theme }) => theme.colors.background};
+  
+  `;
 
 const Landing: React.FC = () => {
   return (
     <>
-      <PageWrapper>
-        <HeaderSection>
-          <Header />
-        </HeaderSection>
+      <HeaderSection>
+        <Header />
         <MainSection>
           <BookFrame>
-            <Image src={bokomslag} alt="Bokomslag" />
-            {/* 
+          <Image src={omslag} alt="Bokomslag" />
+          {/* Lägg in bild här på omslaget.
+        Samt en nedräkning till release? 
         Öka avståndet mellan footer och övrigt.  */}
-        <TextContent>
-            <Intro aria-labelledby="about-heading">
-              <h3>Exempel på innehåll</h3>
-              <ul>
-                <li>Strategier</li>
-                <li>Praktiska tips</li>
-                <li>Exempel från verkligheten</li>
-              </ul>
-            </Intro>
-            </TextContent>
+          <Intro aria-labelledby="about-heading">
+            <h2>Bok om elever med NPF i skolan</h2>
+            <h3>Innehåll</h3>
+            <ul style={{ paddingLeft: "15px" }}>
+              <li>Strategier</li>
+              <li>Praktiska tips</li>
+              <li>Exempel från verkligheten</li>
+            </ul>
+          </Intro>
           </BookFrame>
-          <NotifyForm />
         </MainSection>
-        <FooterLanding />
-      </PageWrapper>
+      </HeaderSection>
+
+      <FooterLanding />
     </>
   );
 };
