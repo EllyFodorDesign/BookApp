@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import { HeaderSection, MainSection, PageWrapper } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
-import omslagBig from "../assets/omslagBig.jpg"; // Import the book cover image
+import bokomslag from "../assets/bokomslag.jpg"; // Import the book cover image
 import MediaQuery from "../styles/mediaQuery";
 import NotifyForm from "@/components/NotifyForm";
 
@@ -42,13 +42,6 @@ const Image = styled.img`
   width: 100%;
   margin: 0 auto ${({ theme }) => theme.spacing.S};
 
-   @media (min-width: 480px) {
-      max-width: ${({ theme }) => theme.sizes.XXS}; 
-  margin: auto ${({ theme }) => theme.spacing.M}  ;
-      
-
-  }
-
   ${MediaQuery.desktop} {
     max-width: 90%;
   }
@@ -57,9 +50,8 @@ const Image = styled.img`
 export const BookFrame = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  
 
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -77,26 +69,13 @@ export const BookFrame = styled.div`
 
   }
 
-  @media (min-width: 480px) {
-    flex-direction: row;
-      max-width: ${({ theme }) => theme.sizes.M}; 
-      border: 2px solid black;
-
-    margin: 0;
-    padding: 0;
-
+  @media (min-width: 1200px) {
+    width: 650px;
   }
 `;
 
 export const TextContent = styled.section`
-max-width:   ${({ theme }) => theme.sizes.L}; 
-
-@media (min-width: 480px) {
-  max-width:   ${({ theme }) => theme.sizes.XS}; 
-
-    
-
-  }
+width: 420px;
 
 
 
@@ -111,7 +90,7 @@ const Landing: React.FC = () => {
         </HeaderSection>
         <MainSection>
           <BookFrame>
-            <Image src={omslagBig} alt="Bokomslag" />
+            <Image src={bokomslag} alt="Bokomslag" />
             {/* 
         Öka avståndet mellan footer och övrigt.  */}
         <TextContent>
