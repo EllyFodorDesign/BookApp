@@ -3,9 +3,9 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import { HeaderSection, MainSection } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
-import omslag from "../assets/omslag.jpg"; // Import the book cover image
+import omslagBig from "../assets/omslagBig.jpg"; // Import the book cover image
 import MediaQuery from "../styles/mediaQuery";
-
+import NotifyForm from "@/components/NotifyForm";
 
 const Intro = styled.section`
   text-align: left;
@@ -48,22 +48,29 @@ const Intro = styled.section`
 `;
 
 const Image = styled.img`
-  width: 95%;
+  width: 90%;
   margin: ${({ theme }) => theme.spacing.S};
   height: auto;
   object-fit: cover;
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-  ${MediaQuery.desktop} {
-    max-width: 90%;
+  @media (min-width: 480px) {
+    width: 95%;
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1200px) {
   }
 `;
 
-export const BookFrame = styled(MainSection)`
-background-color: ${({ theme }) => theme.colors.background};
-  
-  `;
+export const BookFrame = styled.div`
+  background-color: ${({ theme }) => theme.colors.background};
+  margin-top: ${({ theme }) => theme.spacing.L};
+  width: 90%;
+`;
 
 const Landing: React.FC = () => {
   return (
@@ -72,20 +79,22 @@ const Landing: React.FC = () => {
         <Header />
         <MainSection>
           <BookFrame>
-          <Image src={omslag} alt="Bokomslag" />
-          {/* Lägg in bild här på omslaget.
+            <Image src={omslagBig} alt="Bokomslag" />
+            {/* Lägg in bild här på omslaget.
         Samt en nedräkning till release? 
         Öka avståndet mellan footer och övrigt.  */}
-          <Intro aria-labelledby="about-heading">
-            <h2>Bok om elever med NPF i skolan</h2>
-            <h3>Innehåll</h3>
-            <ul style={{ paddingLeft: "15px" }}>
-              <li>Strategier</li>
-              <li>Praktiska tips</li>
-              <li>Exempel från verkligheten</li>
-            </ul>
-          </Intro>
+        
+            <Intro aria-labelledby="about-heading">
+              <h2>Bok om elever med NPF i skolan</h2>
+              <h3>Innehåll</h3>
+              <ul style={{ paddingLeft: "15px" }}>
+                <li>Strategier</li>
+                <li>Praktiska tips</li>
+                <li>Exempel från verkligheten</li>
+              </ul>
+            </Intro>
           </BookFrame>
+          <NotifyForm />
         </MainSection>
       </HeaderSection>
 

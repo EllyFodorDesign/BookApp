@@ -7,11 +7,8 @@ const StyledFooterLanding = styled.footer`
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.95rem;
   width: 100%;
-  margin-top: ${({ theme }) => theme.spacing.XL};
+  margin-top: ${({ theme }) => theme.spacing.M};
   background-color: ${({ theme }) => theme.colors.heroBackground};
-  @media (min-width: 768px) {
-    margin-left: ${({ theme }) => theme.spacing.XXL};
-  }
 `;
 
 export default function FooterLanding() {

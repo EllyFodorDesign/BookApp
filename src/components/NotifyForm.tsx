@@ -21,12 +21,8 @@ const Section = styled.section`
   }
 
   ${MediaQuery.tablet} {
-    display: flex;
-    height: 100%;
-    flex-direction: row;
-    width: 100%;
-    justify-content: left;
-    margin-bottom: 40px;
+        margin-bottom: ${({ theme }) => theme.spacing.XS};
+        margin-top: ${({ theme }) => theme.spacing.M};
   }
 
   ${MediaQuery.desktop} {
@@ -62,8 +58,8 @@ export const CardContent = styled(MainSection)`
 
   @media (min-width: 480px) {
 
-  width: ${({ theme }) => theme.sizes.XXS};
-  height: ${({ theme }) => theme.sizes.XXS};
+  width: ${({ theme }) => theme.sizes.XS};
+  height: ${({ theme }) => theme.sizes.S};
   }
 `;
 
