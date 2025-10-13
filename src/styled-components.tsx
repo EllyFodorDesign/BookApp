@@ -33,7 +33,6 @@ export const PageWrapper = styled.div`
 
 export const MainSection = styled.div`
   background: ${({ theme }) => theme.colors.muted};
-  border: 2px solid ${({ theme }) => theme.colors.landingDarker};
   margin: 0;
   width: 100%;
   display: flex;

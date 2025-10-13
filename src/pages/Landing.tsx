@@ -59,6 +59,10 @@ const Image = styled.img`
 `;
 
 export const BookFrame = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
   background-color: ${({ theme }) => theme.colors.background};
   margin-top: ${({ theme }) => theme.spacing.L};
   width: 90%;
