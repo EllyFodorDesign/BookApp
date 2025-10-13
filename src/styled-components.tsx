@@ -11,7 +11,7 @@ export const PageWrapper = styled.div`
   box-sizing: border-box;
   justify-content: center;
   box-sizing: border-box;
-  width: 100vh;
+  width: 100%;
   background-color: ${({ theme }) => theme.colors.primaryLightest};
 
   ${MediaQuery.phone} {
@@ -33,7 +33,7 @@ export const PageWrapper = styled.div`
 
 export const MainSection = styled.div`
   background: ${({ theme }) => theme.colors.muted};
-  //border: 2px solid ${({ theme }) => theme.colors.landingDarker};
+  border: 2px solid ${({ theme }) => theme.colors.landingDarker};
   margin: 0;
   width: 100%;
   display: flex;

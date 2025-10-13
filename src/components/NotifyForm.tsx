@@ -59,7 +59,12 @@ export const CardContent = styled(MainSection)`
   background: ${({ theme }) => theme.colors.formBackground};
   width: ${({ theme }) => theme.sizes.XS};
   height: ${({ theme }) => theme.sizes.XS};
-  
+
+  @media (min-width: 480px) {
+
+  width: ${({ theme }) => theme.sizes.XXS};
+  height: ${({ theme }) => theme.sizes.XXS};
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -89,8 +94,7 @@ const Form = styled.form`
 
     }
 
-  @media (min-width: 480px) {
-  }
+  
 `;
 
 const Input = styled.input`
