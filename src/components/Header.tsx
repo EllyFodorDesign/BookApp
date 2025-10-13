@@ -24,11 +24,12 @@ text-align:left;
     color: ${({ theme }) => theme.colors.landing};
   margin-top: ${({ theme }) => theme.spacing.XS};
   margin-bottom: ${({ theme }) => theme.spacing.S};
+    font-size: ${({ theme }) => theme.fontSizes.H2};
   background: ${({ theme }) => theme.colors.heroBackground};
   }
 
   h3{
-  font-size: ${({ theme }) => theme.fontSizes.H2};
+  font-size: ${({ theme }) => theme.fontSizes.H3};
   color: ${({ theme }) => theme.colors.landingDarker};
   max-width: 95%;
   font-weight: normal;

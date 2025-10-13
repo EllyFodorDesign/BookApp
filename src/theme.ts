@@ -34,6 +34,7 @@ const theme = {
 sizes: {
   XXS: "200px",
   XS: "240px",
+  SMALLS: "300px",
   S: "320px",
   M: "480px",
   L: "650px",
