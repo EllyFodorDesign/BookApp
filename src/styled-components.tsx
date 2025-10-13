@@ -5,60 +5,56 @@ export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  flex-wrap: wrap;
-  background-color: white;
-  padding: 0px;
-  margin: 0px;
-  min-height: 100%;
-  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
   align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
   box-sizing: border-box;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.primaryLightest};
 
   ${MediaQuery.phone} {
-    width: 100%;
+    
   }
 
   ${MediaQuery.tablet} {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: left;
+   
   }
 
   ${MediaQuery.desktop} {
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     max-width: 100%;
-    justify-content: left;
+    align-items: center;
+    justify-content: flex-start;
   }
 `;
 
-export const MainSection = styled(PageWrapper)`
+export const MainSection = styled.div`
   background: ${({ theme }) => theme.colors.muted};
-  margin-bottom: ${({ theme }) => theme.spacing.XL};
-  margin-top: ${({ theme }) => theme.spacing.M};
-
-  ${MediaQuery.tablet} {
-    display: flex;
-    height: 100%;
-    flex-direction: row;
-    width: 100%;
-    justify-content: left;
-    margin-bottom: 40px;
-  }
-
-  ${MediaQuery.desktop} {
-    max-width: 1200px;
-  }
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0;
+  overflow-x: hidden;
 `;
 
 export const HeaderSection = styled(PageWrapper)`
   background: ${({ theme }) => theme.colors.muted};
-    ${MediaQuery.desktop} {
+  width: 100%;
+
+  ${MediaQuery.desktop} {
     max-width: 1200px;
+    margin: 0 auto;
   }
+`;
+
+export const BottomSection = styled.section`
+margin-top:  ${({ theme }) => theme.spacing.L};
+  
 `;

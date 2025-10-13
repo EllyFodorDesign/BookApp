@@ -1,17 +1,14 @@
 import styled from "styled-components";
 
 const StyledFooterLanding = styled.footer`
-  padding: ${({ theme }) => theme.spacing.M} 0;
+  padding: ${({ theme }) => theme.spacing.M};
   border-top: 1px solid rgba(0, 0, 0, 0.04);
-  text-align: left;
-  margin-left: ${({ theme }) => theme.spacing.M};
+  text-align: center;
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.95rem;
-background-color: ${({ theme }) => theme.colors.primaryLightest};
-  @media (min-width: 768px) {
-  margin-left: ${({ theme }) => theme.spacing.XXL};
-  }
-
+  width: 100%;
+  margin-top: ${({ theme }) => theme.spacing.M};
+  background-color: ${({ theme }) => theme.colors.heroBackground};
 `;
 
 export default function FooterLanding() {

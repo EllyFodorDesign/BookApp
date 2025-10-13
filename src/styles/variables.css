@@ -18,20 +18,32 @@
   --space-xs: 4px;
   --space-xxs: 2px;
 
+/*sizes*/
+--sizes-xxs: 200px;
+  --sizes-xs: 240px;
+   --sizes-s: 320px;
+   --sizes-smalls: 300px;
+   --sizes-m: 480px;
+   --sizes-l: 650px;
+  --sizes-xl: 800px;
+  
+
   /* 🔲 Border radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
 
   /* ✍️ Typography */
-  --fs-h1: 2rem;
-  --fs-h2: 1.6rem;
-  --fs-h3: 1.25rem;
+  --fs-h1: 30px;
+  --fs-h2: 25px;
+  --fs-h3: 22px;
   --fs-lead: 1.125rem;
-  --fs-body: 1rem;
+  --fs-body: 18px;
+  --fs-p: 0.9rem;
+  --fs-psmall: 0.6rem;
   --fs-small: 0.875rem;
   --fs-button: 0.875rem;
-  --fs-li: 0.95rem;
+  --fs-li: 16px;
   --fs-lul: 1rem;
 
   /* 💬 Fonts */

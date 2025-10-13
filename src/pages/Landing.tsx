@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-import { HeaderSection, MainSection } from "../styled-components";
+import { BottomSection, HeaderSection, MainSection } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
-import omslag from "../assets/omslag.jpg"; // Import the book cover image
-import MediaQuery from "../styles/mediaQuery";
-
+import omslagBig from "../assets/omslagBig.jpg"; // Import the book cover image
+import NotifyForm from "@/components/NotifyForm";
 
 const Intro = styled.section`
   text-align: left;
@@ -20,13 +19,14 @@ const Intro = styled.section`
   }
 
   h2 {
-    font-size: ${({ theme }) => theme.fontSizes.LH2};
+    font-size: ${({ theme }) => theme.fontSizes.H2};
     border-bottom: 1px solid ${({ theme }) => theme.colors.primaryLightest};
+    border: 2px solid red;
   }
 
   h3 {
-    font-size: ${({ theme }) => theme.fontSizes.LH3};
-    margin: ${({ theme }) => `${theme.spacing.L} 0 ${theme.spacing.S}`};
+    font-size: ${({ theme }) => theme.fontSizes.H3};
+    margin-top: ${({ theme }) => theme.spacing.S};
   }
 
   ul {
@@ -34,30 +34,38 @@ const Intro = styled.section`
   }
 
   li {
-    font-size: ${({ theme }) => theme.fontSizes.Lli};
+    font-size: ${({ theme }) => theme.fontSizes.li};
   }
 
-  ${MediaQuery.phone} {
-    h2 {
-      font-size: ${({ theme }) => theme.fontSizes.LH1};
-    }
-    h3 {
-      font-size: ${({ theme }) => theme.fontSizes.LH2};
-    }
-  }
 `;
 
 const Image = styled.img`
-  width: 95%;
+  width: 90%;
   margin: ${({ theme }) => theme.spacing.S};
   height: auto;
   object-fit: cover;
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-  ${MediaQuery.desktop} {
-    max-width: 90%;
+  @media (min-width: 480px) {
+    width: 95%;
   }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1200px) {
+  }
+`;
+
+export const BookFrame = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+  background-color: ${({ theme }) => theme.colors.background};
+  margin-top: ${({ theme }) => theme.spacing.L};
+  width: 90%;
 `;
 
 const Landing: React.FC = () => {
@@ -66,19 +74,25 @@ const Landing: React.FC = () => {
       <HeaderSection>
         <Header />
         <MainSection>
-          <Image src={omslag} alt="Bokomslag" />
-          {/* Lägg in bild här på omslaget.
+          <BookFrame>
+            <Image src={omslagBig} alt="Bokomslag" />
+            {/* Lägg in bild här på omslaget.
         Samt en nedräkning till release? 
         Öka avståndet mellan footer och övrigt.  */}
-          <Intro aria-labelledby="about-heading">
-            <h2>Bok om elever med NPF i skolan</h2>
-            <h3>Innehåll</h3>
-            <ul style={{ paddingLeft: "15px" }}>
-              <li>Strategier</li>
-              <li>Praktiska tips</li>
-              <li>Exempel från verkligheten</li>
-            </ul>
-          </Intro>
+        
+            <Intro aria-labelledby="about-heading">
+              <h3>Bok om elever med NPF i skolan</h3>
+              <h4>Innehåll</h4>
+              <ul style={{ paddingLeft: "15px" }}>
+                <li>Strategier</li>
+                <li>Praktiska tips</li>
+                <li>Exempel från verkligheten</li>
+              </ul>
+            </Intro>
+          </BookFrame>
+          <BottomSection>
+          <NotifyForm />
+          </BottomSection>
         </MainSection>
       </HeaderSection>
 

@@ -1,25 +1,36 @@
 import styled from "styled-components";
 import { HeaderSection } from "../styled-components";
-import MediaQuery from "../styles/mediaQuery";
 
 const HeaderLanding = styled.header`
   background: ${({ theme }) => theme.colors.heroBackground};
-  padding: ${({ theme }) => theme.spacing.M} ${({ theme }) => theme.spacing.S}; /* vertical | horizontal */
+  padding: ${({ theme }) => theme.spacing.XXS};
+  ${({ theme }) => theme.spacing.XXS}; /* vertical | horizontal */
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  text-align: left;
 `;
 
-const LandingTitle = styled.h1`
-  max-width: 100%;
-  color: ${({ theme }) => theme.colors.landing};
-  margin-left: ${({ theme }) => theme.spacing.M};
-  margin-top: ${({ theme }) => theme.spacing.XS};
-  margin-bottom: ${({ theme }) => theme.spacing.XS};
+export const HeaderText = styled.section`
   background: ${({ theme }) => theme.colors.heroBackground};
+  text-align: left;
+  justify-content: center;
+  margin: ${({ theme }) => theme.spacing.S} auto;
 
-  ${MediaQuery.phone} {
-    width: 100%;
+  h1 {
+    color: ${({ theme }) => theme.colors.landing};
+    font-size: ${({ theme }) => theme.fontSizes.H1};
+    background: ${({ theme }) => theme.colors.heroBackground};
+    margin-top: 0;
+  }
+  h2 {
+    font-size: ${({ theme }) => theme.fontSizes.H2};
+    color: ${({ theme }) => theme.colors.landingDarker};
+    font-weight: normal;
+  }
+
+  @media (min-width: 480px) {
   }
 `;
 
@@ -27,7 +38,10 @@ export default function Header() {
   return (
     <HeaderSection>
       <HeaderLanding>
-        <LandingTitle>Kommer snart</LandingTitle>
+        <HeaderText aria-labelledby="Info-om-bokrelease">
+          <h1>Kommer snart</h1>
+          <h2>Bok om elever i skolan</h2>
+        </HeaderText>
       </HeaderLanding>
     </HeaderSection>
   );

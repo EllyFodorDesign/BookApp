@@ -2,12 +2,14 @@
 const theme = {
   colors: {
     primary: "#000000ff", 
-   primaryLightest: "#fbdbc0ff",
+   primaryLightest: "#fae8d7ff",
+   cardBackground: "#f7ecdcff",
    background: "#ffffffff",
     text: "#0B2A26",
     muted: "#fae8d7ff",
-    formBackground: "#fafafa",
+    formBackground: "#fcfaf1ff",
     landing: "#96723cff",
+    landingDarker: "rgba(93, 69, 35, 1)",
    heroBackground: "#fbdbc0ff",
     
   },
@@ -22,9 +24,22 @@ const theme = {
   body: "var(--fs-body)",
   small: "var(--fs-small)",
   Lp: "var(--fs-body)",
-  Lli: "var(--fs-li)",
+  li: "var(--fs-li)",
   Lul: "var(--fs-lul)",
   button: "var(--fs-button)",
+  p: "var(--fs-p)",
+  psmall: "var(--fs-psmall)",
+},
+
+sizes: {
+  XXS: "200px",
+  XS: "240px",
+  SMALLS: "300px",
+  S: "320px",
+  M: "480px",
+  L: "650px",
+  XL: "800px",
+
 },
  
   spacing: {
