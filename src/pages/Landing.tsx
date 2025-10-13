@@ -12,12 +12,17 @@ const Intro = styled.section`
   margin: ${({ theme }) => theme.spacing.XXS};
   color: ${({ theme }) => theme.colors.text};
 
+  
   ${MediaQuery.phone} {
     h2 {
       font-size: ${({ theme }) => theme.fontSizes.LH1};
     }
     h3 {
       font-size: ${({ theme }) => theme.fontSizes.LH2};
+    }
+
+       li {
+      font-size: ${({ theme }) => theme.fontSizes.li};
     }
 
     @media (min-width: 480px) {
@@ -68,6 +73,13 @@ export const BookFrame = styled.div`
   }
 `;
 
+export const TextContent = styled.section`
+width: 420px;
+
+
+
+`;
+
 const Landing: React.FC = () => {
   return (
     <>
@@ -80,14 +92,16 @@ const Landing: React.FC = () => {
             <Image src={bokomslag} alt="Bokomslag" />
             {/* 
         Öka avståndet mellan footer och övrigt.  */}
+        <TextContent>
             <Intro aria-labelledby="about-heading">
-              <h3>Innehåll</h3>
-              <ul style={{ paddingLeft: "15px" }}>
+              <h3>Exempel på innehåll</h3>
+              <ul>
                 <li>Strategier</li>
                 <li>Praktiska tips</li>
                 <li>Exempel från verkligheten</li>
               </ul>
             </Intro>
+            </TextContent>
           </BookFrame>
           <NotifyForm />
         </MainSection>

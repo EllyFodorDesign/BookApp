@@ -50,7 +50,7 @@ export const GlobalStyle = createGlobalStyle`
   h3 { font-size: var(--fs-h3); }
 
   p, li {
-    font-size: var(--fs-body);
+    font-size: var(--fs-p);
     line-height: 1.6;
   }
 
@@ -88,6 +88,8 @@ const theme = {
     lead: "var(--fs-lead)",// 18px mobile/tablet, 20px desktop
     body: "var(--fs-body)",// 16px mobile/tablet, 18px desktop
     button: "var(--fs-button)", // 14px mobile/tablet, 16px desktop
+    p: "var(--fs-p)", 
+    psmall:"var(--fs-psmall)",
   },
   spacing: {
     XXL: "var(--space-xxl)", // 64px

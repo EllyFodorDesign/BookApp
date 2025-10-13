@@ -36,28 +36,36 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
+
   @media (min-width: 375px) {
-    margin: ${({ theme }) => theme.spacing.XS} auto;
     border-color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
 const Card = styled.div`
   background: ${({ theme }) => theme.colors.cardBackground};
-  border-radius: 0.6rem;
+  border-radius: 1rem;
   margin: ${({ theme }) => theme.spacing.S};
   padding: ${({ theme }) => theme.spacing.S} ;
-  border: 0.5px solid rgba(127, 129, 131, 0.2);
+  border: 1.5px solid rgba(29, 72, 114, 0.2);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
   animation: ${fadeInScale} 0.4s ease forwards;
   text-align: center;
+    max-width: ${({ theme }) => theme.sizes.XL};
+
 
   ${MediaQuery.phone} {
     margin: 0 auto;
 
-    max-width: 90%;
-    max-height: 340px;
+  
   }
+`;
+
+export const CardContent = styled(MainSection)`
+  background: ${({ theme }) => theme.colors.formBackground};
+  width: ${({ theme }) => theme.sizes.XS};
+
+
 `;
 
 const IconWrapper = styled.div`
@@ -68,6 +76,7 @@ const IconWrapper = styled.div`
   background: rgba(255, 200, 0, 0.15);
   border-radius: 9999px;
   margin-bottom: ${({ theme }) => theme.spacing.XXS};
+  margin-top: ${({ theme }) => theme.spacing.S};
 
   svg {
     width: 2rem;
@@ -79,6 +88,7 @@ const IconWrapper = styled.div`
 const Description = styled.p`
   color: #555;
   margin-bottom: 0;
+  
 `;
 
 const Form = styled.form`
@@ -123,7 +133,6 @@ const Input = styled.input`
 
 const Button = styled.button`
   height: 3rem;
-  padding: 0 2rem;
   font-size: 1rem;
   font-weight: 600;
   color: #0f0f0f;
@@ -141,7 +150,8 @@ const Button = styled.button`
 `;
 
 const FooterNote = styled.p`
-  font-size: 0.875rem;
+font-size: ${({ theme }) => theme.fontSizes.psmall};
+
   color: #777;
   margin-top: ${({ theme }) => theme.spacing.M};
 `;
@@ -223,12 +233,13 @@ const NotifyForm = () => {
       <Section>
         <Container>
           <Card>
+          <CardContent>
             <IconWrapper>
               <Bell />
             </IconWrapper>
             {!sent && (
-              <Description>
-                Registrera din e-postadress för notis om boksläpp!
+              <Description aria-labelledby="för-notis-om-boksläpp!">
+                Registrera din e-postadress!
               </Description>
             )}
             {sent ? (
@@ -252,6 +263,7 @@ const NotifyForm = () => {
             )}
 
             <FooterNote>E-postadress delas ej med tredje part.</FooterNote>
+            </CardContent>
           </Card>
         </Container>
       </Section>

@@ -7,42 +7,44 @@ const HeaderLanding = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   display: inline-block;
   width: 100%;
+  text-align: left;
 
   @media (min-width: 768px) {
   }
 `;
 
-const LandingTitle = styled.h1`
-  max-width: 100%;
-  color: ${({ theme }) => theme.colors.landing};
-  margin-left: ${({ theme }) => theme.spacing.M};
-  margin-top: ${({ theme }) => theme.spacing.XS};
-  margin-bottom: ${({ theme }) => theme.spacing.XS};
+export const HeaderText = styled.section`
   background: ${({ theme }) => theme.colors.heroBackground};
+text-align:left;
+  justify-content: center;
+  max-width: ${({ theme }) => theme.sizes.M};
+  margin: ${({ theme }) => theme.spacing.M} auto;
 
-  @media (min-width: 480px) {
-    margin-left: ${({ theme }) => theme.spacing.L};
+  h1 {
+    color: ${({ theme }) => theme.colors.landing};
+  margin-top: ${({ theme }) => theme.spacing.XS};
+  margin-bottom: ${({ theme }) => theme.spacing.S};
+  background: ${({ theme }) => theme.colors.heroBackground};
   }
 
-  @media (min-width: 768px) {
-    padding-left: ${({ theme }) => theme.spacing.XXL};
-    padding-right: ${({ theme }) => theme.spacing.XXL};
-  }
-`;
-
-export const LandingTitleSub = styled(LandingTitle)`
+  h3{
   font-size: ${({ theme }) => theme.fontSizes.H2};
   color: ${({ theme }) => theme.colors.landingDarker};
   max-width: 95%;
   font-weight: normal;
+  }
+
 `;
+
 
 export default function Header() {
   return (
     <HeaderSection>
       <HeaderLanding>
-        <LandingTitle>Kommer snart</LandingTitle>
-        <LandingTitleSub>Bok om elever i skolan</LandingTitleSub>
+        <HeaderText aria-labelledby="Info-om-bokrelease">
+        <h1>Kommer snart</h1>
+        <h3>Bok om elever i skolan</h3>
+        </HeaderText>
       </HeaderLanding>
     </HeaderSection>
   );
