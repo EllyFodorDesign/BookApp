@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import { HeaderSection, MainSection } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
 import omslagBig from "../assets/omslagBig.jpg"; // Import the book cover image
-import MediaQuery from "../styles/mediaQuery";
 import NotifyForm from "@/components/NotifyForm";
 
 const Intro = styled.section`
@@ -20,12 +19,13 @@ const Intro = styled.section`
   }
 
   h2 {
-    font-size: ${({ theme }) => theme.fontSizes.LH2};
+    font-size: ${({ theme }) => theme.fontSizes.H2};
     border-bottom: 1px solid ${({ theme }) => theme.colors.primaryLightest};
+    border: 2px solid red;
   }
 
   h3 {
-    font-size: ${({ theme }) => theme.fontSizes.LH3};
+    font-size: ${({ theme }) => theme.fontSizes.H3};
     margin: ${({ theme }) => `${theme.spacing.L} 0 ${theme.spacing.S}`};
   }
 
@@ -37,14 +37,6 @@ const Intro = styled.section`
     font-size: ${({ theme }) => theme.fontSizes.li};
   }
 
-  ${MediaQuery.phone} {
-    h2 {
-      font-size: ${({ theme }) => theme.fontSizes.LH1};
-    }
-    h3 {
-      font-size: ${({ theme }) => theme.fontSizes.LH2};
-    }
-  }
 `;
 
 const Image = styled.img`
