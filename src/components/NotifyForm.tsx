@@ -36,7 +36,6 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-
   @media (min-width: 375px) {
     border-color: ${({ theme }) => theme.colors.primary};
   }
@@ -45,27 +44,22 @@ const Container = styled.div`
 const Card = styled.div`
   background: ${({ theme }) => theme.colors.cardBackground};
   border-radius: 1rem;
-  margin: ${({ theme }) => theme.spacing.S};
-  padding: ${({ theme }) => theme.spacing.S} ;
+  padding: ${({ theme }) => theme.spacing.S};
   border: 1.5px solid rgba(29, 72, 114, 0.2);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
   animation: ${fadeInScale} 0.4s ease forwards;
   text-align: center;
-    max-width: ${({ theme }) => theme.sizes.XL};
-
 
   ${MediaQuery.phone} {
     margin: 0 auto;
-
-  
   }
 `;
 
 export const CardContent = styled(MainSection)`
   background: ${({ theme }) => theme.colors.formBackground};
   width: ${({ theme }) => theme.sizes.XS};
-
-
+  height: ${({ theme }) => theme.sizes.XS};
+  
 `;
 
 const IconWrapper = styled.div`
@@ -85,25 +79,15 @@ const IconWrapper = styled.div`
   }
 `;
 
-const Description = styled.p`
-  color: #555;
-  margin-bottom: 0;
-  
-`;
-
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  gap: 1rem;
+  align-items: normal;
+  gap: 0.2rem;
   margin-left: ${({ theme }) => theme.spacing.XS};
-  margin-bottom: ${({ theme }) => theme.spacing.L};
-  margin-top: ${({ theme }) => theme.spacing.S};
-  max-height: 5rem;
+   p{font-weight: bold;
 
-  @media (min-width: 375px) {
-    align-items: center;
-  }
+    }
 
   @media (min-width: 480px) {
   }
@@ -132,7 +116,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  height: 3rem;
+  height: 2.5rem;
   font-size: 1rem;
   font-weight: 600;
   color: #0f0f0f;
@@ -150,10 +134,11 @@ const Button = styled.button`
 `;
 
 const FooterNote = styled.p`
-font-size: ${({ theme }) => theme.fontSizes.psmall};
+  font-size: ${({ theme }) => theme.fontSizes.psmall};
 
   color: #777;
   margin-top: ${({ theme }) => theme.spacing.M};
+
 `;
 
 const ThankYou = styled.div`
@@ -233,36 +218,39 @@ const NotifyForm = () => {
       <Section>
         <Container>
           <Card>
-          <CardContent>
-            <IconWrapper>
-              <Bell />
-            </IconWrapper>
-            {!sent && (
-              <Description aria-labelledby="för-notis-om-boksläpp!">
-                Registrera din e-postadress!
-              </Description>
-            )}
-            {sent ? (
-              <ThankYou>
-                <h3>Tack! Vi hör av oss via mejl när boken är tillgänglig.</h3>
-              </ThankYou>
-            ) : (
-              <Form onSubmit={handleSubmit}>
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="din.email@exempel.se"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-                <Button type="submit" disabled={submitting}>
-                  {submitting ? "Skickar…" : "Anmäl Intresse"}
-                </Button>
-              </Form>
-            )}
+            <CardContent>
+              <IconWrapper>
+                <Bell />
+              </IconWrapper>
 
-            <FooterNote>E-postadress delas ej med tredje part.</FooterNote>
+              {sent ? (
+                <ThankYou>
+                  <h3>
+                    Tack! Vi hör av oss via mejl när boken är tillgänglig.
+                  </h3>
+                </ThankYou>
+              ) : (
+                <Form onSubmit={handleSubmit}>
+                  {!sent && (
+                    <p aria-labelledby="för-notis-om-boksläpp!">
+                      Registrera din e-postadress!
+                    </p>
+                  )}
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="din.email@exempel.se"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <Button type="submit" disabled={submitting}>
+                    {submitting ? "Skickar…" : "Anmäl Intresse"}
+                  </Button>
+                </Form>
+              )}
+
+              <FooterNote>E-postadress delas ej med tredje part.</FooterNote>
             </CardContent>
           </Card>
         </Container>

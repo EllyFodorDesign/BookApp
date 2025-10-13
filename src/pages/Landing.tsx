@@ -64,8 +64,9 @@ export const BookFrame = styled.div`
   padding-top: ${({ theme }) => theme.spacing.S};
   box-sizing: border-box;
 
-  @media (min-width: 768px) {
+  @media (min-width: 375px) {
     padding: ${({ theme }) => theme.spacing.M};
+
   }
 
   @media (min-width: 1200px) {
