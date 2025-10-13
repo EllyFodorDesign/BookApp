@@ -22,14 +22,12 @@ text-align:left;
 
   h1 {
     color: ${({ theme }) => theme.colors.landing};
-  margin-top: ${({ theme }) => theme.spacing.XS};
-  margin-bottom: ${({ theme }) => theme.spacing.S};
-    font-size: ${({ theme }) => theme.fontSizes.H2};
+    font-size: ${({ theme }) => theme.fontSizes.H1};
   background: ${({ theme }) => theme.colors.heroBackground};
+  margin-top: 0;
   }
-
-  h3{
-  font-size: ${({ theme }) => theme.fontSizes.H3};
+  h2{
+  font-size: ${({ theme }) => theme.fontSizes.H2};
   color: ${({ theme }) => theme.colors.landingDarker};
   max-width: 95%;
   font-weight: normal;
@@ -44,7 +42,7 @@ export default function Header() {
       <HeaderLanding>
         <HeaderText aria-labelledby="Info-om-bokrelease">
         <h1>Kommer snart</h1>
-        <h3>Bok om elever i skolan</h3>
+        <h2>Bok om elever i skolan</h2>
         </HeaderText>
       </HeaderLanding>
     </HeaderSection>

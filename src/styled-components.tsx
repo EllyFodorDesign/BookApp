@@ -54,3 +54,8 @@ export const HeaderSection = styled(PageWrapper)`
     margin: 0 auto;
   }
 `;
+
+export const BottomSection = styled.section`
+margin-top:  ${({ theme }) => theme.spacing.L};
+  
+`;

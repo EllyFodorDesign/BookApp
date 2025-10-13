@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-import { HeaderSection, MainSection } from "../styled-components";
+import { BottomSection, HeaderSection, MainSection } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
 import omslagBig from "../assets/omslagBig.jpg"; // Import the book cover image
 import NotifyForm from "@/components/NotifyForm";
@@ -26,7 +26,7 @@ const Intro = styled.section`
 
   h3 {
     font-size: ${({ theme }) => theme.fontSizes.H3};
-    margin: ${({ theme }) => `${theme.spacing.L} 0 ${theme.spacing.S}`};
+    margin-top: ${({ theme }) => theme.spacing.S};
   }
 
   ul {
@@ -77,8 +77,8 @@ const Landing: React.FC = () => {
         Öka avståndet mellan footer och övrigt.  */}
         
             <Intro aria-labelledby="about-heading">
-              <h2>Bok om elever med NPF i skolan</h2>
-              <h3>Innehåll</h3>
+              <h3>Bok om elever med NPF i skolan</h3>
+              <h4>Innehåll</h4>
               <ul style={{ paddingLeft: "15px" }}>
                 <li>Strategier</li>
                 <li>Praktiska tips</li>
@@ -86,7 +86,9 @@ const Landing: React.FC = () => {
               </ul>
             </Intro>
           </BookFrame>
+          <BottomSection>
           <NotifyForm />
+          </BottomSection>
         </MainSection>
       </HeaderSection>
 
