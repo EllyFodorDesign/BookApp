@@ -37,7 +37,8 @@ const Section = styled.section`
 
 const Container = styled.div`
   @media (min-width: 375px) {
-    margin-top: ${({ theme }) => theme.spacing.M};
+    margin: ${({ theme }) => theme.spacing.XS} auto;
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
@@ -45,7 +46,7 @@ const Card = styled.div`
   background: ${({ theme }) => theme.colors.cardBackground};
   border-radius: 0.6rem;
   margin: ${({ theme }) => theme.spacing.S};
-  padding: ${({ theme }) => theme.spacing.M};
+  padding: ${({ theme }) => theme.spacing.S} ;
   border: 0.5px solid rgba(127, 129, 131, 0.2);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
   animation: ${fadeInScale} 0.4s ease forwards;
@@ -53,7 +54,7 @@ const Card = styled.div`
 
   ${MediaQuery.phone} {
     margin: 0 auto;
-    padding: 0 auto;
+
     max-width: 90%;
     max-height: 340px;
   }

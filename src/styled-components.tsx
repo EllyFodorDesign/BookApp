@@ -6,22 +6,20 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   overflow-x: hidden;
   padding: 0;
-  margin: 0 auto;
+  margin: 0;
   align-items: center;
   box-sizing: border-box;
   justify-content: center;
   box-sizing: border-box;
-  width: 100%;
+  width: 100vh;
   background-color: ${({ theme }) => theme.colors.primaryLightest};
 
   ${MediaQuery.phone} {
-    width: 100%;
+    
   }
 
   ${MediaQuery.tablet} {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+   
   }
 
   ${MediaQuery.desktop} {
@@ -35,14 +33,16 @@ export const PageWrapper = styled.div`
 
 export const MainSection = styled.div`
   background: ${({ theme }) => theme.colors.muted};
-  margin: 0 auto;
+  //border: 2px solid ${({ theme }) => theme.colors.landingDarker};
+  margin: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   box-sizing: border-box;
   padding: 0;
+  overflow-x: hidden;
 `;
 
 export const HeaderSection = styled(PageWrapper)`

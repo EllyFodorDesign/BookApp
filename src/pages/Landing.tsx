@@ -35,7 +35,7 @@ const Image = styled.img`
   width: 85%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
-margin: 0 auto ${({ theme }) => theme.spacing.S};
+  margin: 0 auto ${({ theme }) => theme.spacing.S};
 
   ${MediaQuery.desktop} {
     max-width: 90%;
@@ -51,10 +51,9 @@ export const BookFrame = styled.div`
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-color: ${({ theme }) => theme.colors.background};
-  width: 100%;
-  max-width: 280px;
+  max-width: ${({ theme }) => theme.sizes.M}; 
   overflow: hidden;
-  margin: ${({ theme }) => theme.spacing.M} auto;
+  margin: ${({ theme }) => theme.spacing.XL} auto;
   padding-left: ${({ theme }) => theme.spacing.S};
   padding-right: ${({ theme }) => theme.spacing.S};
   padding-top: ${({ theme }) => theme.spacing.S};

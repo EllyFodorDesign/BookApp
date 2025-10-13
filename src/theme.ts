@@ -28,6 +28,15 @@ const theme = {
   Lul: "var(--fs-lul)",
   button: "var(--fs-button)",
 },
+
+sizes: {
+  XS: "240px",
+  S: "320px",
+  M: "480px",
+  L: "650px",
+  XL: "800px",
+
+},
  
   spacing: {
   XXL: "var(--space-xxl)",
