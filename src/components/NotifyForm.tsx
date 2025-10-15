@@ -154,7 +154,7 @@ const NotifyForm = () => {
 
   useEffect(() => {
     if (!sent) return;
-    const timer = setTimeout(() => setSent(false), 1500);
+    const timer = setTimeout(() => setSent(false), 3000);
     return () => clearTimeout(timer);
   }, [sent]);
 
@@ -234,7 +234,9 @@ const NotifyForm = () => {
                   {!sent && (
                     <p aria-labelledby="för-notis-om-boksläpp!">
                       Registrera din e-postadress!
+                      
                     </p>
+                
                   )}
                   <Input
                     name="email"
