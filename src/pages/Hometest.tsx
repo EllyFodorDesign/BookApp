@@ -23,9 +23,20 @@ const Image = styled.img`
   object-fit: cover;
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-
 `;
+
+const Intro = styled.section`
+  text-align: left;
+  margin: ${({ theme }) => theme.spacing.L};
+  color: ${({ theme }) => theme.colors.text};
+
+  h2,
+  h3,
+  ul,
+  li {
+    line-height: 1.5;
+  }
+  `;
 
 const Hometest: React.FC = () => (
   <>
@@ -35,7 +46,15 @@ const Hometest: React.FC = () => (
     <MainSection>
       <BookFrame>
  <Image src={omslagBig} alt="Bokomslag" />
- 
+ <Intro>
+  <h3>Bok om elever med NPF i skolan</h3>
+            <h4>Innehåll</h4>
+            <ul style={{ paddingLeft: "15px" }}>
+              <li>Strategier</li>
+              <li>Praktiska tips</li>
+              <li>Exempel från verkligheten</li>
+            </ul>
+ </Intro>
       </BookFrame>
     </MainSection>
      <BottomSection>
