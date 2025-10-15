@@ -38,7 +38,7 @@ const Intro = styled.section`
   }
   `;
 
-const Hometest: React.FC = () => (
+const Test: React.FC = () => (
   <>
     <HeaderSection>
            <Header />
@@ -64,4 +64,4 @@ const Hometest: React.FC = () => (
   </>
 );
 
-export default Hometest;
+export default Test;
