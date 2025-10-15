@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-import { BottomSection, HeaderSection, MainSection } from "../styled-components";
+import {
+  BottomSection,
+  HeaderSection,
+  MainSection,
+
+} from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
 import omslagBig from "../assets/omslagBig.jpg"; // Import the book cover image
 import NotifyForm from "@/components/NotifyForm";
@@ -36,7 +41,6 @@ const Intro = styled.section`
   li {
     font-size: ${({ theme }) => theme.fontSizes.li};
   }
-
 `;
 
 const Image = styled.img`
@@ -47,22 +51,14 @@ const Image = styled.img`
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-  @media (min-width: 480px) {
-    width: 95%;
-  }
 
-  @media (min-width: 768px) {
-  }
-
-  @media (min-width: 1200px) {
-  }
 `;
 
 export const BookFrame = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: ${({ theme }) => theme.colors.background};
   margin-top: ${({ theme }) => theme.spacing.L};
   width: 90%;
@@ -73,29 +69,24 @@ const Landing: React.FC = () => {
     <>
       <HeaderSection>
         <Header />
-        <MainSection>
-          <BookFrame>
-            <Image src={omslagBig} alt="Bokomslag" />
-            {/* Lägg in bild här på omslaget.
-        Samt en nedräkning till release? 
-        Öka avståndet mellan footer och övrigt.  */}
-        
-            <Intro aria-labelledby="about-heading">
-              <h3>Bok om elever med NPF i skolan</h3>
-              <h4>Innehåll</h4>
-              <ul style={{ paddingLeft: "15px" }}>
-                <li>Strategier</li>
-                <li>Praktiska tips</li>
-                <li>Exempel från verkligheten</li>
-              </ul>
-            </Intro>
-          </BookFrame>
-          <BottomSection>
-          <NotifyForm />
-          </BottomSection>
-        </MainSection>
       </HeaderSection>
-
+      <MainSection>
+        <BookFrame>
+          <Image src={omslagBig} alt="Bokomslag" />
+          <Intro aria-labelledby="about-heading">
+            <h3>Bok om elever med NPF i skolan</h3>
+            <h4>Innehåll</h4>
+            <ul style={{ paddingLeft: "15px" }}>
+              <li>Strategier</li>
+              <li>Praktiska tips</li>
+              <li>Exempel från verkligheten</li>
+            </ul>
+          </Intro>
+        </BookFrame>
+      </MainSection>
+      <BottomSection>
+        <NotifyForm />
+      </BottomSection>
       <FooterLanding />
     </>
   );

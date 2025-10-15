@@ -8,6 +8,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Books from "./components/Books";
+import Hometest from "./pages/HomeTest";
 
 import { GlobalStyle } from "./styles/GlobalStyle";
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <Route element={<Layout />}>
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
+           <Route path="/hometest" element={<Hometest />} />
           <Route path="/about" element={<About />} />
           <Route path="/books" element={<Books />} />
           <Route path="/contact" element={<Contact />} />

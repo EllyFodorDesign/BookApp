@@ -49,12 +49,13 @@ export const HeaderSection = styled(PageWrapper)`
   width: 100%;
 
   ${MediaQuery.desktop} {
-    max-width: 1200px;
+    max-width: 1800px;
     margin: 0 auto;
   }
 `;
 
 export const BottomSection = styled.section`
 margin-top:  ${({ theme }) => theme.spacing.L};
+
   
 `;
