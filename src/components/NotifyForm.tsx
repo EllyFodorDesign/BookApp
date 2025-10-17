@@ -55,6 +55,7 @@ export const CardContent = styled(MainSection)`
   background: ${({ theme }) => theme.colors.formBackground};
   width: ${({ theme }) => theme.sizes.XS};
   height: ${({ theme }) => theme.sizes.XS};
+  border-radius: 0.6rem;
 
   @media (min-width: 480px) {
 
@@ -116,16 +117,16 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  height: 2.5rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #0f0f0f;
   background: #71b676;
-  border: none;
-  border-radius: 0.5rem;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(8, 8, 8, 0.25);
   transition: transform 0.2s;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background: #00c8d6;
