@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-import { BottomSection, HeaderSection, MainSection } from "../styled-components";
+import {
+  BottomSection,
+  HeaderSection,
+  MainSection,
+
+} from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
 import omslagBig from "../assets/omslagBig.jpg"; // Import the book cover image
 import NotifyForm from "@/components/NotifyForm";
@@ -36,7 +41,6 @@ const Intro = styled.section`
   li {
     font-size: ${({ theme }) => theme.fontSizes.li};
   }
-
 `;
 
 const Image = styled.img`

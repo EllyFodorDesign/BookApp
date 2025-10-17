@@ -10,6 +10,7 @@ import Projects from "./components/Projects";
 import Books from "./components/Books";
 
 import { GlobalStyle } from "./styles/GlobalStyle";
+import Test from "./pages/Test";
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <Route element={<Layout />}>
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
+           <Route path="/hometest" element={<Test />} />
           <Route path="/about" element={<About />} />
           <Route path="/books" element={<Books />} />
           <Route path="/contact" element={<Contact />} />
