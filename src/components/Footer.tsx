@@ -76,16 +76,14 @@ const BrandSection = styled.div`
   }
 `;
 
-const BrandTitle = styled.h3`
-  font-size: 1.6rem;
+const BrandTitle = styled.h1`
   font-weight: normal;
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
-
+  margin: ${({ theme }) => theme.spacing.S} auto; 
+color: ${({ theme }) => theme.colors.footertext};
   text-align: left;
 
   @media (min-width: 480px) {
-    margin-bottom: 0.5rem;
+   margin: ${({ theme }) => theme.spacing.S} auto; 
   }
 
   @media (min-width: 768px) {
@@ -183,10 +181,11 @@ const ContactLinks = styled(ShortCuts)`
   }
 `;
 
-const LinksTitle = styled.h4`
-  font-weight: 800;
-  font-size: ${theme.fontSizes.H1};
+const LinksTitle = styled.h2`
+  font-weight: 600;
+
   margin: 0 0 1rem 0;
+  color: ${({ theme }) => theme.colors.footertext};
 
   @media (min-width: 480px) {
     font-size: 1.1rem;

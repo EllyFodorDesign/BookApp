@@ -5,6 +5,7 @@ const theme = {
    primaryLightest: "#fae8d7ff",
    cardBackground: "#f7ecdcff",
    background: "#ffffffff",
+   footertext: "#f5fce6ff",
     text: "#0B2A26",
     muted: "#fae8d7ff",
     formBackground: "#fcfaf1ff",
