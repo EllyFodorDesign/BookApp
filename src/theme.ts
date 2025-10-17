@@ -49,6 +49,15 @@ large: "12rem",
 
 
 },
+
+scale:{
+ 
+small: 1, 
+medium: 1.1,
+large: 1.2,
+
+
+},
  
   spacing: {
   XXL: "var(--space-xxl)",
