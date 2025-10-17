@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Bell } from "lucide-react";
-import { toast } from "sonner";
 import MediaQuery from "@/styles/mediaQuery";
 import { MainSection } from "@/styled-components";
+import { toast } from "sonner";
 
 // ====== Styled Components ======
 const fadeInScale = keyframes`
