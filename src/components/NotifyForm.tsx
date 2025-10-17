@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { Bell } from "lucide-react";
 import { toast } from "sonner";
 import MediaQuery from "@/styles/mediaQuery";
-import { MainSection } from "@/styled-components";
+import { BottomSection, MainSection } from "@/styled-components";
 
 // ====== Styled Components ======
 const fadeInScale = keyframes`
@@ -214,7 +214,7 @@ const NotifyForm = () => {
   };
 
   return (
-    <MainSection>
+    <BottomSection>
       <Section>
         <Container>
           <Card>
@@ -255,7 +255,7 @@ const NotifyForm = () => {
           </Card>
         </Container>
       </Section>
-    </MainSection>
+    </BottomSection>
   );
 };
 

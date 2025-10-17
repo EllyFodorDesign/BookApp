@@ -36,13 +36,18 @@ export const MainSection = styled.div`
   margin: 0;
   width: 100%;
   display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+box-sizing: border-box;
+padding: 0;
+overflow-x: hidden;
+
+  @media (min-width: 480px) {
+    }
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 0;
-  overflow-x: hidden;
-  /*The backgroundcolor should be the screens width. but not the content in it*/
+  
 `;
 
 export const HeaderSection = styled(PageWrapper)`

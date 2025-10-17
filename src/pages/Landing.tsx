@@ -40,7 +40,7 @@ const Intro = styled.section`
 `;
 
 const Image = styled.img`
-  width: 90%;
+  width: 60%;
   margin: ${({ theme }) => theme.spacing.S};
   height: auto;
   object-fit: cover;
@@ -60,12 +60,18 @@ const Image = styled.img`
 
 export const BookFrame = styled.div`
 display: flex;
-flex-direction: column;
+flex-direction: row;
 align-items: center;
 justify-content: center;
   background-color: ${({ theme }) => theme.colors.background};
   margin-top: ${({ theme }) => theme.spacing.L};
-  width: 90%;
+
+   @media (min-width: 480px) {
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+ }
 `;
 
 const Landing: React.FC = () => {
