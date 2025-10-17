@@ -35,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: var(--font-sans, system-ui, sans-serif);
     font-size: var(--fs-body);
     line-height: 1.6;
-    background-color: var(--color-background);
+    background-color: var(--color-hero-bg);
     color: var(--color-foreground);
     -webkit-font-smoothing: antialiased;
   }

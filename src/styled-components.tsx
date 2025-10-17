@@ -42,6 +42,7 @@ export const MainSection = styled.div`
   box-sizing: border-box;
   padding: 0;
   overflow-x: hidden;
+  /*The backgroundcolor should be the screens width. but not the content in it*/
 `;
 
 export const HeaderSection = styled(PageWrapper)`
