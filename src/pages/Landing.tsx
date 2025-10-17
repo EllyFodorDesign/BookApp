@@ -8,7 +8,7 @@ import NotifyForm from "@/components/NotifyForm";
 
 const Intro = styled.section`
   text-align: left;
-  margin: ${({ theme }) => theme.spacing.L};
+    margin-left: ${({ theme }) => theme.spacing.S};
   color: ${({ theme }) => theme.colors.text};
 
   h2,
@@ -40,12 +40,12 @@ const Intro = styled.section`
 `;
 
 const Image = styled.img`
-  width: 60%;
-  margin: ${({ theme }) => theme.spacing.S};
+  width: 55%;
   height: auto;
   object-fit: cover;
   border-radius: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: ${({ theme }) => theme.spacing.XXS};
 
   @media (min-width: 480px) {
     width: 95%;
@@ -60,9 +60,11 @@ const Image = styled.img`
 
 export const BookFrame = styled.div`
 display: flex;
+  border-radius: 0.6rem;
 flex-direction: row;
 align-items: center;
-justify-content: center;
+justify-content: space-evenly;
+width: 90%;
   background-color: ${({ theme }) => theme.colors.background};
   margin-top: ${({ theme }) => theme.spacing.L};
 
@@ -87,8 +89,8 @@ const Landing: React.FC = () => {
         Öka avståndet mellan footer och övrigt.  */}
         
             <Intro aria-labelledby="about-heading">
-              <h3>Bok om elever med NPF i skolan</h3>
-              <h4>Innehåll</h4>
+              <h3>"Att leva med NPF som barn"</h3>
+              <h4>Utdrag av innehållet:</h4>
               <ul style={{ paddingLeft: "15px" }}>
                 <li>Strategier</li>
                 <li>Praktiska tips</li>

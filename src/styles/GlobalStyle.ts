@@ -49,6 +49,8 @@ export const GlobalStyle = createGlobalStyle`
   h1 { font-size: var(--fs-h1); }
   h2 { font-size: var(--fs-h2); }
   h3 { font-size: var(--fs-h3); }
+  h4 { font-size: var(--fs-h4); }
+
 
   p, li {
     font-size: var(--fs-p);

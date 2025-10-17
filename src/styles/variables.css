@@ -36,14 +36,15 @@
   /* ✍️ Typography */
   --fs-h1: 30px;
   --fs-h2: 25px;
-  --fs-h3: 22px;
+  --fs-h3: 20px;
+  --fs-h4: 16px;
   --fs-lead: 1.125rem;
   --fs-body: 18px;
-  --fs-p: 0.9rem;
+  --fs-p: 12px;
   --fs-psmall: 0.6rem;
   --fs-small: 0.875rem;
   --fs-button: 0.875rem;
-  --fs-li: 16px;
+  --fs-li: 12px;
   --fs-lul: 1rem;
 
   /* 💬 Fonts */
