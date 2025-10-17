@@ -26,7 +26,14 @@
    --sizes-m: 480px;
    --sizes-l: 650px;
   --sizes-xl: 800px;
-  
+
+  /*forms*/
+--form-w-small: 12px;  
+--form-h-small: 12px; 
+--form-w-medium: 12px; 
+--form-h-medium: 12px; 
+--form-w-large: 12px; 
+--form-h-large: 12px; 
 
   /* 🔲 Border radius */
   --radius-sm: 4px;

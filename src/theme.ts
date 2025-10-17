@@ -41,6 +41,14 @@ sizes: {
   XL: "800px",
 
 },
+forms:{
+  /*forms*/
+small: "12rem", 
+medium: "12rem",
+large: "12rem",
+
+
+},
  
   spacing: {
   XXL: "var(--space-xxl)",

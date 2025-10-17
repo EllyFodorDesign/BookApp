@@ -108,6 +108,12 @@ const theme = {
     md: "var(--radius-md)", // 8px
     lg: "var(--radius-lg)", // 12px
   },
+
+   form: {
+   small: "var(--form-small)", // 4px
+   medium: "var(--form-medium)",
+   large: "var(--form-large)",
+ },
 };
 
 export type Theme = typeof theme;

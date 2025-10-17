@@ -53,14 +53,13 @@ const Card = styled.div`
 
 export const CardContent = styled(MainSection)`
   background: ${({ theme }) => theme.colors.formBackground};
-  width: ${({ theme }) => theme.sizes.XS};
-  height: ${({ theme }) => theme.sizes.XS};
+ height: ${({ theme }) => theme.forms.small};
+ width: 11rem;
   border-radius: 0.6rem;
 
-  @media (min-width: 480px) {
+  @media (min-width: 768px) {
 
-  width: ${({ theme }) => theme.sizes.XS};
-  height: ${({ theme }) => theme.sizes.S};
+
   }
 `;
 
@@ -72,7 +71,7 @@ const IconWrapper = styled.div`
   background: rgba(255, 200, 0, 0.15);
   border-radius: 9999px;
   margin-bottom: ${({ theme }) => theme.spacing.XXS};
-  margin-top: ${({ theme }) => theme.spacing.S};
+  margin-top:0;
 
   svg {
     width: 2rem;
@@ -99,7 +98,7 @@ const Input = styled.input`
   height: 3rem;
   padding: ${({ theme }) => theme.spacing.S};
   margin-bottom: ${({ theme }) => theme.spacing.S};
-  font-size: 1rem;
+  font-size: 0.7rem;
   color: #111;
   background: #fff;
   border: 1px solid #ccc;
@@ -117,7 +116,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: #0f0f0f;
   background: #71b676;
@@ -138,7 +137,8 @@ const FooterNote = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.psmall};
 
   color: #777;
-  margin-top: ${({ theme }) => theme.spacing.M};
+  margin: ${({ theme }) => theme.spacing.S};
+
 
 `;
 
