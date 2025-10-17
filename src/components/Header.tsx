@@ -12,17 +12,27 @@ const HeaderLanding = styled.header`
   text-align: left;
 `;
 
-export const HeaderText = styled.section`
+export const BookFrame = styled.div`
+display: flex;
+  border-radius: 0.6rem;
+flex-direction: column;
+justify-content: center;
+  background-color: ${({ theme }) => theme.colors.background};
+  margin: ${({ theme }) => theme.spacing.M} auto;
+   text-align: left;
+   width: 90%;
+  `;
+
+export const HeaderText = styled(BookFrame)`
   background: ${({ theme }) => theme.colors.heroBackground};
   text-align: left;
-  justify-content: center;
-  margin: ${({ theme }) => theme.spacing.S} auto;
 
   h1 {
     color: ${({ theme }) => theme.colors.landing};
     font-size: ${({ theme }) => theme.fontSizes.H1};
     background: ${({ theme }) => theme.colors.heroBackground};
     margin-top: 0;
+    margin-bottom: ${({ theme }) => theme.spacing.XXS};
   }
   h2 {
     font-size: ${({ theme }) => theme.fontSizes.H2};
