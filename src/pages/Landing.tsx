@@ -48,7 +48,9 @@ const Image = styled.img`
   margin: ${({ theme }) => theme.spacing.XXS};
 
   @media (min-width: 480px) {
-    width: 95%;
+    width: 65%;
+      margin: ${({ theme }) => theme.spacing.S};
+
   }
 
   @media (min-width: 768px) {
@@ -68,11 +70,19 @@ width: 90%;
   background-color: ${({ theme }) => theme.colors.background};
   margin-top: ${({ theme }) => theme.spacing.L};
 
-   @media (min-width: 480px) {
-    display: flex;
+@media (min-width: 480px) {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+ }
+
+ @media (min-width: 1200px) {
+display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+width: 70%;
  }
 `;
 

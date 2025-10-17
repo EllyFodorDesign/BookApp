@@ -27,6 +27,11 @@ export const HeaderText = styled(BookFrame)`
   background: ${({ theme }) => theme.colors.heroBackground};
   text-align: left;
 
+  
+  @media (min-width: 1200px) {
+    width: 60%;
+  }
+
   h1 {
     color: ${({ theme }) => theme.colors.landing};
     font-size: ${({ theme }) => theme.fontSizes.H1};
