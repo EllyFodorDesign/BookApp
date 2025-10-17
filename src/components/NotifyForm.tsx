@@ -32,9 +32,13 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-  @media (min-width: 375px) {
-    border-color: ${({ theme }) => theme.colors.primary};
-  }
+display: flex;
+justify-content: center;
+transform-origin: top center;
+ transition: transform 0.3s ease;
+ transform: scale(${({ theme }) => theme.scale.small});
+   border-color: ${({ theme }) => theme.colors.primary};
+
 `;
 
 const Card = styled.div`
@@ -54,7 +58,7 @@ const Card = styled.div`
 export const CardContent = styled(MainSection)`
   background: ${({ theme }) => theme.colors.formBackground};
  height: ${({ theme }) => theme.forms.small};
- width: 11rem;
+ width:  ${({ theme }) => theme.forms.small};
   border-radius: 0.6rem;
 
   @media (min-width: 768px) {
