@@ -225,11 +225,11 @@ const NotifyForm = () => {
           <Card>
             <CardContent>
               <IconWrapper>
-                <Bell />
+                <Bell aria-labelledby="Ringklocka-symbol"/>
               </IconWrapper>
 
               {sent ? (
-                <ThankYou>
+                <ThankYou aria-labelledby="Tack-text">
                   <h3>
                     Tack! Vi hör av oss via mejl när boken är tillgänglig.
                   </h3>
@@ -237,13 +237,13 @@ const NotifyForm = () => {
               ) : (
                 <Form onSubmit={handleSubmit}>
                   {!sent && (
-                    <p aria-labelledby="för-notis-om-boksläpp!">
+                    <p aria-labelledby="få-notis-om-boksläpp!">
                       Registrera din e-postadress!
                       
                     </p>
                 
                   )}
-                  <Input
+                  <Input aria-labelledby="fält-för-registrera-email"
                     name="email"
                     type="email"
                     placeholder="din.email@exempel.se"
@@ -251,7 +251,7 @@ const NotifyForm = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
-                  <Button type="submit" disabled={submitting}>
+                  <Button aria-labelledby="Knapp-bekräfta-utskick" type="submit" disabled={submitting}>
                     {submitting ? "Skickar…" : "Anmäl Intresse"}
                   </Button>
                 </Form>
