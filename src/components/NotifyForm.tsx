@@ -140,7 +140,7 @@ const Button = styled.button`
 const FooterNote = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.psmall};
 
-  color: #777;
+  color: #666666;
   margin: ${({ theme }) => theme.spacing.S};
 
 
