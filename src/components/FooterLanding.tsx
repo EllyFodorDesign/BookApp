@@ -14,7 +14,7 @@ const StyledFooterLanding = styled.footer`
 
 export default function FooterLanding() {
   return (
-    <StyledFooterLanding>
+    <StyledFooterLanding aria-labelledby="info-om-sidans-användning">
       <p>
       © 2025 Elly Fodor Publishing. Alla rättigheter reserverade.</p>
     </StyledFooterLanding>

@@ -98,11 +98,11 @@ const Landing: React.FC = () => {
         <MainSection>
           <BookFrame>
             <Image src={omslagBig} alt="Bokomslag" />
-            {/* Lägg in bild här på omslaget.
+            {/* 
         Samt en nedräkning till release? 
-        Öka avståndet mellan footer och övrigt.  */}
+        */}
         
-            <Intro aria-labelledby="about-heading">
+            <Intro aria-labelledby="intro-titlar">
               <h3>"Att leva med NPF som barn"</h3>
               <h4>Utdrag av innehållet:</h4>
               <ul style={{ paddingLeft: "15px" }}>
@@ -113,7 +113,7 @@ const Landing: React.FC = () => {
             </Intro>
           </BookFrame>
           <BottomSection>
-          <NotifyForm />
+          <NotifyForm aria-labelledby="registrera-email"/>
           </BottomSection>
         </MainSection>
       </HeaderSection>
