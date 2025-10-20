@@ -5,14 +5,12 @@ const ButtonGroup = styled.div`
   flex-direction: column;
   align-items: center;
 
-
-@media (min-width: 768px) {
-  margin-top: 2rem;
-}
+  @media (min-width: 768px) {
+    margin-top: 2rem;
+  }
 `;
 
 const Button = styled.button`
- 
   font-size: 1rem;
   border-radius: 0.3rem;
   cursor: pointer;
@@ -24,11 +22,8 @@ const Button = styled.button`
   margin-bottom: 20px;
 
   @media (min-width: 768px) {
-  font-size: 1.5rem;
-  
-}
-;
-  
+    font-size: 1.5rem;
+  }
   /* Default styles */
   background-color: #dedede;
   color: black;
@@ -41,3 +36,6 @@ const Button = styled.button`
 `;
 
 export { ButtonGroup, Button };
+
+/* Lägg till så länken funkar när knappen trycks på: 
+https://webshop.publit.com/webshop/5846*/
