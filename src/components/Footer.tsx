@@ -284,7 +284,7 @@ const Footer = () => {
           </Container>
           <Divider>
             <Copyright>
-              © 2025 EllyFodor. Alla rättigheter reserverade.
+              © 2025 EllyFodor Publishing. Alla rättigheter reserverade.
             </Copyright>
           </Divider>
         </FooterSection>
