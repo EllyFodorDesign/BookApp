@@ -54,6 +54,12 @@
   --fs-li: 12px;
   --fs-lul: 1rem;
 
+/*weights*/
+  --fw-light: 300;
+ --fw-normal: 400;
+--fw-bold: 700;
+ 
+
   /* 💬 Fonts */
   --font-sans: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-serif: "Georgia", "Times New Roman", serif;

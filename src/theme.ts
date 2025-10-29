@@ -31,6 +31,13 @@ const theme = {
   psmall: "var(--fs-psmall)",
 },
 
+fontWeight: {
+  light: "var(--fw-light)",
+  normal: "var(--fw-normal)",
+  bold: "var(--fw-bold)",
+
+},
+
 sizes: {
   XXS: "200px",
   XS: "240px",
@@ -69,9 +76,9 @@ large: 1.2,
   XXS: "var(--space-xxs)",
 },
    radii: {
-    SM: "var(--radius-SM)",
-    MD: "var(--radius-MD)",
-    LG: "var(--radius-LG)",
+    SM: "var(--radius-sm)",
+    MD: "var(--radius-md)",
+    LG: "var(--radius-lg)",
   },
 };
 
