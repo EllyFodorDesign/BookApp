@@ -1,11 +1,15 @@
-import React from "react";
+
 import { HeaderSection, MainSection } from "../styled-components";
 import Hero from "../components/Hero";
-import { ButtonGroup, Button } from "../components/Button";
-import ScheduleButton from "../components/ScheduleButton";
+import { ButtonGroup } from "../components/Button";
 import { Heading } from "../components/styled-components/texts";
+import ReadAboutButton from "@/components/ReadAboutButton";
+import WebshopButton from "../components/WebshopButton";
+{/*import PublitWebshop from "@/components/MyComponent";*/}
+
 
 const Home: React.FC = () => (
+
   <>
     <HeaderSection>
       <Hero />
@@ -13,9 +17,11 @@ const Home: React.FC = () => (
     <MainSection>
       <Heading>"Att leva som barn med NPF i skolan"</Heading>
       <ButtonGroup>
-        <Button>Köp boken genom att trycka här</Button>
-        <ScheduleButton buttoText="Läs mer om böckerna här" />
+        <WebshopButton buttoText="Köp boken genom att trycka här"/>
+{/* <PublitWebshop/>*/}
+        <ReadAboutButton buttoText="Läs mer om böckerna här" />
       </ButtonGroup>
+    
     </MainSection>
   </>
 );

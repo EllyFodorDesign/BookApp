@@ -6,10 +6,10 @@ interface ScheduleButtonProps {
 
 
 
-const ScheduleButton = ({ buttoText }: ScheduleButtonProps) => {
+const WebshopButton = ({ buttoText }: ScheduleButtonProps) => {
   const handleClick = () => {
     window.open(
-      "https://book-app-alpha-two.vercel.app/books",
+      "https://webshop.publit.com/webshop/5846",
       "_blank"
     );
   };
@@ -21,4 +21,4 @@ const ScheduleButton = ({ buttoText }: ScheduleButtonProps) => {
   );
 };
 
-export default ScheduleButton;
+export default WebshopButton;

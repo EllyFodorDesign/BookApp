@@ -5,7 +5,7 @@ import { styled } from "styled-components";
 
 
 
-export const ContactButton = styled.a`
+export const ReadButton = styled.a`
 padding: 0.75rem 1.5rem;
   
   font-size: 1rem;
@@ -16,7 +16,7 @@ padding: 0.75rem 1.5rem;
   cursor: pointer;
   transition: all 0.5s ease;
   margin: 20px;
-      background: #bd9256;
+      background: #1b1917;
       color: hsl(0, 0%, 98%);
 
 
@@ -26,4 +26,4 @@ padding: 0.75rem 1.5rem;
   
   }
 `;
-export default ContactButton;
+export default ReadButton;
