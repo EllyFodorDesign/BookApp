@@ -11,6 +11,7 @@ const theme = {
     landing: "#96723cff",
     landingDarker: "rgba(93, 69, 35, 1)",
    heroBackground: "#fbdbc0ff",
+   buttonBackground: "#757575ff",
     
   },
   fontSizes: {
@@ -32,9 +33,15 @@ const theme = {
 },
 
 fontWeight: {
+  thin: "var(fw-thin)",
+  ultralight: "var(fw-ultralight)",
   light: "var(--fw-light)",
   normal: "var(--fw-normal)",
+    semibold: "var(--fw-semibold)",
   bold: "var(--fw-bold)",
+   heavy: "var(--fw-heavy)",
+    black: "var(--fw-black)",
+
 
 },
 

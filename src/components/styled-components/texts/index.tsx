@@ -2,14 +2,12 @@ import { styled } from "styled-components";
 
 export const Heading = styled.h1`
   font-size: 1.2rem;
-  font-weight: bolder;
+  font-weight: ${({ theme }) => theme.fontWeight.normal};
   color: hsl(85, 15%, 25%);
-  margin-bottom: 2rem;
-  margin-top: 0rem;
+
   text-align: center;
-  padding: 2px;
-  margin: 4px;
-  margin-bottom: 20px;
+
+  margin-bottom: ${({ theme }) => theme.spacing.XL};
 
   @media (min-width: 768px) {
     font-size: 1.5rem;
@@ -22,6 +20,11 @@ export const PageTitle = styled.h1`
   font-size: 2rem;
   margin: 20px;
   text-align: center;
+`;
+
+export const HeadingTwo = styled(Heading)`
+  margin: ${({ theme }) => theme.spacing.XS};
+  margin-top: ${({ theme }) => theme.spacing.L};
 `;
 
 export const Title = styled.h2`
@@ -81,5 +84,4 @@ export const Content = styled.div`
   text-align: center;
 `;
 
-export const SubHeading = styled.h2`
-`;
+export const SubHeading = styled.h2``;

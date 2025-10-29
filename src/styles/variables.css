@@ -55,10 +55,15 @@
   --fs-lul: 1rem;
 
 /*weights*/
+  --fw-thin: 100;
+    --fw-ultralight: 200;
   --fw-light: 300;
  --fw-normal: 400;
+  --fw-medium: 500;
+   --fw-semibold: 600;
 --fw-bold: 700;
- 
+  --fw-heavy: 800;
+   --fw-black: 900;
 
   /* 💬 Fonts */
   --font-sans: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
