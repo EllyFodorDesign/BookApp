@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import {
@@ -9,6 +9,15 @@ import {
 } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
 import omslag from "../assets/omslag.jpg"; // Import the book cover image
+import { Document, Page, pdfjs} from "react-pdf";
+import "react-pdf/dist/Page/TextLayer.css";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url
+).toString();
 
 
 const Intro = styled.section`
@@ -90,7 +99,25 @@ width: 70%;
  }
 `;
 
+const PdfContainer = styled.div`
+  max-width: 500px;
+  margin-left: ${({ theme }) => theme.spacing.S};
+`;
+
 const Landing: React.FC = () => {
+  const [numPages, setNumPages] = useState<number>(0);
+  const  [pageNumber, setPageNumber] = useState<number>(1);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
+  
+const goToPrevPage = () => setPageNumber ((p) => Math.max(p - 1, 1));
+const goToNextPage = () => setPageNumber ((p) => Math.max(p + 1, 1));
+
   return (
     <>
       <HeaderSection>
@@ -113,6 +140,37 @@ const Landing: React.FC = () => {
             </Intro>
           </BookFrame>
           <BottomSection>
+  {/* PDF + navigation */}
+            <PdfContainer>
+              <Document
+                file="/document.pdf"
+                onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+                loading={<p>Loading PDF…</p>}
+              >
+                <Page
+                  pageNumber={pageNumber}
+                  width={500} // Adjust to fit layout
+                  renderTextLayer={false}
+                  renderAnnotationLayer={false}
+                />
+              </Document>
+
+              <nav
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginTop: "1rem",
+                }}
+              >
+                <button onClick={goToPrevPage} disabled={pageNumber <= 1}>
+                  Prev
+                </button>
+                {numPages > 0 && <span>Page {pageNumber} of {numPages}</span>}
+                <button onClick={goToNextPage} disabled={pageNumber >= numPages}>
+                  Next
+                </button>
+              </nav>
+            </PdfContainer>
 
              {/* 
           <NotifyForm aria-labelledby="registrera-email"/> */}
