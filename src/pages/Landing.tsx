@@ -101,25 +101,46 @@ width: 70%;
 
 const PdfContainer = styled.div`
   max-width: 500px;
-  margin-left: ${({ theme }) => theme.spacing.S};
+  min-height: 80vh;
 `;
 
 const Landing: React.FC = () => {
   const [numPages, setNumPages] = useState<number>(0);
   const  [pageNumber, setPageNumber] = useState<number>(1);
-  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const onDocumentLoadSucssess = ({ numPages}) => {
+    setNumPages(numPages);
+  }
+  const goToPrevPage = () =>
+    setPageNumber(pageNumber - 1 <= 1 ? 1 : pagenumber -1);
 
-  if (!isClient) return null;
+const goToNextPage = () =>
+	setPageNumber(
+		pageNumber + 1 >= numPages ? numPages : pageNumber + 1,
+	);
   
-const goToPrevPage = () => setPageNumber ((p) => Math.max(p - 1, 1));
-const goToNextPage = () => setPageNumber ((p) => Math.max(p + 1, 1));
 
   return (
     <>
+    	<div className="page">
+<nav>
+  <button onClick={goToPrevPage} className="previous">Prev</button>
+  <button onClick={goToNextPage} className="next">Next</button>
+  <p>
+    Page {pageNumber} of {numPages}
+  </p>
+</nav>
+
+
+
+			<Document
+				file="/document.pdf"
+				onLoadSuccess={onDocumentLoadSuccess}
+			>
+				<Page pageNumber={pageNumber} />
+			</Document>
+		</div>
+
       <HeaderSection>
         <Header />
         <MainSection>
@@ -140,38 +161,6 @@ const goToNextPage = () => setPageNumber ((p) => Math.max(p + 1, 1));
             </Intro>
           </BookFrame>
           <BottomSection>
-  {/* PDF + navigation */}
-            <PdfContainer>
-              <Document
-                file="/document.pdf"
-                onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-                loading={<p>Loading PDF…</p>}
-              >
-                <Page
-                  pageNumber={pageNumber}
-                  width={500} // Adjust to fit layout
-                  renderTextLayer={false}
-                  renderAnnotationLayer={false}
-                />
-              </Document>
-
-              <nav
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  marginTop: "1rem",
-                }}
-              >
-                <button onClick={goToPrevPage} disabled={pageNumber <= 1}>
-                  Prev
-                </button>
-                {numPages > 0 && <span>Page {pageNumber} of {numPages}</span>}
-                <button onClick={goToNextPage} disabled={pageNumber >= numPages}>
-                  Next
-                </button>
-              </nav>
-            </PdfContainer>
-
              {/* 
           <NotifyForm aria-labelledby="registrera-email"/> */}
           </BottomSection>
