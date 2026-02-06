@@ -1,31 +1,79 @@
-import styled from "styled-components";
+import { useState } from "react";
+import { Document, Page } from "react-pdf";
 
-const PdfWrapper = styled.div`
-  width: 100%;
-  max-width: 900px;
-  height: 80vh; /* THIS IS CRUCIAL */
-  margin: ${({ theme }) => theme.spacing.L} auto;
-  border-radius: 0.6rem;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-`;
+// Text layer for React-PDF
+import "react-pdf/dist/Page/TextLayer.css";
+const App = () => {
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
-const PdfIframe = styled.iframe`
-  width: 100%;
-  height: 100%;
-  border: none;
-`;
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  };
 
-const Reading = () => {
+  const goToPrevPage = () =>
+    setPageNumber(pageNumber - 1 <= 1 ? 1 : pageNumber - 1);
+
+  const goToNextPage = () =>
+    setPageNumber(pageNumber + 1 >= numPages ? numPages : pageNumber + 1);
+
   return (
-    <PdfWrapper>
-      <PdfIframe
-        src="/public/document.pdf"
-        title="Book preview"
-      />
-    </PdfWrapper>
+    <div>
+      <nav>
+        <button onClick={goToPrevPage}>Prev</button>
+        <button onClick={goToNextPage}>Next</button>
+        <p>
+          Page {pageNumber} of {numPages}
+        </p>
+      </nav>
+
+      <Document
+        file="document.pdf" // Path to your PDF file.
+        onLoadSuccess={onDocumentLoadSuccess}
+      >
+        <Page pageNumber={pageNumber} />
+      </Document>
+    </div>
   );
 };
 
-export default Reading;
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
