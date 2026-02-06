@@ -119,7 +119,7 @@ const goToNextPage = () =>
 	
   return (
     <>
-         <HeaderSection>
+      <HeaderSection>
        <Header />
        <MainSection> 
         <PdfContainer>
