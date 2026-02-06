@@ -9,7 +9,6 @@ import {
 } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
 import omslag from "../assets/omslag.jpg"; // Import the book cover image
-import NotifyForm from "@/components/NotifyForm";
 
 const Intro = styled.section`
   text-align: left;
@@ -113,7 +112,8 @@ const Landing: React.FC = () => {
             </Intro>
           </BookFrame>
           <BottomSection>
-          <NotifyForm aria-labelledby="registrera-email"/>
+             {/* 
+          <NotifyForm aria-labelledby="registrera-email"/> */}
           </BottomSection>
         </MainSection>
       </HeaderSection>
