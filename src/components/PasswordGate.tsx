@@ -22,7 +22,7 @@ function PasswordGate({ children }: { children: ReactNode }) {
         />
         <button
           onClick={() => {
-            if (pw === import.meta.env.VITE_PASSWORD) {
+            if (pw === import.meta.env.VITE_SITE_PASSWORD) {
               sessionStorage.setItem("ok", "true");
               setOk(true);
             }
