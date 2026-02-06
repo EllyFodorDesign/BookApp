@@ -1,4 +1,5 @@
 import { ContactButton } from "./ContactButton";
+import { useNavigate } from "react-router-dom";
 
 interface ScheduleButtonProps {
   buttoText?: string;
@@ -7,15 +8,12 @@ interface ScheduleButtonProps {
 
 
 const ScheduleButton = ({ buttoText }: ScheduleButtonProps) => {
-  const handleClick = () => {
-    window.open(
-      "https://book-app-alpha-two.vercel.app/books",
-      "_blank"
-    );
-  };
+ const navigate = useNavigate();
+ 
+ 
 
   return (
-    <ContactButton style={{ width: "fit-content" }} onClick={handleClick}>
+    <ContactButton style={{ width: "fit-content" }} onClick={() => navigate("/books")}>
       {buttoText}
     </ContactButton>
   );
