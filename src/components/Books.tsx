@@ -91,9 +91,9 @@ const Books = () => {
     <AboutSection id="about">
       <Container>
         <Content>
-          <Title>Böcker av författaren</Title>
+          <SubTitle>"Att leva med NPF som barn"</SubTitle>
           <Divider></Divider>
-          <SubTitle>"Att leva som barn med NPF i skolan"</SubTitle>
+          
           <SubTitleSmaller>För pedagoger och lärare</SubTitleSmaller>
           <PortraitPlaceholder>
             <Image src={authorImage} alt="Författare" />
