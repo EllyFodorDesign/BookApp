@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import authorImage from "../assets/author.jpg"; // Import the author image
+import contentImage from "../assets/omslag.jpg"; 
 import Divider from "antd/es/divider";
 
 
@@ -96,7 +96,7 @@ const Books = () => {
           
           <SubTitleSmaller>För pedagoger och lärare</SubTitleSmaller>
           <PortraitPlaceholder>
-            <Image src={authorImage} alt="Författare" />
+            <Image src={contentImage} alt="läsning-om-npf" />
             {/* replace with actual image*/}
             <PlaceholderSubtextBooks>
               För dig som vill läsa texten digitalt.<br />
