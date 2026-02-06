@@ -8,7 +8,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Books from "./components/Books";
-import Text from "./components/Text";
+import Text from "./components/Reading";
 
 import { GlobalStyle } from "./styles/GlobalStyle";
 
