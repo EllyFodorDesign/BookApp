@@ -108,7 +108,7 @@ const Landing: React.FC = () => {
   const [numPages, setNumPages] = useState<number>(0);
   const  [pageNumber, setPageNumber] = useState<number>(1);
 
-  const onDocumentLoadSucssess = ({ numPages}) => {
+  const onDocumentLoadSucssess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
   }
   const goToPrevPage = () =>
