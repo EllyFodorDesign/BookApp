@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import {
@@ -112,54 +112,43 @@ const Landing: React.FC = () => {
     setNumPages(numPages);
   }
   const goToPrevPage = () =>
-    setPageNumber(pageNumber - 1 <= 1 ? 1 : pagenumber -1);
+    setPageNumber((p) => Math.max (p 1, 1));
 
 const goToNextPage = () =>
-	setPageNumber(
-		pageNumber + 1 >= numPages ? numPages : pageNumber + 1,
-	);
-  
-
+	setPageNumber((p) => Math.min (p + 1, numPages));
+	
   return (
     <>
-    	<div className="page">
-<nav>
-  <button onClick={goToPrevPage} className="previous">Prev</button>
-  <button onClick={goToNextPage} className="next">Next</button>
-  <p>
-    Page {pageNumber} of {numPages}
-  </p>
-</nav>
+         <HeaderSection>
+       <Header />
+       <MainSection> 
+        <PdfContainer>
+       <nav>
+              <button onClick={goToPrevPage} disabled={pageNumber <= 1}>
+                Prev
+              </button>
+              <button
+                onClick={goToNextPage}
+                disabled={pageNumber >= numPages}
+              >
+                Next
+              </button>
+              <p>
+                Page {pageNumber} of {numPages}
+              </p>
+            </nav>   
+      
 
+      
 
-
-			<Document
-				file="/document.pdf"
-				onLoadSuccess={onDocumentLoadSuccess}
-			>
-				<Page pageNumber={pageNumber} />
-			</Document>
-		</div>
-
-      <HeaderSection>
-        <Header />
-        <MainSection>
-          <BookFrame>
-            <Image src={omslag} alt="Bokomslag" />
-            {/* 
-        Samt en nedräkning till release? 
-        */}
-        
-            <Intro aria-labelledby="intro-titlar">
-              <h3>"Att leva med NPF som barn"</h3>
-              <h4>Utdrag av innehållet:</h4>
-              <ul style={{ paddingLeft: "15px" }}>
-                <li>Strategier</li>
-                <li>Praktiska tips</li>
-                <li>Exempel från verkligheten</li>
-              </ul>
-            </Intro>
-          </BookFrame>
+            <Document
+              file="/document.pdf"
+              onLoadSuccess={onDocumentLoadSuccess}
+            >
+              <Page pageNumber={pageNumber} width={500} />
+            </Document>
+          </PdfContainer>
+ 
           <BottomSection>
              {/* 
           <NotifyForm aria-labelledby="registrera-email"/> */}
