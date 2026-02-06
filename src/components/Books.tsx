@@ -64,7 +64,7 @@ const PortraitPlaceholder = styled.div`
     hsl(85, 35%, 35%, 0.2)
   );
   border-radius: 0.5rem;
-  height: 38rem;
+  height:30 rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,12 +99,8 @@ const Books = () => {
             <Image src={authorImage} alt="Författare" />
             {/* replace with actual image*/}
             <PlaceholderSubtextBooks>
-              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magn. lorem ipsum
-              dolor sit amet, consectetur adipiscing elit. <br />
-              Sed do eiusmod tempor incididunt ut labore et dolore magna. lorem
-              ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-              tempor incididunt ut labore et dolore magn.
+              För dig som vill läsa texten digitalt.<br />
+              Se texten nedan.                                                 
             </PlaceholderSubtextBooks>
           </PortraitPlaceholder>
         </Content>
