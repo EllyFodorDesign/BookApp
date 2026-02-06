@@ -9,6 +9,7 @@ import {
 } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
 import omslag from "../assets/omslag.jpg"; // Import the book cover image
+import Text from "@/components/Text"; // Import the Text component to display the PDF viewer
 
 const Intro = styled.section`
   text-align: left;
@@ -112,6 +113,7 @@ const Landing: React.FC = () => {
             </Intro>
           </BookFrame>
           <BottomSection>
+<Text />
              {/* 
           <NotifyForm aria-labelledby="registrera-email"/> */}
           </BottomSection>
