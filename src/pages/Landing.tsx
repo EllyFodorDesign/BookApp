@@ -8,7 +8,7 @@ import {
 
 } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
-import omslagBig from "../assets/omslagBig.jpg"; // Import the book cover image
+import omslag from "../assets/omslag.jpg"; // Import the book cover image
 import NotifyForm from "@/components/NotifyForm";
 
 const Intro = styled.section`
@@ -97,7 +97,7 @@ const Landing: React.FC = () => {
         <Header />
         <MainSection>
           <BookFrame>
-            <Image src={omslagBig} alt="Bokomslag" />
+            <Image src={omslag} alt="Bokomslag" />
             {/* 
         Samt en nedräkning till release? 
         */}
