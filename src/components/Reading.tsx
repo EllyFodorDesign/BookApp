@@ -1,36 +1,31 @@
-import { useEffect } from "react";
+import styled from "styled-components";
 
-const Text = () => {
-  useEffect(() => {
-    // Define a function to resize the embedded PDF
-    const resizeEmbed = () => {
-      // Retrieve the embedded PDF element by its ID
-      const embed = document.getElementById("pdfEmbed");
-      if (embed) {
-        // Get the height of the window
-        const windowHeight = window.innerHeight;
-        // Set the height of the embedded PDF to match the window height
-        embed.style.height = `${windowHeight}px`;
-      }
-    };
+const PdfWrapper = styled.div`
+  width: 100%;
+  max-width: 900px;
+  height: 80vh; /* THIS IS CRUCIAL */
+  margin: ${({ theme }) => theme.spacing.L} auto;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+`;
 
-    resizeEmbed();
-    window.addEventListener("resize", resizeEmbed);
-    return () => window.removeEventListener("resize", resizeEmbed);
-  }, []);
+const PdfIframe = styled.iframe`
+  width: 100%;
+  height: 100%;
+  border: none;
+`;
 
+const Reading = () => {
   return (
-    <div style={{ height: "100vh", overflow: "hidden" }}>
-      <embed
-        id="pdfEmbed"
-        src="../assets/document.pdf"
-        type="application/pdf"
-        width="100%"
-        height="100%"
-        style={{ border: "none" }}
+    <PdfWrapper>
+      <PdfIframe
+        src="/public/document.pdf"
+        title="Book preview"
       />
-    </div>
+    </PdfWrapper>
   );
 };
 
-export default Text;
+export default Reading;
