@@ -54,8 +54,8 @@ export default function Header() {
     <HeaderSection>
       <HeaderLanding>
         <HeaderText aria-labelledby="Info-om-bokrelease">
-          <h1>Kommer snart</h1>
-          <h2>Bok om elever i skolan</h2>
+          <h1>Välkommen hit!</h1>
+          <h2>Se texten nedan</h2>
         </HeaderText>
       </HeaderLanding>
     </HeaderSection>
