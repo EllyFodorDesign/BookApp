@@ -6,6 +6,13 @@ import FooterLanding from "../components/FooterLanding";
 import omslag from "../assets/omslag.jpg"; // Import the book cover image
 import MediaQuery from "../styles/mediaQuery";
 import PdfViewer from "@/components/PdfViewer";
+import { pdfjs } from "react-pdf";
+
+// Must be at the top of your component or main.tsx
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url
+).toString();
 
 const Intro = styled.section`
   text-align: left;

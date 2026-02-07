@@ -1,11 +1,12 @@
 import { useRef, useEffect, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 
+if (typeof window !=="undefined"){
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
   import.meta.url
 ).toString();
-
+}
 export default function PdfViewer({ file }: { file: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState<number>(0);
