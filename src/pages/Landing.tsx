@@ -128,7 +128,7 @@ const Landing: React.FC = () => {
           </BookFrame>
           <BookFrame>
             <PdfContainer>
-              <PdfViewer file="/document.pdf"/>
+              <PdfViewer file="/document.pdf"/> {/* needs prev and next page buttons and a search field. */}
             </PdfContainer>
             </BookFrame>
           {/* <NotifyForm />*/}
