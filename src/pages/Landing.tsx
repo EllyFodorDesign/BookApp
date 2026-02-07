@@ -92,25 +92,7 @@ width: 70%;
  }
 `;
 
-export const PdfContainer = styled(BookFrame)`
-  max-width: 500px;
-  margin-left: ${({ theme }) => theme.spacing.S};
-`;
-
 const Landing: React.FC = () => {
-   {/*const [numPages, setNumPages] = useState<number>(0);
-  const [pageNumber, setPageNumber] = useState<number>(1);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return null;
-
-  const goToPrevPage = () => setPageNumber((p) => Math.max(p - 1, 1));
-  const goToNextPage = () => setPageNumber((p) => Math.min(p + 1, numPages));
-*/}
   return (
     <>
       <HeaderSection>
@@ -133,45 +115,6 @@ const Landing: React.FC = () => {
             </Intro>
           </BookFrame>
           {/* <NotifyForm />*/}
-          <BookFrame>{/*
-             <PdfContainer><Document
-                file="/document.pdf" // Ensure this is the correct path
-                onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-                onLoadError={(error) => {
-                  console.error("Failed to load PDF:", error);
-                }}
-                onSourceError={(error)=> {
-                  console.error("PDF SOURCE ERROR", error);
-                }}
-                loading={<p>Loading PDF…</p>}
-              >
-                <Page
-                  pageNumber={pageNumber}
-                  width={200}
-                  renderTextLayer={false}
-                  renderAnnotationLayer={false}
-                />
-              </Document>
-
-              <nav style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  marginTop: "1rem",
-                }}
-              >
-                <button onClick={goToPrevPage} disabled={pageNumber <= 1}>
-                  Prev
-                </button>
-                {numPages > 0 && <span>Page {pageNumber} of {numPages}</span>}
-                <button onClick={goToNextPage} disabled={pageNumber >= numPages}>
-                  Next
-                </button>
-              </nav>  </PdfContainer>
-              - Jag vill förstå hur pdf renderaren fungerar. 
-              - Två knappar: prev och next. 
-              - Det är pdf react som används. 
-              */}
-          </BookFrame>
         </MainSection>
       </HeaderSection>
 

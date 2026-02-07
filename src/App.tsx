@@ -8,7 +8,6 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Books from "./components/Books";
-import Text from "./components/Reading";
 
 import { GlobalStyle } from "./styles/GlobalStyle";
 
@@ -20,7 +19,6 @@ const App: React.FC = () => {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Landing />} />
-           <Route path="/text" element={<Text />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/books" element={<Books />} />
