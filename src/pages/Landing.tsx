@@ -5,6 +5,7 @@ import { HeaderSection, MainSection } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
 import omslag from "../assets/omslag.jpg"; // Import the book cover image
 import MediaQuery from "../styles/mediaQuery";
+import PdfViewer from "@/components/PdfViewer";
 
 const Intro = styled.section`
   text-align: left;
@@ -117,7 +118,11 @@ const Landing: React.FC = () => {
               </ul>
             </Intro>
           </BookFrame>
-          <BookFrame><PdfContainer></PdfContainer></BookFrame>
+          <BookFrame>
+            <PdfContainer>
+              <PdfViewer file="/documentPdf"/>
+            </PdfContainer>
+            </BookFrame>
           {/* <NotifyForm />*/}
         </MainSection>
       </HeaderSection>
