@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use-client"
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import {
@@ -9,16 +10,14 @@ import {
 } from "../styled-components";
 import FooterLanding from "../components/FooterLanding";
 import omslag from "../assets/omslag.jpg"; // Import the book cover image
-import { Document, Page, pdfjs} from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/TextLayer.css";
 import "react-pdf/dist/Page/AnnotationLayer.css";
-
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
   import.meta.url
 ).toString();
-
 
 const Intro = styled.section`
   text-align: left;
@@ -101,57 +100,76 @@ width: 70%;
 
 const PdfContainer = styled.div`
   max-width: 500px;
-  min-height: 80vh;
+  margin-left: ${({ theme }) => theme.spacing.S};
 `;
 
 const Landing: React.FC = () => {
   const [numPages, setNumPages] = useState<number>(0);
-  const  [pageNumber, setPageNumber] = useState<number>(1);
+  const [pageNumber, setPageNumber] = useState<number>(1);
+  const [isClient, setIsClient] = useState(false);
 
-  const onDocumentLoadSucssess = ({ numPages }: { numPages: number }) => {
-    setNumPages(numPages);
-  }
-  const goToPrevPage = () =>
-    setPageNumber((p) => Math.max (p 1, 1));
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
-const goToNextPage = () =>
-	setPageNumber((p) => Math.min (p + 1, numPages));
-	
+  if (!isClient) return null;
+
+  const goToPrevPage = () => setPageNumber((p) => Math.max(p - 1, 1));
+  const goToNextPage = () => setPageNumber((p) => Math.min(p + 1, numPages));
+
   return (
     <>
       <HeaderSection>
-       <Header />
-       <MainSection> 
-        <PdfContainer>
-       <nav>
-              <button onClick={goToPrevPage} disabled={pageNumber <= 1}>
-                Prev
-              </button>
-              <button
-                onClick={goToNextPage}
-                disabled={pageNumber >= numPages}
-              >
-                Next
-              </button>
-              <p>
-                Page {pageNumber} of {numPages}
-              </p>
-            </nav>   
-      
-
-      
-
-            <Document
-              file="/document.pdf"
-              onLoadSuccess={onDocumentLoadSuccess}
-            >
-              <Page pageNumber={pageNumber} width={500} />
-            </Document>
-          </PdfContainer>
- 
+        <Header />
+        <MainSection>
+          <BookFrame>
+            <Image src={omslag} alt="Bokomslag" />
+            <Intro aria-labelledby="intro-titlar">
+              <h3>"Att leva med NPF som barn"</h3>
+              <h4>Utdrag av innehållet:</h4>
+              <ul style={{ paddingLeft: "15px" }}>
+                <li>Strategier</li>
+                <li>Praktiska tips</li>
+                <li>Exempel från verkligheten</li>
+              </ul>
+            </Intro>
+          </BookFrame>
           <BottomSection>
-             {/* 
-          <NotifyForm aria-labelledby="registrera-email"/> */}
+            <PdfContainer>
+              <Document
+                file="/document.pdf" // Ensure this is the correct path
+                onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+                onLoadError={(error) => {
+                  console.error("Failed to load PDF:", error);
+                }}
+                onSourceError={(error)=> {
+                  console.error("PDF SOURCE ERROR", error);
+                }}
+                loading={<p>Loading PDF…</p>}
+              >
+                <Page
+                  pageNumber={pageNumber}
+                  width={500}
+                  renderTextLayer={false}
+                  renderAnnotationLayer={false}
+                />
+              </Document>
+
+              <nav style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginTop: "1rem",
+                }}
+              >
+                <button onClick={goToPrevPage} disabled={pageNumber <= 1}>
+                  Prev
+                </button>
+                {numPages > 0 && <span>Page {pageNumber} of {numPages}</span>}
+                <button onClick={goToNextPage} disabled={pageNumber >= numPages}>
+                  Next
+                </button>
+              </nav>
+            </PdfContainer>
           </BottomSection>
         </MainSection>
       </HeaderSection>
@@ -162,3 +180,72 @@ const goToNextPage = () =>
 };
 
 export default Landing;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

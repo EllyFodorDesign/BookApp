@@ -13,7 +13,12 @@ export default defineConfig({
       }
 })
   ],
+
+  optimizeDeps: {
+    include: ["react-pdf"]
+  },
   resolve: {
-    alias: {'@': path.resolve(__dirname, 'src') }
+    dedupe: ["pdfjs-dist"],
+    alias: {'@': path.resolve(__dirname, 'src') },
   }
-})
+});
