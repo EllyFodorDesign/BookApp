@@ -120,7 +120,7 @@ const Landing: React.FC = () => {
           </BookFrame>
           <BookFrame>
             <PdfContainer>
-              <PdfViewer file="/documentPdf"/>
+              <PdfViewer file="/document.pdf"/>
             </PdfContainer>
             </BookFrame>
           {/* <NotifyForm />*/}
