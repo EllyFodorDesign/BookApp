@@ -92,6 +92,11 @@ width: 70%;
  }
 `;
 
+export const PdfContainer = styled(BookFrame)`
+  max-width: 500px;
+  margin-left: ${({ theme }) => theme.spacing.S};
+`;
+
 const Landing: React.FC = () => {
   return (
     <>
@@ -115,6 +120,9 @@ const Landing: React.FC = () => {
             </Intro>
           </BookFrame>
           {/* <NotifyForm />*/}
+          <BookFrame>
+             <PdfContainer>  </PdfContainer>
+          </BookFrame>
         </MainSection>
       </HeaderSection>
 
