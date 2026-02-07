@@ -135,6 +135,8 @@ const Landing: React.FC = () => {
             </Intro>
           </BookFrame>
           <BottomSection>
+            {/*
+             <BookFrame>
             <PdfContainer>
               <Document
                 file="/document.pdf" // Ensure this is the correct path
@@ -149,7 +151,7 @@ const Landing: React.FC = () => {
               >
                 <Page
                   pageNumber={pageNumber}
-                  width={500}
+                  width={200}
                   renderTextLayer={false}
                   renderAnnotationLayer={false}
                 />
@@ -170,6 +172,8 @@ const Landing: React.FC = () => {
                 </button>
               </nav>
             </PdfContainer>
+            </BookFrame>
+            */}
           </BottomSection>
         </MainSection>
       </HeaderSection>
