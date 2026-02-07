@@ -7,7 +7,8 @@ import omslag from "../assets/omslag.jpg"; // Import the book cover image
 import MediaQuery from "../styles/mediaQuery";
 import PdfViewer from "@/components/PdfViewer";
 import { pdfjs } from "react-pdf";
-
+import 'react-pdf/dist/Page/TextLayer.css';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
 // Must be at the top of your component or main.tsx
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
