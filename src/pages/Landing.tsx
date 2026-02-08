@@ -1,4 +1,4 @@
-import React from "react";
+import  React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import { HeaderSection, MainSection } from "../styled-components";
@@ -104,8 +104,9 @@ export const PdfContainer = styled(BookFrame)`
   max-width: 500px;
   margin-left: ${({ theme }) => theme.spacing.S};
 `;
-const Landing: React.FC = () => {
-  return (
+const Landing: React.FC = () => 
+
+    
     <>
       <HeaderSection>
         <Header />
@@ -128,16 +129,18 @@ const Landing: React.FC = () => {
           </BookFrame>
           <BookFrame>
             <PdfContainer>
-              <PdfViewer file="/document.pdf"/> {/* needs prev and next page buttons and a search field. */}
+          
+              <PdfViewer file="/document.pdf" />
+           
             </PdfContainer>
             </BookFrame>
+            
           {/* <NotifyForm />*/}
         </MainSection>
       </HeaderSection>
 
       <FooterLanding />
     </>
-  );
-};
+  ;
 
 export default Landing;
