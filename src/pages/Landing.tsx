@@ -1,4 +1,5 @@
 import  React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import { HeaderSection, MainSection } from "../styled-components";
@@ -9,6 +10,8 @@ import PdfViewer from "@/components/PdfViewer";
 import { pdfjs } from "react-pdf";
 import 'react-pdf/dist/Page/TextLayer.css';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
+import { Page} from "react-pdf";
+import type { PDFDocumentProxy } from "pdfjs-dist";
 // Must be at the top of your component or main.tsx
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -122,19 +125,43 @@ display: flex;
 flex-direction: row;
 
 `;
-const Landing: React.FC = () => 
+//hooks live here
+{/*This state variable will hold the total number of pages in a document (initially set to null).
+//setNumPages: This function updates the numPages state.*/}
+{/*pageNumber: This state variable keeps track of the current page number (initially set to 1).
+setPageNumber: This function updates the pageNumber state.*/}
+{/*This function is called when a document loads successfully.
+The argument { numPages } is destructured to get the total number of pages from the document.
+When the document loads, setNumPages(numPages) updates the numPages state with the total number of pages.*/}
 
+{/*Define your event handler functions (like onDocumentLoadSuccess, goToPrevPage, and goToNextPage) 
+after your hooks but before the return statement.*/}
+
+const Landing: React.FC = () => {
+const [numPages, setNumPages] = useState<number | null>(null); 
+const [pageNumber, setPageNumber] = useState(1); 
+
+const onDocumentLoadSuccess =(pdf: PDFDocumentProxy) => {
+    setNumPages(pdf.numPages);
+  };
+
+const goToPrevPage = () => {
+    setPageNumber((p) => (p - 1 <= 1 ? 1 : p - 1));
+  };
+
+  const goToNextPage = () => {
+    if (!numPages) return;
+    setPageNumber((p) => (p + 1 >= numPages ? numPages : p + 1));
+  };
+  
+return (
     
     <>
       <HeaderSection>
         <Header />
         <MainSection>
           <BookFrame>
-            <Image src={omslag} alt="Bokomslag" />
-            {/* Lägg in bild här på omslaget.
-        Samt en nedräkning till release? 
-        Öka avståndet mellan footer och övrigt.  */}
-        
+            <Image src={omslag} alt="Bokomslag" />      
             <Intro aria-labelledby="intro-titlar">
               <h3>"Att leva med NPF som barn"</h3>
               <h4>Utdrag av innehållet:</h4>
@@ -148,11 +175,19 @@ const Landing: React.FC = () =>
           <BookFrame>
             <PdfContainer>
               <Buttonframe>
-          <button>Före</button>
-          <button>Nästa</button>
-          </Buttonframe>
-              <PdfViewer file="/document.pdf" />
-           
+                <div className ="page">
+                  <nav>
+ <button onClick={goToNextPage} className="next">Nästa</button> 
+ <button onClick={goToPrevPage} className="prev">Tillbaka</button>
+ <p>Sida{pageNumber} av {numPages ?? '--'}
+        </p>
+     
+                  </nav>
+                </div>
+                  </Buttonframe>
+
+              <PdfViewer file="/document.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+           </PdfViewer>
             </PdfContainer>
             </BookFrame>
             
@@ -162,6 +197,8 @@ const Landing: React.FC = () =>
 
       <FooterLanding />
     </>
-  ;
+);
+};
+
 
 export default Landing;

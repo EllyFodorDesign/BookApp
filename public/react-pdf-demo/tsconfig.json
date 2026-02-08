@@ -1,6 +1,0 @@
-{
-  "files": [],
-  "references": [
-       { "path": "./public/react-pdf-demo/tsconfig.node.json" }
-  ]
-}
