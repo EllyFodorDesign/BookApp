@@ -99,10 +99,28 @@ align-items: center;
 justify-content: center;
 width: 70%;
  }
+
+ 
 `;
+
+export const button =styled.button`{
+display: flex;
+flex-direction: row;
+}
+
+`;
+
 export const PdfContainer = styled(BookFrame)`
+display: flex;
+flex-direction: column;
   max-width: 500px;
   margin-left: ${({ theme }) => theme.spacing.S};
+`;
+
+export const Buttonframe= styled(BookFrame)`
+display: flex;
+flex-direction: row;
+
 `;
 const Landing: React.FC = () => 
 
@@ -129,7 +147,10 @@ const Landing: React.FC = () =>
           </BookFrame>
           <BookFrame>
             <PdfContainer>
-          
+              <Buttonframe>
+          <button>Före</button>
+          <button>Nästa</button>
+          </Buttonframe>
               <PdfViewer file="/document.pdf" />
            
             </PdfContainer>
