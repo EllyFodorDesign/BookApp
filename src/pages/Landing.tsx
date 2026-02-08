@@ -1,5 +1,5 @@
 import  React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import { HeaderSection, MainSection } from "../styled-components";
@@ -10,8 +10,6 @@ import PdfViewer from "@/components/PdfViewer";
 import { pdfjs } from "react-pdf";
 import 'react-pdf/dist/Page/TextLayer.css';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
-import { Page} from "react-pdf";
-import type { PDFDocumentProxy } from "pdfjs-dist";
 // Must be at the top of your component or main.tsx
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -141,7 +139,11 @@ const Landing: React.FC = () => {
 const [numPages, setNumPages] = useState<number | null>(null); 
 const [pageNumber, setPageNumber] = useState(1); 
 
-const onDocumentLoadSuccess =(pdf: PDFDocumentProxy) => {
+useEffect(() => {
+  console.log("Page number:", pageNumber);
+}, [pageNumber]);
+
+const onDocumentLoadSuccess =(pdf: any) => { //när dokument lyckas ladda. vilken pdf som helst kan visas.
     setNumPages(pdf.numPages);
   };
 
@@ -186,8 +188,10 @@ return (
                 </div>
                   </Buttonframe>
 
-              <PdfViewer file="/document.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-           </PdfViewer>
+              <PdfViewer file="/document.pdf"
+               onLoadSuccess={onDocumentLoadSuccess}
+               pageNumber={pageNumber}/>
+          
             </PdfContainer>
             </BookFrame>
             
