@@ -104,6 +104,7 @@ width: 70%;
  
 `;
 
+
 export const button =styled.button`{
 display: flex;
 flex-direction: row;
@@ -122,6 +123,13 @@ export const Buttonframe= styled(BookFrame)`
 display: flex;
 flex-direction: row;
 
+`;
+
+export const PageNumDesign = styled.p`
+display: flex;
+flex-direction: row;
+justify-content: center;
+margin-top:  ${({ theme }) => theme.spacing.S};
 `;
 //hooks live here
 {/*This state variable will hold the total number of pages in a document (initially set to null).
@@ -181,8 +189,8 @@ return (
                   <nav>
  <button onClick={goToNextPage} className="next">Nästa</button> 
  <button onClick={goToPrevPage} className="prev">Tillbaka</button>
- <p>Sida{pageNumber} av {numPages ?? '--'}
-        </p>
+ <PageNumDesign>Sida {pageNumber} av {numPages ?? '--'}
+        </PageNumDesign>
      
                   </nav>
                 </div>
